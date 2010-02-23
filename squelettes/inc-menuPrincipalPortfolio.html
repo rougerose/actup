@@ -1,0 +1,8 @@
+#CACHE{7*24*3600}
+
+<div id="menu">
+    <hr class="invisible">
+    <BOUCLE_menuprincipal(RUBRIQUES){id_parent=0}{par num titre}>
+    <h1><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><img src="#CHEMIN{base/commun/menu/secteur#ID_RUBRIQUE-N.gif}" alt="[(#TITRE|supprimer_numero|textebrut)]"  hspace="0" vspace="0" border="0" title="[(#TITRE|supprimer_numero|textebrut)]"></a></h1>
+    </BOUCLE_menuprincipal>
+</div>

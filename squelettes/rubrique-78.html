@@ -1,0 +1,91 @@
+<BOUCLE_p(RUBRIQUES){id_rubrique}>[(#REM) rubrique Guide des droits sociaux ]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=78}{descriptif=image guide}><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
+                </BOUCLE_img_glossaire_haut>
+                <div class="hierarchie">
+                    <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
+                    <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a> </BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(RUBRIQUES){id_rubrique=78}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
+                </div>
+                
+                <div class="CorpsRubrique">
+                    <h2 class="RubCouleurTitreArt">Avertissement</h2>
+                    <p>Depuis 2003, de nombreuses informations publi&eacute;es dans notre guide des droits sociaux sont devenues obsol&egrave;tes (sur le PaCS, le handicap, la prise en charge par la s&eacute;curit&eacute; sociale, etc.). Les entr&eacute;es vont &ecirc;tre progressivement mise &agrave; jour en ligne. Une r&eacute;&eacute;dition du guide est pr&eacute;vue pour 2007/2008.</p>
+
+                    <BOUCLE_articles_exclus(ARTICLES){id_rubrique}{titre_mot=articles exclus}{doublons}></BOUCLE_articles_exclus><BOUCLE_avantpropos(ARTICLES){id_rubrique}{titre=Avant-propos}{doublons}>
+                    <h2 class="RubCouleurTitreArt">[(#TITRE|supprimer_numero)]</h2>
+                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p></BOUCLE_avantpropos>
+                </div>
+                <div class="CorpsRubrique">
+                    <h2 class="RubCouleurTitreArt">Sommaire</h2>
+                    <ul class="normal"><BOUCLE_rubGDS(HIERARCHIE){id_rubrique}{1,1}{doublons}>
+                        <li class="niveau0"><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rubGDS><B_hierarchieGDS><BOUCLE_hierarchieGDS(HIERARCHIE){id_rubrique}{2,7}{doublons}>
+                        <ul>
+                            <li><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_hierarchieGDS>
+                            <ul>
+                                <li><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a>[<p>(#TEXTE)</p>]</li><B_rub_parent>
+                                <ul><BOUCLE_rub_parent(RUBRIQUES){id_parent}{doublons}>
+                                    <li><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rub_parent>
+                                </ul></B_rub_parent><B_niveauArticles>
+                                <ul>
+                                    <BOUCLE_niveauArticles(ARTICLES){id_rubrique}{doublons}{annee>2001}>
+                                    <li class="niveau2"><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="+" width="14" height="14"> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+                                    </BOUCLE_niveauArticles>
+                                </ul>
+                                </B_niveauArticles>
+                            </ul>
+                            <BOUCLE_hierarchieGDS2(HIERARCHIE){id_rubrique}{2,7}>
+                        </ul>
+                        </BOUCLE_hierarchieGDS2>
+                    </ul>
+                </div>
+                <div class="CorpsRubrique" id="Recherche">
+                    <INCLURE{fond=inc-formulaireRechercheGuide}>
+                    <div class="rien">&nbsp;</div>
+                </div>
+                <B_test_affichage><BOUCLE_test_affichage(ARTICLES){id_rubrique}{titre_mot=articles exclus}> </BOUCLE_test_affichage>
+                <div class="CorpsRubrique" id="Separation"><B_telechargement>
+                    <a name="telecharger"></a>
+                    <h3 class="RubCouleurTitreArt">T&eacute;l&eacute;chargement</h3><BOUCLE_telechargement(ARTICLES){id_rubrique}{titre=telechargement}>
+                    <p>#TEXTE<BOUCLE_doc_telechargement(DOCUMENTS){id_article}{mode=document}><br>&#091;&nbsp; <a href="#URL_DOCUMENT">[(#TITRE|supprimer_numero)]</a> - #TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]&nbsp;&#093;</BOUCLE_doc_telechargement></p></BOUCLE_telechargement></B_telechargement><B_avertissement>
+                    <h3 class="RubCouleurTitreArt">Adresses utiles</h3>
+                    <p>Les coordonn&eacute;es des associations, syndicats, institutions et administrations [<a href="#URL_PAGE{adresses-utiles-guide}">consulter la liste</a>]</p>
+                    <a name="avertissement"></a>
+                    <h3 class="RubCouleurTitreArt">Avertissement</h3><BOUCLE_avertissement(ARTICLES){id_rubrique}{titre=avertissement}>
+                    <p>#TEXTE</p></BOUCLE_avertissement><B_remerciements>
+                    <h3 class="RubCouleurTitreArt">Remerciements</h3><BOUCLE_remerciements(ARTICLES){id_rubrique}{titre=remerciements}>
+                    <p>#TEXTE</p></BOUCLE_remerciements></B_remerciements>
+                </div></B_test_affichage>
+                <div class="CorpsRubrique" id="PiedGDS"><BOUCLE_rubGDS2(HIERARCHIE){id_rubrique}{1,1}{doublons}>[&nbsp;<a href="#URL_RUBRIQUE#telecharger">T&eacute;l&eacute;charger le Guide</a>&nbsp;]  [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]</BOUCLE_rubGDS2> [&nbsp;<a href="#URL_PAGE{adresses-utiles-guide}">Adresses utiles</a>&nbsp;]
+                </div><//B_test_affichage>
+
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

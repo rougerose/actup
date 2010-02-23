@@ -1,0 +1,186 @@
+<BOUCLE_p(ARTICLES){id_article}>[(#REM) squelette pour le Glossaire ]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_article}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+
+</head>
+
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique}{descriptif=image glossaire}>[(#EMBED_DOCUMENT)]</BOUCLE_img_glossaire_haut> 
+                <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}{id_article}>
+                
+                <div class="entete">
+                    <div class="titre">
+                        [<h2>(#SURTITRE)</h2>]
+                        <h1>[(#TITRE|supprimer_numero)]</h1>
+                        [<h2>&nbsp;&nbsp;(#SOUSTITRE)</h2>]
+                    </div>
+                    [(#LOGO_ARTICLE)]<B_auteurs>
+                    <h3>par <BOUCLE_auteurs(AUTEURS){id_article}{", "}>#NOM</BOUCLE_auteurs></h3></B_auteurs>
+                    <h4><B_trad_date><BOUCLE_trad_date(ARTICLES){id_article}{titre_mot=anglais}>[(#DATE|mois)] - [(#DATE|jour)] - [(#DATE|annee)]</BOUCLE_trad_date></B_trad_date>publi&eacute; en ligne&nbsp;: [(#DATE|affdate)]<//B_trad_date><B_lien_medias><BOUCLE_lien_medias(MOTS){id_article}{type==medias}> dans <a href="#URL_PAGE{medias,id_mot=#ID_MOT}">[(#TITRE|supprimer_numero)]</a></BOUCLE_lien_medias></B_lien_medias></h4>
+                    <div class="rien">&nbsp;</div>
+                    [<div class="chapo">(#CHAPO)</div>]
+                </div>
+                
+                <BOUCLE_exclu_logomedias(DOCUMENTS){id_article}{titre==LogoMedias}{doublons}></BOUCLE_exclu_logomedias>
+                <div id="texte">
+                    <div id="GuideGlossaireDroiteMot" class="GuideGlossaireColonne"> 
+                        <div class="GuideGlossaireElement1"> 
+                            <h4 class="GuideGlossaire">Index du Glossaire</h4>
+                            <form action="#URL_PAGE{glossaire}" method="get" dir="ltr" lang="fr" id="FormGuideGlossaire">
+                                <select name="id_groupe" id="SelectGuideGlossaire">
+                                    <option selected>&nbsp;</option>
+                                    <BOUCLE_sommaire_glossaire1(GROUPES_MOTS){titre==un glossaire}{par titre}>
+                                    <option value="#ID_GROUPE">[(#TITRE|supprimer_numero|substr{19})]</option></BOUCLE_sommaire_glossaire1>
+                                </select>
+                                <input type="submit" name="valider" class="BoutonSommaire" value="valider">
+                            </form>
+                            <h4 class="GuideGlossaire">Et aussi</h4>
+                            <BOUCLE_art_glossaire(ARTICLES){id_rubrique=81}{exclus}>
+                            <h5 class="GuideGlossaire"><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h5>
+                            </BOUCLE_art_glossaire>
+                        </div>
+                    </div>
+                    <B_doc_ancre>
+                    <BOUCLE_doc_ancre(DOCUMENTS){id_article}{mode=document}{0,1}>
+                    <a href="#documents" class="noline"><img src="#CHEMIN{base/images/doc_joints_ancre.gif}" width="141" height="83" border="0" class="DocAncre"></a>
+                    </BOUCLE_doc_ancre>
+                    </B_doc_ancre>
+
+                    #TEXTE
+                    
+                </div>
+                
+                [<div class="postscriptum"> 
+                    (#PS)
+                </div>]
+                
+                <B_docs_joints>
+                <div class="DocLies" id="Documents"><a name="documents"></a>
+                    <h4><img src="#CHEMIN{base/images/doc_telechargement.gif}" alt="Documents disponibles en t&eacute;l&eacute;chargement" title="Documents disponibles en t&eacute;l&eacute;chargement" width="141" height="83"></h4>
+                    <BOUCLE_docs_joints(DOCUMENTS){id_article}{mode=document}{doublons}>
+                    <div class="AffDocLies">
+                        [<a href="#URL_DOCUMENT" class="noline">(#LOGO_DOCUMENT)</a>
+                        <br>][<span>(#TITRE|supprimer_numero)</span>][ - (#DESCRIPTIF)] [((#TAILLE|taille_en_octets))]
+                    </div>
+                    </BOUCLE_docs_joints>
+                </div>
+                </B_docs_joints>
+                
+                [<div class="notes"> 
+                    <h4>Notes</h4>
+                    (#NOTES)
+                </div>]
+                <div class="bdp">&nbsp;</div>
+                
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            
+            <hr class="invisible">
+            
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+            <div class="boites">
+                <B_outreach>
+                <BOUCLE_outreach(RUBRIQUES){id_secteur}{0,1}>
+                <BOUCLE_outreach1(RUBRIQUES){id_rubrique}{id_rubrique!=4}>
+                <h2><img src="#CHEMIN{base/commun/rubriques/participez.gif}" alt="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" title="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" width="125" height="30" border="0"></h2>
+                </BOUCLE_outreach1>
+                </BOUCLE_outreach>
+                </B_outreach>
+                <h2><img src="#CHEMIN{base/commun/rubriques/rejoignez_nous.gif}" alt="Rejoignez-nous" title="Rejoignez-nous" width="82" height="15" border="0"></h2>
+                <//B_outreach>
+                <BOUCLE_outreach2(ARTICLES){id_secteur}{titre_mot=outreach}{0,1}{doublons}>
+                <ul>
+                    <li>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></li>
+                </ul>
+                </BOUCLE_outreach2>
+                </BOUCLE_outreach>
+            </div>
+            
+            <BOUCLE_langue(MOTS){id_article}{type=langue}>
+            <B_vers_francais>
+            <BOUCLE_vers_francais(MOTS){id_article}{titre=anglais}>
+            <BOUCLE_lien(MOTS){id_article}{type=bilingue}>
+            <BOUCLE_lien2(ARTICLES){id_mot}{exclus}>
+            <div class="boites">
+                <a href="#URL_ARTICLE" class="noline"><img src="#CHEMIN{base/commun/rubriques/english-3.gif}" alt="Traduction fran&ccedil;aise disponlible" title="Traduction fran&ccedil;aise disponible" width="62" height="15" border="0"></a>
+            </div>
+            </BOUCLE_lien2>
+            </BOUCLE_lien>
+            </BOUCLE_vers_francais>
+            </B_vers_francais>
+            <BOUCLE_vers_anglais(MOTS){id_article}{titre=francais}>
+            <BOUCLE_lien3(MOTS){id_article}{type=bilingue}>
+            <BOUCLE_lien4(ARTICLES){id_mot}{exclus}>
+            <div class="boites">
+                <a href="#URL_ARTICLE" class="noline"><img src="#CHEMIN{base/commun/rubriques/english.gif}" alt="Text available in english" title="Text available in english" width="125" height="15" border="0"></a>
+            </div>
+            </BOUCLE_lien4>
+            </BOUCLE_lien3>
+            </BOUCLE_vers_anglais>
+            <//B_vers_francais>
+            </BOUCLE_langue>
+            
+            <B_mots_glossaire>
+            <div class="boites">
+                <a href="#URL_PAGE{rubrique,id_rubrique=78}" class="noline"><img src="#CHEMIN{base/commun/rubriques/glossaire.gif}" alt="Sida, un glossaire" title="Sida, un glossaire" width="96" height="15" border="0"></a> 
+                <ul>
+                    <BOUCLE_mots_glossaire(MOTS){id_article}{type==sida}{par titre}{doublons}>
+                    <li><a href="#URL_MOT" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_mots_glossaire>
+                </ul>
+            </div>
+            </B_mots_glossaire>
+            
+            <B_themes>
+            <div class="boites">
+                <img src="#CHEMIN{base/commun/rubriques/themes.gif}" alt="Th&egrave;mes et sujets abord&eacute;s" title="Th&egrave;mes et sujets abord&eacute;s" width="125" height="15" border="0">
+                <ul>
+                    <BOUCLE_themes(MOTS){id_article}{par titre}{doublons}{type!==medias}{id_mot!=7}{type!=langue}{type!=bilingue}{type!=affichage}>
+                    <li><a href="#URL_MOT" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_themes>
+                    <BOUCLE_themes_cp(MOTS){id_article}{id_mot=7}>
+                    <li><a href="#URL_PAGE{presse}">[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_themes_cp>
+                </ul>
+            </div>
+            </B_themes>
+            
+            <B_lire>
+            <div class="boites">
+                <img src="#CHEMIN{base/commun/rubriques/lire.gif}" alt="Lire &eacute;galement" title="Lire &eacute;galement" width="125" height="15" border="0">
+                <BOUCLE_lire(MOTS){id_article}{type!==medias}{id_mot!=7}{type!=langue}{type!=bilingue}{type!=affichage}{par titre}>
+                <dl>
+                    <dt>[(#TITRE|supprimer_numero)]</dt>
+                    <BOUCLE_art_mots(ARTICLES){id_mot}{exclus}{par date}{inverse}{0,3}{doublons}>
+                    <dd><a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></dd>
+                    </BOUCLE_art_mots>
+                    </B_art_mots>
+                    <dd class="noart">Il n'y a pas d'article li&eacute; &agrave; ce th&egrave;me</dd>
+                    <//B_art_mots>
+                </dl>
+                </BOUCLE_lire>
+            </div>
+            </B_lire>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

@@ -1,0 +1,4 @@
+#CACHE{7*24*3600}
+<div class="hierarchie">
+    <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
+</div>

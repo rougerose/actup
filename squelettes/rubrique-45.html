@@ -1,0 +1,55 @@
+<BOUCLE_p(RUBRIQUES){id_rubrique}>[(#REM) squelettes rubrique Portfolio ]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-headPortfolio}>
+
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="PortfolioBordure">
+            <div id="ColonneCentre">
+                <div id="PortfolioColonne">
+                    <B_ouverture>
+                    <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
+                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    </BOUCLE_ouverture>
+                    </B_ouverture>
+                    <INCLURE{fond=inc-hierarchiePortfolio}{id_secteur}{id_rubrique}>
+                    
+                    <BOUCLE_articles_rubrique(ARTICLES){id_rubrique}{par date}{inverse}{doublons}>
+                    <div class="RubriquePortfolioUne">
+                        <h5>[(#DATE|affdate)]</h5>
+                        [<a href="#URL_ARTICLE" class="noline">(#LOGO_ARTICLE||image_reduire{150,0}|inserer_attribut{"class","logoPortfolioArticles"})</a>]
+                        [<h4>(#SURTITRE)</h4>]
+                        <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                        [<h4>(#SOUSTITRE)</h4>]
+                        [<p>(#INTRODUCTION|PtoBR) <a href="#URL_ARTICLE">&#091;&nbsp;la suite&nbsp;&#093;</a></p>]
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    </BOUCLE_articles_rubrique>
+                    
+                </div><!-- fin PortfolioColonne -->
+            </div><!-- fin ColonneCentre -->
+        </div><!-- fin PortfolioBordure -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipalPortfolio}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

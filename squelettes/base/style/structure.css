@@ -1,0 +1,67 @@
+div#cadre {
+	border-bottom: 10px solid #000;
+	margin-top: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	background-image: url(../commun/essentiel/bordure-10px-large.gif);
+	background-repeat: repeat-y;
+	background-position: left;
+	border-top-width: 60px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-color: #000;
+	padding-left: 10px;
+}
+div#ColonneCentre {
+	width: 66%;
+	float: right;
+	margin-left: 2%;
+}
+div#ColonneGauche {
+	width: 25%;
+	float: right;
+	margin-right: 3%;
+	margin-left: 2%;
+}
+#CadreBlanc {
+	margin-left: 10px;
+	background-color: #FFF;
+	margin-right: 0px;
+	color: #000;
+}
+/* pour afficher visuel en fond de page sommaire */
+.CadreBlancSommaire {
+	background-repeat: no-repeat;
+	background-position: 120% 0px;
+}
+#Contenu {
+	float: right;
+	width: 68%;
+}
+#Gauche {
+	float: right;
+	margin-top: 60px;
+	margin-right: 5%;
+	width: 26%;
+	padding-left: 7px;
+}
+#haut {
+	position: absolute;
+	top: 5px;
+	background-color: #CCC;
+	right: 72%;
+}
+#Colonne {
+	width: 490px;
+}
+#menu {
+	margin-bottom: 3em;
+	padding-right: 3px;
+	margin-top: 60px;
+}
+div#fondRadio {
+	background-image: url(../images/SidaBlabla/sida-blabla.jpg);
+	background-repeat: no-repeat;
+	width: 490px;
+}

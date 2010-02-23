@@ -1,0 +1,27 @@
+div.reactup {
+	width: 490px;
+	margin-top: 0px;
+	margin-bottom: 4em;
+	color: #FFFFFF;
+	background-color: #000000;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+p.reactup-appel {
+	font-size: 12px;
+	line-height: 1.4em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-top: 0px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+p.part {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+div.reactup a:link, div.reactup a:visited {
+	font-weight: bold;
+	color: #FFFFFF;
+}

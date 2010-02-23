@@ -1,0 +1,104 @@
+<BOUCLE_p(RUBRIQUES){id_rubrique}>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-headStylesAlter}>
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <BOUCLE_exclu_anglais(ARTICLES){id_secteur}{titre_mot=anglais}{doublons}></BOUCLE_exclu_anglais><BOUCLE_exclu_anglais2(ARTICLES){id_secteur}{lang=en}{doublons}></BOUCLE_exclu_anglais2>
+                <BOUCLE_exclu_outreach(ARTICLES){id_secteur}{titre_mot=outreach}{doublons}></BOUCLE_exclu_outreach>
+                <BOUCLE_exclu_InfoPratiques(ARTICLES){id_secteur}{titre_mot=infos pratiques}{doublons}></BOUCLE_exclu_InfoPratiques>
+                
+                <B_ouverture>
+                <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
+                <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                </BOUCLE_ouverture>
+                </B_ouverture>
+                
+                <div class="hierarchie">
+                    <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
+                    <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
+                    </BOUCLE_hierarchie_img>
+                    </BOUCLE_hierarchie_secteur1>
+                </div>
+                
+                <B_articles_liste>
+                <div class="hierarchie">
+                    <p class="pagination"><strong>Archives &#187; </strong>[(#PAGINATION{page})]</p>
+                </div>
+                <BOUCLE_articles_liste(ARTICLES){id_rubrique}{par date}{inverse}{pagination}{doublons}>
+                <div class="encadrement">
+                    [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{130}|inserer_attribut{border,0})</a>]
+                    [<h4>(#SURTITRE)</h4>]
+                    <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                    [<h4>(#SOUSTITRE)</h4>]
+                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p>
+                    <BOUCLE_portfolio(DOCUMENTS){id_article}{mode=document}{extension=jpg}{0,1}>
+                    <p>
+                        <a href="#URL_ARTICLE"><img src="#CHEMIN{base/commun/essentiel/photos-dispo-mots.gif}" align="absmiddle" border="0"></a> <em><a href="#URL_ARTICLE">Des photos sont disponibles</a></em>
+                    </p>
+                    </BOUCLE_portfolio>
+                    <BOUCLE_traductions(ARTICLES){traduction}{exclus}>
+                    <p><img src="#CHEMIN{base/commun/rubriques/jalons_puce.gif}" width="12" height="12" alt="-"> <em>English translation available:</em> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></p></BOUCLE_traductions>
+                    <p class="DateRubrique">[(#DATE|affdate)]</p>
+                </div>
+                </BOUCLE_articles_liste>
+                <div class="hierarchie">
+                    <p class="pagination"><strong>Archives &#187; </strong>[(#PAGINATION{page})]</p>
+                </div>
+                </B_articles_liste>
+                <div class="bdp">&nbsp;</div>
+
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+            <B_infos_pratiques>
+            <div class="boites">
+                <h2><img src="#CHEMIN{base/commun/rubriques/infos-pratiques.gif}" alt="Infos pratiques" width="82" height="15"></h2>
+                <ul>
+                    <BOUCLE_infos_pratiques(ARTICLES){id_secteur}{titre_mot=infos pratiques}{par date}{inverse}{0,5}>
+                    <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_infos_pratiques>
+                </ul>
+            </div>
+            </B_infos_pratiques>
+            <div class="boites">
+                <h2><a href="#URL_PAGE{presse,id_rubrique=#ID_RUBRIQUE}" class="noline"><img src="#CHEMIN{base/commun/rubriques/communiques.gif}" alt="Communiqu&eacute;s de presse" title="Communiqu&eacute;s de presse" width="125" height="15" border="0"></a></h2>
+                <ul>
+                    <li><a href="#URL_PAGE{presse}">Tous nos communiqu&eacute;s</a></li>
+                </ul>
+            </div>
+            <B_bref>
+            <div class="boites">
+                <h2><a href="#" class="noline"><img src="#CHEMIN{base/commun/rubriques/bref.gif}" alt="En bref" title="En bref" width="49" height="15" border="0"></a></h2>
+                <ul>
+                    <BOUCLE_bref(BREVES){id_rubrique}{par date}{inverse}{0,5}{age<25}{doublons}>
+                    <li><a href="#URL_BREVE" [title="(#INTRODUCTION|textebrut|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_bref>
+                </ul>
+            </div>
+            </B_bref>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

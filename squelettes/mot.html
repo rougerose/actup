@@ -1,0 +1,196 @@
+<BOUCLE_p(MOTS){id_mot}>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    <INCLURE{fond=inc-head}>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="base/style/SafeWeek2.css">
+    <style type="text/css" media="screen">
+    <!--
+    .encadrement { border: none; }
+    -->
+    </style>
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <B_SafeWeek>
+                <BOUCLE_SafeWeek(MOTS){id_mot}{titre=Celebration Safe Week}>
+                <BOUCLE_SW(DOCUMENTS){id_rubrique=12}{descriptif=Safe Week haut}>
+                <div class="SWBlocHaut"><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></div>
+                </BOUCLE_SW>
+                <BOUCLE_SW2(DOCUMENTS){id_rubrique=12}{descriptif=Safe Week bas}>
+                <div class="SWBlocBas"><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></div>
+                </BOUCLE_SW2>
+                </BOUCLE_SafeWeek>
+                </B_SafeWeek>
+                <B_test_glossaire>
+                <BOUCLE_test_glossaire(MOTS){id_mot}{type==un glossaire}>
+                <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=81}{descriptif=image glossaire}>[(#EMBED_DOCUMENT)]</BOUCLE_img_glossaire_haut>
+                
+                <div class="hierarchie">
+                    <a href="#URL_PAGE{secteur,id_rubrique=5}" class="noline"></a><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique=5}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_hierarchie_img> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><BOUCLE_lien_rub(RUBRIQUES){id_rubrique=81}><a href="#URL_RUBRIQUE" class="noline"> <BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}> <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_hierarchie_img2></a></BOUCLE_lien_rub>
+                </div>
+                
+                <div class="CorpsRubrique" id="SommaireGlossaire">
+                    <form action="#URL_SITE_SPIP/spip.php" method="get" dir="ltr" lang="fr">
+                        <input type="hidden" name="page" value="glossaire">
+
+                        <select name="id_groupe">
+                            <option selected>INDEX DU GLOSSAIRE</option>
+                            <BOUCLE_sommaire_glossaire1(GROUPES_MOTS){titre LIKE sida%}{par titre}>
+                            <option value="#ID_GROUPE">[(#TITRE|supprimer_numero|substr{19})]</option>
+                            </BOUCLE_sommaire_glossaire1>
+                        </select>
+                        <input type="submit" name="valider" class="BoutonSommaire" value="valider">
+                    </form>
+                </div>
+                <div class="rien">&nbsp;</div>
+                </BOUCLE_test_glossaire>
+                </B_test_glossaire>
+                <div class="hierarchie">&nbsp;</div>
+                <//B_test_glossaire>
+                
+                <div class="entete">
+                    <div class="titre">
+                        <h1>[(#TITRE|supprimer_numero)]</h1>
+                    </div>
+                </div>
+                [<div id="texte">
+                    (#TEXTE)
+                </div>]
+                [<div class="notes">
+                    <h4>Notes</h4>
+                    (#NOTES)
+                </div>]
+                
+                <B_verif_article>
+                <div class="rien">&nbsp;</div>
+                <h3 class="ArtLies">Les articles li&eacute;s au sujet</h3>
+                <div class="encadrement">
+                    <BOUCLE_verif_article(ARTICLES){id_mot}{par date}{inverse}{doublons}>
+                    [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{100,0}|inserer_attribut{border,0}|inserer_attribut{class,logoArticles})</a>]
+                    <h5>[(#DATE|affdate)]</h5>
+                    [<h4>(#SURTITRE)</h4>]
+                    <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                    [<h4>(#SOUSTITRE)</h4>]
+                    <p>
+                        [(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a>
+                    </p>
+                    <BOUCLE_portfolio(DOCUMENTS){id_article}{mode=document}{extension=jpg}{0,1}>
+                    <p>
+                        <img src="#CHEMIN{base/commun/essentiel/photos-dispo-mots.gif}" align="absmiddle"> <em>Des photos sont disponibles</em>
+                    </p>
+                    </BOUCLE_portfolio>
+                        <BOUCLE_langue(MOTS){id_article}{type=langue}>
+                        <BOUCLE_vers_anglais(MOTS){id_article}{titre=francais}>
+                        <BOUCLE_lien3(MOTS){id_article}{type=bilingue}>
+                        <BOUCLE_lien4(ARTICLES){id_mot}{exclus}>
+                    <p>
+                        <img src="#CHEMIN{base/commun/rubriques/jalons_puce.gif}" width="12" height="12" alt="-"> <em>English translation available</em> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a>
+                    </p>
+                        </BOUCLE_lien4>
+                        </BOUCLE_lien3>
+                        </BOUCLE_vers_anglais>
+                        </BOUCLE_langue>
+                    <div class="rien">&nbsp;</div>
+                    </BOUCLE_verif_article>
+                </div>
+                </B_verif_article>
+                
+                <B_verif_rubriques>
+                <div class="rien">&nbsp;</div>
+                <h3 class="ArtLies">Les rubriques li&eacute;es au sujet</h3>
+                <div class="encadrement">
+                    <BOUCLE_verif_rubriques(RUBRIQUES){id_mot}{par titre}{inverse}>
+                    <h5>&nbsp;</h5>
+                    <h3><a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></h3>
+                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_RUBRIQUE">[la suite]</a></p>
+                    <div class="rien">&nbsp;</div>
+                    </BOUCLE_verif_rubriques>
+                </div>
+                </B_verif_rubriques>
+                    
+                <B_verif_breves>
+                <div class="rien">&nbsp;</div>
+                <h3 class="ArtLies">Les br&egrave;ves li&eacute;es au sujet</h3>
+                <div class="encadrement">
+                    <BOUCLE_verif_breves(BREVES){id_mot}{par date}{inverse}>
+                    [<a href="#URL_BREVE">(#LOGO_BREVE||image_reduire{100,0}|inserer_attribut{border,0}|inserer_attribut{class,logoArticles})</a>]
+                    <h5>[(#DATE|affdate)]</h5>
+                    <h3><a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a></h3>
+                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_BREVE">[la suite]</a></p>
+                    <div class="rien">&nbsp;</div>
+                    </BOUCLE_verif_breves>
+                </div>
+                </B_verif_breves>
+                    
+                <B_verif_annuaire>
+                <div class="rien">&nbsp;</div>
+                <h3 class="ArtLies">Les adresses utiles</h3>
+                <div class="encadrement">
+                    <BOUCLE_verif_annuaire(SITES){id_mot}{titre_mot=guide droits sociaux}{par nom_site}{doublons}>
+                    <h5>&nbsp;</h5>
+                    <h3>#NOM_SITE</h3>
+                    <p>
+                        [(#LOGO_SITE|inserer_attribut{border,0}|inserer_attribut{class,logoArticles}|inserer_attribut{alt,#NOM_SITE}|inserer_attribut{align,right})]
+                        [(#DESCRIPTIF)]
+                    </p>
+                    <p>Site web : <a href="#URL_SITE">#URL_SITE</a></p>
+                    <B_syndicannuaire>
+                    <ul class="boites">
+                        <strong>Derniers articles :</strong>
+                        <BOUCLE_syndicannuaire(SYNDIC_ARTICLES){id_syndic}{par date}{inverse}{0,4}>
+                        <li><a href="#URL_ARTICLE">[(#TITRE*|supprimer_numero)]</a> ([(#DATE|affdate)])</li>
+                        </BOUCLE_syndicannuaire>
+                    </ul>
+                    </B_syndicannuaire>
+                    <div class="rien">&nbsp;</div>
+                    </BOUCLE_verif_annuaire>
+                </div>
+                </B_verif_annuaire>
+                    
+                <B_verif_sites>
+                <div class="rien">&nbsp;</div>
+                <h3 class="ArtLies">Les sites web li&eacute;s au sujet</h3>
+                <div class="encadrement">
+                    <BOUCLE_verif_sites(SITES){id_mot}{par nom_site}{doublons}>
+                    <h5>&nbsp;</h5>
+                    <h3><a href="#URL_SITE">#NOM_SITE</a></h3>
+                    <p>
+                        [(#LOGO_SITE|inserer_attribut{border,0}|inserer_attribut{class,logoArticles}|inserer_attribut{alt,#NOM_SITE}|inserer_attribut{align,right})]
+                        [(#DESCRIPTIF)]
+                    </p>
+                    <B_syndic>
+                    <ul class="boites">
+                        <strong>Derniers articles :</strong>
+                        <BOUCLE_syndic(SYNDIC_ARTICLES){id_syndic}{par date}{inverse}{0,4}>
+                        <li><a href="#URL_ARTICLE">[(#TITRE*|supprimer_numero)]</a> ([(#DATE|affdate)])</li>
+                        </BOUCLE_syndic>
+                    </ul>
+                    </B_syndic>
+                    <div class="rien">&nbsp;</div>
+                    </BOUCLE_verif_sites>
+                </div>
+                </B_verif_sites>
+                    
+                <div class="bdp">&nbsp;</div>
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

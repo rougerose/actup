@@ -1,0 +1,109 @@
+<BOUCLE_p(ARTICLES){id_article}>[(#REM) squelettes pages tee-shirts ]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_article}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <B_ouverture>
+                <BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}>
+                <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                </BOUCLE_ouverture>
+                </B_ouverture>
+                <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}{id_article}>
+                
+                <div class="ts-info-article">
+                    <h2>[(#TITRE|supprimer_numero)]</h2>
+
+                    <BOUCLE_createurs(MOTS){id_article}{type=tee-shirts créateurs}>		
+                    [<p class="createurs">par (#TITRE|supprimer_numero)</p>]
+                    </BOUCLE_createurs>
+
+                    [<div id="texte" class="ts-texte">
+                        (#TEXTE)
+                    </div>]
+
+                    <BOUCLE_prix(MOTS){id_article}{type=tee-shirts prix}{0,1}>
+                    [<p class="ts-prix">(#TITRE|supprimer_numero)</p>]
+                    </BOUCLE_prix>
+
+                    <dl class="ts-info-article">
+                        <B_tailles>
+                        <dt class="ts-tailles">tailles disponibles</dt>
+                        <BOUCLE_tailles(MOTS){id_article}{type=tee-shirts tailles}{par num titre, titre}>
+                        [<dd class="ts-tailles">(#TITRE|supprimer_numero)</dd>]
+                        </BOUCLE_tailles></B_tailles>
+
+                        <B_couleurs_disponibles>
+                        <dt class="ts-couleurs">couleur</dt>
+                        <BOUCLE_couleurs_disponibles(MOTS){id_article}{type=tee-shirts couleurs}{doublons}>
+                        <dd class="ts-couleurs">[(#LOGO_MOT||reduire_image{15,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{title, #TITRE})] <span>[(#TITRE|supprimer_numero)]</span></a></dd>
+                        </BOUCLE_couleurs_disponibles>
+                        </B_couleurs_disponibles>
+
+                        <B_autres_modeles>
+                        <dt class="ts-modeles">dans la m&ecirc;me collection </dt>
+                        <BOUCLE_autres_modeles(MOTS){id_article}{type=tee-shirts modeles}{doublons}><BOUCLE_articles_autres_modeles(ARTICLES){id_mot}{exclus}><BOUCLE_images_autres_modeles(DOCUMENTS){id_article}{extension==gif|png|jpg}{0,1}{doublons}>
+                        <dd class="ts-modeles"><a href=#URL_ARTICLE class="noline"><span>[(#_articles_autres_modeles:TEXTE|PtoBR|couper{50})]</span>[(#FICHIER|reduire_image{50,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{title,#TITRE})]</a></dd></BOUCLE_images_autres_modeles></BOUCLE_articles_autres_modeles></BOUCLE_autres_modeles>
+                        </B_autres_modeles>
+
+                        <B_bdc><BOUCLE_bdc(DOCUMENTS){id_rubrique}{0,1}{titre=bon de commande}{extension==pdf}>
+                        [<dt class="ts-bdc">(#TITRE|supprimer_numero)</dt>]
+                        [<dd class="ts-bdc">(#LOGO_DOCUMENT|#URL_DOCUMENT|reduire_image{32,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{title,#TITRE})</dd>]
+                        </BOUCLE_bdc></B_bdc>
+                    </dl>
+
+                </div>
+                
+                <B_image_ts>
+                <div class="ts-image-article">
+                    <BOUCLE_image_ts(DOCUMENTS){id_document = #ENV{id_document}}{extension==gif|png|jpg}>
+                    [(#FICHIER|reduire_image{250,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{title,#TITRE})]
+                    </BOUCLE_image_ts>
+                </div>
+                </B_image_ts>
+                <div class="ts-image-article">
+                    <BOUCLE_image_ts2(DOCUMENTS){id_article}{extension==gif|png|jpg}{0,1}>
+                    [(#FICHIER|reduire_image{250,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{title,#TITRE})]
+                    </BOUCLE_image_ts2>
+                </div>
+                <//B_image_ts>
+                
+                <div class="ts-autres-articles">
+                    <div>
+                        <ul><BOUCLE_ts_autres(ARTICLES){id_rubrique}{exclus}><BOUCLE_ts_autres_images(DOCUMENTS){id_article}{extension==gif|png|jpg}{0,1}{doublons}{par hasard}>
+                            <li><a href=#URL_ARTICLE class="noline">[(#FICHIER|reduire_image{50,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{title,#TITRE})]</a></li>
+                            </BOUCLE_ts_autres_images></BOUCLE_ts_autres>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+            
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+            
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+        
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

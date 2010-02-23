@@ -1,0 +1,75 @@
+div#ColonneRadio {
+	margin: 150px 20px 1em;
+}
+img#sidablabla {
+	margin-bottom: 20px;
+}
+div#RubRadioDescriptif {
+	margin-left: 240px;
+	background-image: url(../images/SidaBlabla/sida-blabla-calque.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	color: #333;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-align: center;
+	font-weight: bold;
+}
+#RubRadioArticleContenu {
+	text-align: left;
+}
+div#RubRadioArticle {
+	margin-left: 200px;
+	background-image: url(../images/SidaBlabla/sida-blabla-calque.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	color: #333;
+	text-align: center;
+	padding-left: 10px;
+}
+#Article {
+	height: 100px;
+	overflow: auto;
+	border: 1px solid #F30;
+	margin: 1em 5px 1em 0px;
+}
+ul.ListeMp3 {
+	margin: 0px;
+	list-style: url(../../puce.gif) inside;
+	padding: 0px 0px 0px 7px;
+}
+li.ListeMp3 {
+	padding-left: 3px;
+}
+div#RubRadioDescriptifTexte {
+	margin-top: 2em;
+	margin-left: 12px;
+	margin-right: 5px;
+	padding-bottom: 2em;
+}
+div#EnteteInfo {
+	background-image: url(../images/SidaBlabla/RadioLibertaire.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+img#SidaBlablalogo {
+	margin-top: 100px;
+}
+div.SidaBlablaArticle {
+	background-image: none;
+}
+#media {
+	text-align: center;
+	background: #F30;
+	padding: 5px 10px 10px;
+	margin: 1.3em 5px 1.3em 0px;
+}
+#media p {
+	font: 88% Helvetica, Arial, Verdana, sans-serif;
+	color: #FFF;
+	margin: 3px;
+}
+p.retour {
+	font: 88%/1.7em Helvetica, Arial, Verdana, sans-serif;
+	text-align: right;
+	margin-right: 5px;
+}

@@ -1,0 +1,48 @@
+/* Styles couleurs Guide des droits sociaux
+------------------------------------------------------------ */
+h2.RubCouleurTitreArt {
+	color: #FF3300;
+}
+h3.RubCouleurTitreArt {
+	color: #FF3300;
+	font-size: 110%;
+	margin-left: 10px;
+	margin-bottom: 0px;
+}
+h3.RubCouleurTitreArt3 {
+	font-size: 110%;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	color: #FFFFFF;
+}
+h2.RubCouleurTitreArt2 {
+	color: #909;
+}
+
+/* Styles couleurs Information = Pouvoir 
+-------------------------------------------------------- */
+
+h2.RubCouleurIPTitreArt {
+	color: #C06;
+}
+h3.RubCouleurIPTitreArt {
+	color: #C06;
+	font-size: 100%;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	margin-top: 1.5em;
+}
+h3.RubCouleurIPTitreArt3 {
+	font-size: 100%;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	color: #FFFFFF;
+}
+h2.RubCouleurIPTitreArt2 {
+	color: #909;
+}
+h4.RubCouleurTitreArt {
+	color: #FF3300;
+	font-size: 100%;
+	margin-left: 15px;
+}

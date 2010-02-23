@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP est une association de lutte contre le sida. Rejoignez-nous !</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF_SITE_SPIP|textebrut)">
+    ]
+    <meta name="keywords" content="association, lutte, sida, HIV, s&eacute;ropositivit&eacute;, s&eacute;ropositif, s&eacute;ropositive, homosexualit&eacute;, gay, lesbienne, drogues, pr&eacute;vention, prison, &eacute;trangers, traitements, Nord, Sud, homophobie, activisme">
+    <meta name="verify-v1" content="j2JOmNo+vyYHuLT/DOkHmdNwCnTp2Wx2w0e/3Tf4bMw=" />
+    <INCLURE{fond=inc-head}>
+    <link rel="stylesheet" type="text/css" media="screen" href="base/style/BangkokEcran.css">
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <BOUCLE_exclu_portfolio(RUBRIQUES){id_rubrique=45}{doublons}><BOUCLE_exclu_art_portfolio(ARTICLES){branche}{doublons}></BOUCLE_exclu_art_portfolio></BOUCLE_exclu_portfolio><BOUCLE_exclu_info_pratiques(ARTICLES){titre_mot=infos pratiques}{doublons}></BOUCLE_exclu_info_pratiques>
+                
+                <B_ouverture>
+                <BOUCLE_ouverture(DOCUMENTS){descriptif=ouverture sommaire}{0,1}>
+                <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                </BOUCLE_ouverture>
+                </B_ouverture>
+                
+                <B_dossier_nouveau_format><BOUCLE_dossier_nouveau_format(ARTICLES){tout}{type_mot=dossiers ouverture}{par date}{inverse}{age<20}{doublons}>
+                <div class="encadrement">
+                    <h2><img src="#CHEMIN{base/commun/rubriques/dossier-1er-decembre.gif}" alt="dossier" border="0"></h2>
+                    [<h4>(#SURTITRE)</h4>]
+                    <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                    [<h4>(#SOUSTITRE)</h4>]
+                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p>
+                    <p class="DateRubrique">[(#DATE|affdate)] | <BOUCLE_rubrique_article0(RUBRIQUES){id_rubrique}>[(#TITRE|supprimer_numero)] <a href="#URL_RUBRIQUE" title="consulter la rubrique [(#TITRE|supprimer_numero|supprimer_tags)]"><strong>&#187;</strong></a></BOUCLE_rubrique_article0></p>
+                    <ul>
+                        <BOUCLE_mot_meme_dossier(MOTS){id_article}{type=dossiers}>
+                        <BOUCLE_articles_meme_dossier(ARTICLES){id_mot}{exclus}>
+                        <li>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</li>
+                        </BOUCLE_articles_meme_dossier>
+                        </BOUCLE_mot_meme_dossier>
+                    </ul>
+                    <div class="rien">&nbsp;</div>
+
+                </div>
+                </BOUCLE_dossier_nouveau_format></B_dossier_nouveau_format>
+
+                
+                
+                <BOUCLE_verif_article2(ARTICLES){titre_mot=affichage une}{par date}{inverse}{lang=fr}>
+                <BOUCLE_rubriques2(RUBRIQUES){id_rubrique}{doublons}>
+                <div class="encadrement">
+                    <h2><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline">
+                        <BOUCLE_logo_secteur2(RUBRIQUES){id_secteur}{0,1}>
+                        <img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|entites_html|supprimer_numero)]" border="0" title="[(#TITRE|entites_html|supprimer_numero)]">
+                        </BOUCLE_logo_secteur2>
+                        </a>
+                    </h2>
+                    <BOUCLE_Une2(MOTS){titre=affichage une}>
+                    <BOUCLE_articles2(ARTICLES){id_mot}{id_rubrique}{doublons}{lang=fr}{par date}{inverse}>
+                    [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{100,0}|inserer_attribut{class,logoArticles}|inserer_attribut{border,0})</a>]
+                    <h5>[(#DATE|affdate)]</h5>
+                    [<h4>(#SURTITRE)</h4>]
+                    <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                    [<h4>(#SOUSTITRE)</h4>]
+                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p>
+                    <BOUCLE_portfolio2(DOCUMENTS){id_article}{mode=document}{extension=jpg}{0,1}>
+                    <p>
+                        <a href="#URL_ARTICLE"><img src="#CHEMIN{base/commun/essentiel/photos-dispo-mots.gif}" align="absmiddle" border="0"></a> <em><a href="#URL_ARTICLE">Des photos sont disponibles</a></em>
+                    </p>
+                    </BOUCLE_portfolio2>
+                    <BOUCLE_traductions2(ARTICLES){traduction}{exclus}>
+                    <p>
+                        <img src="#CHEMIN{base/commun/rubriques/jalons_puce.gif}" width="12" height="12" alt="-"> <em>English translation available:</em> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a>
+                    </BOUCLE_traductions2>
+                    <div class="rien">&nbsp;</div>
+                    </BOUCLE_articles2>
+                    </BOUCLE_Une2>
+                </div>
+                </BOUCLE_rubriques2>
+                </BOUCLE_verif_article2>
+                <div class="rien">&nbsp;</div>
+
+
+                <div class="encadrement">
+                    <h2>
+                        <BOUCLE_rub_medias(RUBRIQUES){titre==les m&eacute;dias}{0,1}>
+                        <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                        </BOUCLE_rub_medias>
+                    </h2>
+
+                    <!-- le dernier Action -->
+                    
+                    <BOUCLE_action_recent(ARTICLES){id_rubrique=47}{par date}{inverse}{0,1}>
+                    <div class="media5">
+                        <div class="media2">
+                            <BOUCLE_action_recent2(MOTS){id_article}{type=medias action}>
+                            <a href="#URL_PAGE{medias,id_mot=#ID_MOT}" class="noline"><img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias"></a>
+                            <br>
+                            <br>
+                            <BOUCLE_affichage_rubrique_action(RUBRIQUES){id_rubrique=47}>
+                            <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                            </BOUCLE_affichage_rubrique_action>
+                        </div>
+                        <div class="media4">
+                            [(#TITRE|supprimer_numero|majuscules)]<BOUCLE_date(ARTICLES){id_mot}{par date}{inverse}{0,1}> | [(#DATE_REDAC|?{[(#DATE_REDAC|nom_mois)][ (#DATE_REDAC|annee)], [(#DATE|nom_mois)] [(#DATE|annee)]})]</BOUCLE_date>
+                            <br>
+                            <ul>
+                                <BOUCLE_action_recent_art3(ARTICLES){id_mot}{par id_secteur}{0,5}>
+                                <li><a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_action_recent_art3>
+                                <li class="pluspetit"><a href="#URL_PAGE{medias,id_mot=#ID_MOT}">[ le sommaire complet de ce num&eacute;ro ]</a></li>
+                            </ul>
+                        </div>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    </BOUCLE_action_recent2>
+                    </BOUCLE_action_recent>
+
+                    <!-- le dernier Protocoles -->
+
+                    <BOUCLE_protocoles_recent(ARTICLES){id_rubrique=51}{par date}{inverse}{0,1}>
+                    <div class="media5">
+                        <div class="media2">
+                            <BOUCLE_protocoles_recent2(MOTS){id_article}{type=medias protocoles}>
+                            <a href="#URL_PAGE{medias,id_mot=#ID_MOT}" class="noline"><img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias"></a>
+                            <br>
+                            <br>
+                            <BOUCLE_affichage_rubrique_protocoles(RUBRIQUES){id_rubrique=51}>
+                            <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                            </BOUCLE_affichage_rubrique_protocoles>
+                        </div>
+                        <div class="media4">
+                            [(#TITRE|supprimer_numero|majuscules)]<BOUCLE_date2(ARTICLES){id_mot}{par date}{inverse}{0,1}> | [(#DATE_REDAC|?{[(#DATE_REDAC|nom_mois)][ (#DATE_REDAC|annee)], [(#DATE|nom_mois)] [(#DATE|annee)]})]</BOUCLE_date2>
+                            <br>
+                            <ul>
+                                <BOUCLE_protocoles_recent_art3(ARTICLES){id_mot}{par id_secteur}{0,5}>
+                                <li><a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_protocoles_recent_art3>
+                                <li class="pluspetit"><a href="#URL_PAGE{medias,id_mot=#ID_MOT}">[ le sommaire complet de ce num&eacute;ro ]</a></li>
+                            </ul>
+                        </div>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    </BOUCLE_protocoles_recent2>
+                    </BOUCLE_protocoles_recent>
+
+                    <!-- le GLossaire -->
+
+                    <div class="media5">
+                        <div class="media2">
+                            <BOUCLE_rubrique_glossaire2(RUBRIQUES){id_rubrique=81}><a href="#URL_RUBRIQUE" class="noline"><BOUCLE_glossaire(MOTS){type=medias glossaire}{0,1}>
+                            <img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias">
+                            </BOUCLE_glossaire></a></BOUCLE_rubrique_glossaire2>
+                            <br>
+                            <br>
+                            <BOUCLE_affichage_rubrique_glossaire(RUBRIQUES){id_rubrique=81}>
+                            <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                        </div>
+                        <div class="media4">
+                            SIDA, UN GLOSSAIRE
+                            <ul>
+                                <BOUCLE_glossaire_art(ARTICLES){id_rubrique}{doublons}{0,1}>
+                                <li><a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_glossaire_art>
+                                <BOUCLE_glossaire_mots(MOTS){type==sida}{par hasard}{0,4}{doublons}>
+                                <li><a href="#URL_MOT" [title="(#TEXTE|attribut_html|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_glossaire_mots>
+                                <li class="pluspetit"><a href="#URL_RUBRIQUE">[ le sommaire complet de ce num&eacute;ro ]</a></li>
+                                </BOUCLE_affichage_rubrique_glossaire>
+                            </ul>
+                        </div>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+
+                    <!-- le GDS -->
+                    <div class="media5">
+                        <div class="media2">
+                            <BOUCLE_rubrique_gds(RUBRIQUES){id_rubrique=78}><a href="#URL_RUBRIQUE" class="noline"><BOUCLE_guide(MOTS){type=medias guide droits sociaux}>
+                            <img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias">
+                            </BOUCLE_guide></a></BOUCLE_rubrique_gds>
+                            <br>
+                            <br>
+                            <BOUCLE_affichage_rubrique_gds(RUBRIQUES){id_rubrique=78}>
+                            <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                        </div>
+                        <div class="media4">
+                            LE GUIDE DES DROITS SOCIAUX
+                            <ul>
+                                <BOUCLE_gds_art(ARTICLES){id_rubrique}{doublons}{0,5}>
+                                <li><a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_gds_art>
+                                <li class="pluspetit"><a href="#URL_RUBRIQUE">[ le sommaire complet de ce num&eacute;ro ]</a></li>
+                                </BOUCLE_affichage_rubrique_gds>
+                            </ul>
+                        </div>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    <!-- les Repi -->
+                    <div class="media5">
+                        <div class="media2">
+                            <BOUCLE_rubrique_repi(RUBRIQUES){id_rubrique=53}><a href="#URL_RUBRIQUE" class="noline"><BOUCLE_repi2(MOTS){type=medias repi}>
+                            <img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias">
+                            </BOUCLE_repi2></a></BOUCLE_rubrique_repi>
+                            <br>
+                            <br>
+                            <BOUCLE_affichage_rubrique_repi(RUBRIQUES){id_rubrique=53}>
+                            <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                        </div>
+                        <div class="media4">
+                            R&Eacute;NIONS PUBLIQUES D'INFORMATIONS (R&eacute;PI)
+                            <ul><BOUCLE_repi_prochaine(ARTICLES){id_rubrique}{doublons}{age<=0}>
+                                <li><span class="Nouveau">Prochaine R&eacute;PI :</span> [(#DATE|affdate)] | <a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_repi_prochaine></B_repi_prochaine><BOUCLE_repi_precedentes(ARTICLES){id_rubrique}{doublons}{par date}{inverse}{0,4}>
+                                <li>[(#DATE|affdate)] | <a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_repi_precedentes>
+                                <li class="pluspetit"><a href="#URL_RUBRIQUE">[ Toutes nos R&eacute;PI ]</a></li></BOUCLE_affichage_rubrique_repi>
+                            </ul>
+                        </div>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    <div class="rien">&nbsp;</div>
+
+                    <!-- SidaBlabla -->
+                    <div class="media5">
+                        <div class="media2">
+                            <BOUCLE_rubrique_radio(RUBRIQUES){id_rubrique=65}><a href="#URL_RUBRIQUE" class="noline"><BOUCLE_radio2(MOTS){type=medias radio}>
+                            <img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias">
+                            </BOUCLE_radio2></a></BOUCLE_rubrique_radio>
+                            <br>
+                            <br>
+                            <BOUCLE_affichage_rubrique_radio(RUBRIQUES){id_rubrique=65}>
+                            <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
+                        </div>
+                        <div class="media4">
+                            SIDA blabla
+                            <ul>
+                                <BOUCLE_emissions(ARTICLES){id_rubrique}{doublons}{par date}{inverse}{0,5}>
+                                <li><a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_emissions>
+                                <li class="pluspetit"><a href="#URL_RUBRIQUE">[ Toutes nos &eacute;missions ]</a></li></BOUCLE_affichage_rubrique_radio>
+                            </ul>
+                        </div>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    <div class="rien">&nbsp;</div>
+                </div>
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+            <B_bienvenue>
+            <BOUCLE_bienvenue(MOTS){titre=Bienvenue HP}{doublons}>
+            <BOUCLE_bienvenue2(ARTICLES){id_mot}>
+            <div class="boites">
+                <h2><a href="#" class="noline"><img src="#CHEMIN{base/commun/rubriques/bienvenue.gif}" alt="Bienvenue &agrave; Act Up-Paris" title="Bienvenue &agrave; Act Up-Paris" width="52" height="15" border="0"></a></h2>
+                <ul>
+                    <li>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></li>
+                </ul>
+            </div>
+            </BOUCLE_bienvenue2>
+            </BOUCLE_bienvenue>
+            </B_bienvenue>
+            
+            <!-- <div class="boites">
+                            <dl class="soutenir">
+                                <dt><img src="#CHEMIN{base/commun/soutenir/Soutenir_ActUp_01.png}" width="178" height="77" alt="Soutenir Act Up-Paris dans son combat quotidien contre le sida"></dt>
+                                <dd><a href="#URL_PAGE{soutenir}" class="noline"><img src="#CHEMIN{base/commun/soutenir/Soutenir_ActUp_02.png}" width="178" height="32" alt="Faire un don"></a></dd>
+                                <dd><a href="#URL_PAGE{rejoindre}" class="noline"><img src="#CHEMIN{base/commun/soutenir/Soutenir_ActUp_03.png}" width="178" height="34" alt="Militer"></a></dd>
+                            </dl>
+                        </div> -->
+            
+            
+            
+            
+            
+
+            <BOUCLE_articles_mot_colonneGauche(ARTICLES){id_mot=2343}{par date}{inverse}>
+            <BOUCLE_document_colonneGauche(DOCUMENTS){id_article}{descriptif=colonneGauche}{0,1}>
+            <div class="boites">
+                <a href="#URL_ARTICLE" [title="(#TITRE|textebrut)"]>[(#FICHIER||image_reduire{178,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{border,0})]</a>
+            </div>
+            </BOUCLE_document_colonneGauche>
+            </BOUCLE_articles_mot_colonneGauche>
+            
+            <B_recrutement>
+            <div class="boites">
+                <h2><img src="#CHEMIN{base/commun/rubriques/recrutement.gif}" alt="Recrutement"></h2>
+                <ul>
+                    <BOUCLE_recrutement(ARTICLES){titre_mot=recrutement}{par date}{inverse}{age<10}>
+                    [<li><a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a></li>]
+                    </BOUCLE_recrutement>
+                </ul>
+            </div>
+            </B_recrutement>
+            <B_soutien>
+            <div class="boites">
+                <h2><img src="#CHEMIN{base/commun/rubriques/soutien.gif}" alt="Ils soutiennent Act Up, soutenez-les" width="119" height="26"></h2>
+                <ul>
+                    <BOUCLE_soutien(BREVES){par date}{age<=0}{doublons}{titre_mot=nous soutenir}>
+                    <li>[(#DATE|affdate)] - <a href="#URL_BREVE" [title="(#INTRODUCTION|textebrut|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_soutien>
+                </ul>
+            </div>
+            </B_soutien>
+
+            <div class="boites">
+                <h2><a href="#URL_PAGE{presse}" class="noline"><img src="#CHEMIN{base/commun/rubriques/communiques.gif}" alt="Communiqu&eacute;s de presse" title="Communiqu&eacute;s de presse" width="125" height="15" border="0"></a></h2>
+                <ul>
+                    <li><a href="#URL_PAGE{presse}">Tous nos communiqu&eacute;s</a></li>
+                </ul>
+            </div>
+            <B_infos_pratiques>
+            <div class="boites">
+                <h2><img src="#CHEMIN{base/commun/rubriques/infos-pratiques.gif}" alt="Infos pratiques" width="82" height="15"></h2>
+                <ul>
+                    <BOUCLE_infos_pratiques(ARTICLES){titre_mot=infos pratiques}{par date}{inverse}{0,8}>
+                    <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_infos_pratiques>
+                    <BOUCLE_infos_pratiques_breves(BREVES){titre_mot=infos pratiques}{par date}{inverse}{0,5}>
+                    <li><a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_infos_pratiques_breves>
+                </ul>
+            </div>
+            </B_infos_pratiques>
+
+            <B_tee-shirts>
+            <div class="boites SommairePortfolio">
+                <h2><a href="rubrique178.html" class="noline"><img src="#CHEMIN{base/images/tee-shirt/tee-shirts-noir.gif}" alt="Tee-shirts et objets" width="97" height="15" border="0"></a></h2>
+                <BOUCLE_tee-shirts(ARTICLES){id_rubrique=178}{par hasard}{0,4}>
+                <a href="#URL_ARTICLE" class="noline"><BOUCLE_image_ts(DOCUMENTS){id_article}{extension==gif|png|jpg}{0,1}>
+                    [(#FICHIER|reduire_image{73,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{border,0})]
+                    </BOUCLE_image_ts></a>
+                    </BOUCLE_tee-shirts>
+
+                    <div class="rien">&nbsp;</div></div></B_tee-shirts>
+
+
+                    <B_15ans>
+                    <BOUCLE_15ans(DOCUMENTS){descriptif=15 ans}{par hasard}{0,1}>
+                    <div class="boites"> <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"> </div>
+                    </BOUCLE_15ans>
+                    </B_15ans>
+                    <B_art_portfolio>
+                    <BOUCLE_art_portfolio(ARTICLES){id_rubrique=45}{par date}{inverse}{0,1}>
+                    <div id="SommairePortfolio" class="boites">
+                        <h2><a href="rubrique45.html" class="noline"><img src="#CHEMIN{base/commun/rubriques/portfolioN.gif}" alt="Portfolio" width="52" height="15" border="0"></a></h2>
+                        <a href="#URL_ARTICLE" class="noline"><img src="IMG/[(#LOGO_ARTICLE|fichier)]" alt="[(#TITRE|supprimer_numero|textebrut)]" border="0" class="SommaireLogoArtPortfolio"></a> </div>
+                        <div class="rien">&nbsp;</div>
+                        </BOUCLE_art_portfolio>
+                        </B_art_portfolio>
+                        <BOUCLE_15ans_doublons(BREVES){titre_mot==15 ans}{doublons}>
+                        </BOUCLE_15ans_doublons>
+                        <B_bref>
+                        <div class="boites">
+                            <h2><img src="#CHEMIN{base/commun/rubriques/bref.gif}" alt="En bref" title="En bref" width="49" height="15" border="0"></h2>
+                            <ul>
+                                <BOUCLE_bref(BREVES){par date}{inverse}{0,3}{age<20}{doublons}>
+                                <li><a href="#URL_BREVE" [title="(#INTRODUCTION|textebrut|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                                </BOUCLE_bref>
+                            </ul>
+                        </div>
+                        </B_bref>
+                        
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>

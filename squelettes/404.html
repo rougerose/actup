@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | Erreur 404 : la page que vous demandez n'existe plus</title>
+    
+    <INCLURE{fond=inc-head}>
+    
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                
+                
+                <div class="entete">
+                    <div class="titre">
+                        <h1>Erreur 404</h1>
+                    </div>
+                </div>
+                
+                <div id="texte">
+                    <p>Nous sommes désolé-e-s, la page que vous demandez n'existe plus. <a href="#URL_SITE_SPIP">Retour à la page d'accueil du site</a></p>
+                    <p>We are sorry, the page you request doesn't exist anymore. <a href="#URL_SITE_SPIP">Go back to the home page</a></p>
+                    <p>
+                </div>
+                
+                <div class="bdp">&nbsp;</div>
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_principale>

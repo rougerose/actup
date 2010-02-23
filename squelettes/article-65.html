@@ -1,0 +1,100 @@
+<BOUCLE_p(ARTICLES){id_article}>[(#REM) squelette SidaBlabla ]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_article}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <B_ouverture>
+                <BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}>
+                <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                </BOUCLE_ouverture>
+                </B_ouverture>
+                <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}{id_article}>
+                
+                <div id="fondRadio">
+                    <div id="RubRadioArticle">
+                        <img src="#CHEMIN{base/images/sida-blabla.gif}" alt="Sida blabla" width="216" height="106" id="sidablabla">
+                        <div id="RubRadioArticleContenu">
+                            <div class="entete">
+                                <div class="titre">
+                                    <h1> #TITRE</h1>
+                                    <h4>&Eacute;mission du [(#DATE|affdate)]</h4>
+                                </div>
+                            </div>
+                            <div id="texte">
+                                #TEXTE
+                            </div>
+                            [<div class="postscriptum">
+                                (#PS)
+                            </div>]
+                            [<div class="notes">
+                                (#NOTES)
+                            </div>]
+                            <BOUCLE_ecoute(DOCUMENTS){id_document}>
+                            <div id="media">
+                                <p class="media"><strong>En &eacute;coute :</strong> [(#TITRE|supprimer_numero)]</p>
+                                <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" width="200" height="16">
+                                    <param name="src" value="#URL_DOCUMENT">
+                                    <param name="autoplay" value="true">
+                                    <param name="controller" value="true">
+                                    <embed src="#URL_DOCUMENT" width="200" height="16" controller="true" autoplay="true"></embed>
+                                </object>
+                            </div>
+                            </BOUCLE_ecoute>
+                            
+                            <B_enregistrements>
+                            <ul class="ListeMp3" id="Article">
+                                <BOUCLE_enregistrements(DOCUMENTS){id_article}>
+                                <li><a href="[(#URL_ARTICLE|parametre_url{id_document,#ID_DOCUMENT})]">#TITRE</a> #TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]</li>
+                                </BOUCLE_enregistrements>
+                            </ul>
+                            </B_enregistrements>
+                            <p class="retour">[ &eacute;mission<BOUCLE_precedent(ARTICLES){id_rubrique}{age_relatif>=0}{par date}{inverse}{1,1}> <a href="#URL_ARTICLE">pr&eacute;c&eacute;dente</a> |</BOUCLE_precedent><BOUCLE_suivante(ARTICLES){id_rubrique}{age_relatif<0}{par date}{0,1}> <a href="#URL_ARTICLE">suivante</a></BOUCLE_suivante> ]<br><a href="/rubrique65.html">[ retour &agrave; la rubrique Sida <em>blabla</em>]</a></p>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bdp">&nbsp;</div>
+                
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+            
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+            
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+            <B_themes>
+            <div class="boites">[<img src="(#CHEMIN{base/commun/rubriques/themes.gif})" alt="Th&egrave;mes et sujets abord&eacute;s" title="Th&egrave;mes et sujets abord&eacute;s" width="125" height="15" border="0">]
+                <ul>
+                    <BOUCLE_themes(MOTS){id_article}{par titre}{doublons}{type!==medias}{id_mot!=7}{type!=langue}{type!=bilingue}{type!=affichage}{type!=divers}{type!=dossiers}{type!=dossiers ouverture}>
+                    <li><a href="#URL_MOT" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_themes>
+                    <BOUCLE_themes_cp(MOTS){id_article}{id_mot=7}>
+                    <li><a href="#URL_PAGE{presse}">[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_themes_cp>
+                </ul>
+            </div>
+            </B_themes>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

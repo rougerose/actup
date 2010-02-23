@@ -1,0 +1,21 @@
+#CACHE{24*3600}
+<B_cp>
+<div class="hierarchie">
+    [(#PAGINATION{page})]
+</div>
+<div class="encadrement">
+    <BOUCLE_cp(ARTICLES){id_rubrique}{id_mot=7}{par date}{inverse}{pagination 5}>
+    [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{100,0}|inserer_attribut{class,logoArticles}|inserer_attribut{border,0})</a>]
+    <h5>[(#DATE|affdate)]</h5>
+    [<h4>(#SURTITRE)</h4>] 
+    <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+    [<h4>(#SOUSTITRE)</h4>] 
+    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p>
+    <BOUCLE_langue(MOTS){id_article}{type=langue}><BOUCLE_vers_anglais(MOTS){id_article}{titre=francais}><BOUCLE_lien3(MOTS){id_article}{type=bilingue}><BOUCLE_lien4(ARTICLES){id_mot}{exclus}>
+    <p><img src="#CHEMIN{base/commun/rubriques/jalons_puce.gif}" width="12" height="12" alt="-"> <em>English translation available</em> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></p>
+    </BOUCLE_lien4></BOUCLE_lien3></BOUCLE_vers_anglais></BOUCLE_langue></p>
+    <div class="rien">&nbsp;</div>
+    </BOUCLE_cp>
+</div>
+<div class="bdp">&nbsp;</div>
+</B_cp>

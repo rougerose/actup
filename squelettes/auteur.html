@@ -1,0 +1,56 @@
+<BOUCLE_p(AUTEURS){id_auteur}{tout}>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP |Envoyer un mail - Send us a mail to #NOM</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_article}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <div class="hierarchie"> 
+                    <BOUCLE_hierarchie_accueil(DOCUMENTS){descriptif=hierarchie accueil}><a href="." class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_accueil> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="[puce]" border="0"> <BOUCLE_hierarchie_plan(DOCUMENTS){descriptif=hierarchie nous contacter}><a href="#URL_PAGE{contact}" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
+                    </BOUCLE_hierarchie_plan>
+                </div>
+                
+                <div class="entete">
+                    <div class="titre">
+                        <h1>Envoyer un mail &agrave;  - Send a mail to #NOM</h1>
+                    </div>
+                </div>
+                
+                <div id="texte">
+                    #FORMULAIRE_ECRIRE_AUTEUR
+                </div>
+                <div class="poscriptum">
+                    <p class="spip">* Tous les champs sont obligatoires - All fields are required</p>
+                    <p class="spip"><strong>Act Up-Paris et vos donn&eacute;es personnelles</strong><br> Act Up-Paris fait de la politique, pas du marketing ! Le fichier de l'association ne fait l'objet d'aucune commercialisation. Les coordonn&eacute;es (postales, mail) que vous souhaiteriez nous communiquer sont exclusivement utilis&eacute;es par Act Up-Paris afin de vous faire parvenir les informations et/ou publications que nous r&eacute;alisons et diffusons.<br> A tout moment, vous disposez d'un droit d'acc&egrave;s, de modification, de rectification et de suppression des donn&eacute;es qui vous concernent  (art. 34 de la loi &quot;Informatique et Libert&eacute;s&quot;). Pour l'exercer, veuillez nous &eacute;crire &agrave; Act Up-Paris, BP 287, 75525 Paris cedex 11 ou bien encore <a href="auteur76.html">nous envoyer un mail</a>.</p>
+                </div>
+                <div class="bdp">&nbsp;</div>
+
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+            
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+            
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+            
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

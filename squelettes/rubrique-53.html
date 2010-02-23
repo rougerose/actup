@@ -1,0 +1,68 @@
+<BOUCLE_p(RUBRIQUES){id_rubrique}>[(#REM) squelette RéPI ]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <B_ouverture>
+                <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
+                <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                </BOUCLE_ouverture>
+                </B_ouverture>
+                <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}>
+                <div>#TEXTE</div>
+                [<div class="notes"> 
+                    <h4>Notes</h4>
+                    (#NOTES)
+                </div>]
+                <h2 class="SsTitreRubRepi">Informations par mail</h2>
+                <p class="RubIntroRepi">Si vous souhaitez &ecirc;tre tenu inform&eacute; de nos prochaines r&eacute;unions, <strong>une liste de diffusion</strong> est disponible. L'inscription (ou la d&eacute;sinscription) &agrave; cette liste est disponible <a href="http://listes.samizdat.net/wws/info/repi_l">sur cette page</a>.</p>
+                
+                <h2 class="SsTitreRubRepi">Prochaine(s) R&eacute;PI</h2>
+                <BOUCLE_prochaine_repi(ARTICLES){id_rubrique}{age<=0}{par date}{inverse}{doublons}>
+                <p class="DateRepi">[(#DATE|affdate)]</p>
+                <h3 class="RubTitreRepi"><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                <p class="RubIntroRepi">[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[ la suite ]</a></p>
+                </BOUCLE_prochaine_repi>
+                </B_prochaine_repi>
+                <p class="RubIntroRepi">La date et le sujet de notre prochaine R&eacute;union Publique d'Informations n'est pas encore d&eacute;termin&eacute;e.</p>
+                <p class="RubIntroRepi">Merci de renouveler votre visite sur cette page ult&eacute;rieurement.</p>
+                <//B_prochaine_repi>
+                <h2 class="SsTitreRubRepi">Nos pr&eacute;c&eacute;dentes R&eacute;PI</h2>
+                <BOUCLE_precedente_repi(ARTICLES){id_rubrique}{par date}{inverse}{doublons}>
+                <p class="DateRepi">[(#DATE|affdate)]</p>
+                <h3 class="RubTitreRepi"><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+                <p class="RubIntroRepi">[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[ la suite ]</a></p><BOUCLE_CR(DOCUMENTS){id_article}{mode=document}{titre==compte rendu}{0,1}>
+                <p class="RubIntroRepi"><strong>Le compte rendu de cette R&eacute;PI</strong> est <a href="#URL_ARTICLE##ID_DOCUMENT">disponible en format #TYPE_DOCUMENT</a> ([(#TAILLE|taille_en_octets)]).</p>
+                </BOUCLE_CR>
+                </BOUCLE_precedente_repi>
+                
+
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

@@ -1,0 +1,36 @@
+div#AccueilBangkokGauche {
+	width: 270px;
+	float: left;
+}
+div#AccueilBangkokDroite {
+	width: 170px;
+	float: left;
+	margin-left: 35px;
+	margin-top: 1em;
+}
+h3.BKKAccueil {
+	font-size: 100%;
+}
+h3.BKKRubriques {
+	margin: 1em 0px 3px;
+}
+h4.BKKArticlesSecond {
+	margin: 0px 0px 0.5em 2px;
+	font: bold 90% Geneva, Helvetica, Arial, sans-serif;
+}
+h4.BKKArticlesSecond span, h3.BKKAccueil span {
+	color: #999;
+	font: normal 90% Geneva, Helvetica, Arial, sans-serif;
+}
+p.BKKRubriquesDescriptif {
+	margin: 0px 0px 3px 2px;
+	font: 85%/1.2em Geneva, Helvetica, Arial, sans-serif;
+	color: #666;
+}
+p.BKKplus {
+	font: 85% Geneva, Helvetica, Arial, sans-serif;
+	text-align: right;
+}
+img.BKKPortfolio {
+	border: thick solid #000000;
+}

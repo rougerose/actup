@@ -1,0 +1,162 @@
+<BOUCLE_p(ARTICLES){id_article=2067}>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]</title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_article}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <B_ouverture><BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture"></BOUCLE_ouverture></B_ouverture>
+                
+                <div class="hierarchie"><BOUCLE_hierarchie_accueil(DOCUMENTS){descriptif=hierarchie accueil}><a href="#URL_SITE_SPIP" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_accueil> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="[puce]" border="0"> <BOUCLE_hierarchie_plan(DOCUMENTS){descriptif=hierarchie nous soutenir}><a href="soutenir.php3" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_plan>
+                </div>
+                <div class="entete">
+                    <BOUCLE_logo_gd_format(ARTICLES){id_mot}><BOUCLE_logo_gd_format2(DOCUMENTS){id_article}{titre==LogoMedias}{0,1}{doublons}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_logo_gd_format2></BOUCLE_logo_gd_format>
+                    <div class="titre">
+                        [<h2>(#SURTITRE)</h2>]
+                        <h1>#TITRE</h1>
+                        [<h2>&nbsp;&nbsp;(#SOUSTITRE)</h2>]
+                    </div>
+                    [(#LOGO_ARTICLE)]<B_auteurs>
+                    <h3>par <BOUCLE_auteurs(AUTEURS){id_article}{", "}>#NOM </BOUCLE_auteurs></h3></B_auteurs>
+                    <h4><B_trad_date><BOUCLE_trad_date(ARTICLES){id_article}{titre_mot=anglais}>[(#DATE|mois)] - [(#DATE|jour)] - [(#DATE|annee)]</BOUCLE_trad_date></B_trad_date>publi&eacute; le [(#DATE|affdate)]<//B_trad_date><B_lien_medias><BOUCLE_lien_medias(MOTS){id_article}{type==medias}> dans <a href="#URL_PAGE{medias,id_mot=#ID_MOT}">#TITRE</a></BOUCLE_lien_medias></B_lien_medias></h4>
+                    <div class="rien">&nbsp;</div>
+                    [<div class="chapo">(#CHAPO)</div>]
+                </div><BOUCLE_exclu_logomedias(DOCUMENTS){id_article}{titre==LogoMedias}{doublons}></BOUCLE_exclu_logomedias>
+                <div id="texte">
+                    #TEXTE
+                </div>
+                [<div class="postscriptum"> 
+                    (#PS)
+                </div>]
+                <B_docs_joints>
+                <div class="DocLies" id="Documents"><a name="documents"></a>
+                    <h4><img src="#CHEMIN{base/images/doc_telechargement.gif}" alt="Documents disponibles en t&eacute;l&eacute;chargement" title="Documents disponibles en t&eacute;l&eacute;chargement" width="141" height="83"></h4>
+                    <BOUCLE_docs_joints(DOCUMENTS){id_article}{mode=document}{doublons}>
+                    <div class="AffDocLies">[<a href="#URL_DOCUMENT" class="noline">(#LOGO_DOCUMENT)</a>
+                        <br>][<span>(#TITRE)</span>][ - (#DESCRIPTIF)] [((#TAILLE|taille_en_octets))]
+                    </div></BOUCLE_docs_joints>
+                </div></B_docs_joints>
+                [<div class="notes"> 
+                    <h4>Notes</h4>
+                    (#NOTES)
+                </div>]
+                <div class="bdp">&nbsp;</div>
+
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            
+            <div class="boites">
+                <B_outreach>
+                <BOUCLE_outreach(RUBRIQUES){id_secteur}{0,1}>
+                <BOUCLE_outreach1(RUBRIQUES){id_rubrique}{id_rubrique!=4}>
+                <h2>[<img src="(#CHEMIN{base/commun/rubriques/participez.gif})" alt="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" title="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" width="125" height="30" border="0">]</h2>
+                </BOUCLE_outreach1>
+                </BOUCLE_outreach>
+                </B_outreach>
+                <h2>[<img src="(#CHEMIN{base/commun/rubriques/rejoignez_nous.gif})" alt="Rejoignez-nous" title="Rejoignez-nous" width="82" height="15" border="0">]</h2>
+                <//B_outreach>
+                <BOUCLE_outreach2(ARTICLES){id_secteur}{titre_mot=outreach}{0,1}{doublons}>
+                <ul>
+                    <li>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></li>
+                </ul>
+                </BOUCLE_outreach2>
+                </BOUCLE_outreach>
+            </div>
+
+            <B_mot_dossier2>
+            <div class="boites">
+                <h2>[<img src="(#CHEMIN{base/commun/rubriques/dossier-sommaire.gif})" alt="sommaire du dossier">]</h2>
+                <dl>
+                    <BOUCLE_mot_dossier2(MOTS){id_article}{type=Dossiers}>
+                    <dt>[(#TITRE)]</dt>
+                    <BOUCLE_articles_dossier(ARTICLES){id_mot}{par num titre}>
+                    <dd>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dd>
+                    </BOUCLE_articles_dossier>
+                    </BOUCLE_mot_dossier2>
+                </dl>
+            </div>
+            </B_mot_dossier2>
+            
+            <BOUCLE_langue(MOTS){id_article}{type=langue}>
+            <B_vers_francais>
+            <BOUCLE_vers_francais(MOTS){id_article}{titre=anglais}>
+            <BOUCLE_lien(MOTS){id_article}{type=bilingue}>
+            <BOUCLE_lien2(ARTICLES){id_mot}{exclus}>
+            <div class="boites"><a href="#URL_ARTICLE" class="noline"[><img src="(#CHEMIN{base/commun/rubriques/francais.gif})" alt="Traduction fran&ccedil;aise disponlible" title="Traduction fran&ccedil;aise disponible" width="140" height="15" border="0">]</a>
+                <ul>
+                    <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+                </ul>
+            </div>
+            </BOUCLE_lien2>
+            </BOUCLE_lien>
+            </BOUCLE_vers_francais>
+            </B_vers_francais>
+            <BOUCLE_vers_anglais(MOTS){id_article}{titre=francais}>
+            <BOUCLE_lien3(MOTS){id_article}{type=bilingue}>
+            <BOUCLE_lien4(ARTICLES){id_mot}{exclus}>
+            <div class="boites"><a href="#URL_ARTICLE" class="noline">[<img src="(#CHEMIN{base/commun/rubriques/english.gif})" alt="Text available in english" title="Text available in english" width="125" height="15" border="0">]</a>
+                <ul>
+                    <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+                </ul>
+            </div>
+            </BOUCLE_lien4>
+            </BOUCLE_lien3>
+            </BOUCLE_vers_anglais>
+            <//B_vers_francais>
+            </BOUCLE_langue>
+            <B_traductions>
+            <BOUCLE_traductions(ARTICLES){traduction}{exclus}>
+            <div class="boites"><a href="#URL_ARTICLE" class="noline">[<img src="(#CHEMIN{base/commun/rubriques/[(#LANG|attribut_html)].gif})" alt="Traduction  disponible / Translation available" title="Traduction  disponible / Translation available" width="140" height="15" border="0">]</a>
+                <ul>
+                    [<li><a href="#URL_ARTICLE" dir="#LANG_DIR">(#TITRE|supprimer_numero)</a></li>]
+                </ul>
+                </BOUCLE_traductions>
+            </div>
+            </B_traductions>
+            <B_mots_glossaire>
+            <div class="boites"><a href="<BOUCLE_lien_glossaire(RUBRIQUES){id_rubrique=78}>#URL_RUBRIQUE</BOUCLE_lien_glossaire>" class="noline">[<img src="(#CHEMIN{base/commun/rubriques/glossaire.gif})" alt="Sida, un glossaire" title="Sida, un glossaire" width="96" height="15" border="0">]</a>
+                <ul>
+                    <BOUCLE_mots_glossaire(MOTS){id_article}{type==sida}{par titre}{doublons}>
+                    <li><a href="#URL_MOT" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_mots_glossaire>
+                </ul>
+            </div>
+            </B_mots_glossaire>
+            <B_themes>
+            <div class="boites">[<img src="(#CHEMIN{base/commun/rubriques/themes.gif})" alt="Th&egrave;mes et sujets abord&eacute;s" title="Th&egrave;mes et sujets abord&eacute;s" width="125" height="15" border="0">]
+                <ul>
+                    <BOUCLE_themes(MOTS){id_article}{par titre}{doublons}{type!==medias}{id_mot!=7}{type!=langue}{type!=bilingue}{type!=affichage}{type!=divers}{type!=dossiers}{type!=dossiers ouverture}>
+                    <li><a href="#URL_MOT" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_themes>
+                    <BOUCLE_themes_cp(MOTS){id_article}{id_mot=7}>
+                    <li><a href="#URL_PAGE{presse}">[(#TITRE|supprimer_numero)]</a></li>
+                    </BOUCLE_themes_cp>
+                </ul>
+            </div>
+            </B_themes>
+            
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

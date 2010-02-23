@@ -1,0 +1,811 @@
+img#LogoAUP {
+	position: absolute;
+	height: auto;
+	width: auto;
+	top: 4px;
+	right: 69%;
+	margin-right: 1%;
+	left: auto;
+}
+a, a:link {
+	color: #909;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+}
+a:visited {
+	color: #306;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+}
+a:hover, a:active {
+	color: #C39;
+	text-decoration: none;
+	border-bottom: 1px solid #C39;
+	border-top-width: 0;
+	border-right-width: 0;
+	border-left-width: 0;
+}
+a.noline, a.noline:link, a.noline:visited, a.noline:hover {
+	border-bottom-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.rien {
+	clear: both;
+	height: 5px;
+}
+.invisible {
+	display: none;
+}
+#ImgOuverture {
+	margin-bottom: 1em;
+}
+#menu h1 {
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+}
+ #menu2 {
+	margin-bottom: 30px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 80%;
+	width: 180px;
+	left: auto;
+	top: auto;
+	position: relative;
+}
+#menu2 img {
+	border: 1px solid #333;
+	margin-right: 2px;
+}
+#menu2 dt {
+	display: inline;
+}
+#menu2 dd {
+	position: absolute;
+	left: 0px;
+	top: 20px;
+	margin: 0px;
+	padding: 0px;
+	visibility: hidden;
+}
+.encadrement, .encadrement-archives {
+	margin-bottom: 2em;
+	padding-right: 10px;
+	/* border: 1px solid #E6E6E6;*/
+	padding-bottom: 2px;
+	margin-top: 1em;
+	background-color: #FFF;
+}
+.encadrement-archives {
+	margin-bottom:.5em;
+}
+.encadrement h2, .encadrement-archives h2, .sommaireRubriques h2, .archives h2, .media1 h2, .RubriquePortfolioUne h2 {
+	margin-top: 0px;
+}
+.CorpsRubrique h2 {
+	font-size: 140%;
+	margin-top: 1.8em;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#ColonneRadio h2.RubRadioTitreArt {
+	font-size: 100%;
+	color: #909;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	margin-top: 1.8em;
+	line-height: 0.8em;
+}
+.encadrement h3, .encadrement-archives h3, div.contenuDossier h3, .RubriquePortfolioUne h3, .CorpsRubrique h3, h3.RubTitreRepi {
+	font-size: 120%;
+	margin-left: 10px;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	line-height: 1.2em;
+}
+.encadrement h3, .encadrement-archives h3 {
+	margin-left:0;
+}
+.encadrement h3.AutresArticles {
+	font-size: 100%;
+	margin-left: 10px;
+	margin-top: 0.8em;
+	margin-bottom: 0em;
+	line-height: 1.2em;
+	list-style-type: disc;
+}
+h3.RubIntertitre {
+}
+.encadrement h4, .encadrement-archives h4, .RubriquePortfolioUne h4, #GuideGlossaireGauche h4, #GuideGlossaireDroite h4, #GuideGlossaire h4 {
+	font-size: 100%;
+	margin-left: 10px;
+	margin-top: 0em;
+	color: #66F;
+	margin-bottom: 0em;
+	font-weight: normal;
+	line-height: 1.4em;
+}
+.encadrement h4, .encadrement-archives h4 {
+	margin-left:0;
+}
+.encadrement h5, .encadrement-archives h5, .RubriquePortfolioUne h5 {
+	font-size: 85%;
+	margin-left: 5px;
+	font-weight: normal;
+	color: #666;
+	margin-bottom: 0.6em;
+}
+/*.encadrement p, */.GuideGlossaireColonne p, div.contenuDossier p, .RubriquePortfolioUne p, .CorpsRubrique p, #GuideGlossaireGauche p, #GuideGlossaireDroite p, #GuideGlossaire p, #ColonneRadio p,  p.RubIntroRepi {
+	margin-left: 20px;
+	line-height: 1.4em;
+	margin-bottom: 3px;
+	padding: 0px;
+	margin-top: 0.8em;
+	font-size: 100%;
+}
+.encadrement p, .encadrement-archives p {
+	line-height: 1.4em;
+	margin-bottom: 3px;
+	padding: 0px;
+	margin-top: 0.4em;
+	font-size: 90%;
+}
+p.DateRubrique {
+	margin:0;
+	color: #666;
+}
+p.Date {
+	font-size: 85%;
+	margin-left: -5px;
+	color: #666;
+	margin-top: 3em;
+	margin-bottom: 0px;
+	line-height: 1em;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.encadrement dd {
+	line-height: 1.2em;
+}
+.encadrement dl {
+	margin-left: 30px;
+	font-family: Helvetica, Arial, sans-serif;
+	width: 50%;
+	line-height: 1.5em;
+}
+.encadrement dt {
+	font-weight: bold;
+}
+.coin {
+	position: relative;
+	left: -1px;
+	margin: 0px 0px -6px;
+	top: 1px;
+}
+img.coinMedias {
+	position: relative;
+	top: 186px;
+	margin-bottom: -5px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.media {
+}
+.media1 {
+	width: 128px;
+	border: 1px solid #E6E6E6;
+	height: 185px;
+	float: left;
+	margin-right: 9px;
+	margin-bottom: 9px;
+	margin-top: 0px;
+}
+.media2 {
+	float: left;
+	border: 1px solid #E6E6E6;
+	text-align: center;
+	width: 128px;
+	height: 185px;
+	margin-right: 9px;
+	margin-bottom: 9px;
+	margin-top: 0px;
+}
+.media3 {
+	float: left;
+	text-align: center;
+	width: 128px;
+	padding-top: 10px;
+	height: 175px;
+	border: 1px solid #FFF;
+	margin-right: 9px;
+	display: none;
+	margin-bottom: 9px;
+	margin-top: 0px;
+}
+.media4 {
+	float: left;
+	width: 338px;
+	font-weight: bold;
+	margin-top: 0px;
+	font-family: Helvetica, Arial, sans-serif;
+	padding-top: 3px;
+}
+.media5 {
+	margin-bottom: 1.8em;
+}
+.logoMedias {
+	margin-top: 9px;
+}
+.boites {
+	margin-bottom: 1em;
+	font-family: Helvetica, Arial, sans-serif;
+	margin-top: 2em;
+	font-size: 11px;
+	line-height: 1.2em;
+}
+.boites h2 {
+	margin-bottom: 0.3em;
+	margin-top: 0px;
+}
+.boites ul, .sommaireRubriques ul, .archives ul, .media4 ul, .boites dl, ul.signatures, .contenuDossier ul {
+	list-style-type: none;
+	margin-left: 4%;
+	margin-top: 0.3em;
+	padding: 0px 0px 0.5em;
+	margin-bottom: 0em;
+	font-weight: normal;
+}
+ul.normal {
+	list-style-type: none;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size: 110%;
+	padding-left: 0px;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+	margin-left: 0px;
+}
+.boites li, .sommaireRubriques li, .archives li, .media4 li, li.signatures, .contenuDossier li {
+	margin-top: 0.3em;
+	margin-bottom: 0.6em;
+	padding: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-weight: normal;
+}
+li.signatures {
+	margin-top:0;
+	margin-bottom:0.3em;
+	font-size:90%;
+}
+.boites dl {
+	margin-bottom: 1.3em;
+}
+.boites dt {
+	padding: 0px;
+	color: #666666;
+	margin-bottom: 0.5em;
+	font-weight: bold;
+}
+.boites dd {
+	margin-bottom: 1em;
+	padding: 0px;
+	margin-left: 4%;
+}
+.boites p {
+	margin-left: 4%;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+.hierarchie {
+	margin-bottom: 1em;
+	position: relative;
+	text-align: right;
+}
+.hierarchie p.pagination {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.hierarchie2 {
+	text-align: right;
+	margin-bottom: 1em;
+	margin-top: 2em;
+}
+.hierarchie-et-aussi {
+	text-align: right;
+	margin-bottom: 1em;
+	margin-top: 2em;
+	border-top:1px dotted #ccc;
+	border-right: #ccc;
+	border-bottom: #ccc;
+	border-left: #ccc;
+	padding-top: 1em;
+}
+.sommaireRubriques {
+	border: 1px solid #E6E6E6;
+	width: 227px;
+	float: left;
+	margin-bottom: 1em;
+	margin-right: 9px;
+	padding-bottom: 5px;
+}
+.archives {
+	border: 1px solid #E6E6E6;
+	width: 160px;
+	float: left;
+	margin-right: 9px;
+	margin-top: 0px;
+}
+/* pour le formulaire signature pétition */
+div.formulaire {
+	margin-left: 4%;
+	width: 60%;
+	text-align: left;
+	margin-top: 0px;
+}
+div.formulaire p {
+	margin: auto;
+}
+fieldset {
+	border: none;
+}
+.MenuSommaire {
+	font-size: 10px;
+	width: 150px;
+}
+#select {
+	margin-left: 4%;
+	margin-top: 0px;
+}
+.BoutonSommaire, .spip_bouton {
+	color: #FFF;
+	background-color: #510066;
+	margin-left: 4%;
+	font-size: 90%;
+	margin-top: 0.5em;
+	line-height: normal;
+}
+.bdp {
+	clear: both;
+	margin-bottom: 2em;
+}
+/* menu déroulant secteur gabarit presse */
+.MenuPresse {
+	width: 65%;
+}
+li.pluspetit {
+	font-size: 90%;
+	text-align: right;
+	line-height: 2.5em;
+}
+div.pluspetit {
+	font-size: smaller;
+}
+/* pour les dossiers en HP */
+div.contenuDossier {
+	padding-top: 9%;
+	margin-left: 54%;
+	color: #FFF;
+	padding-bottom: 5%;
+	padding-right: 2%;
+	font-weight: bold;
+}
+div.contenuDossier a {
+	color: #FFF;
+	font-weight: bold;
+}
+div.dossier {
+	margin-bottom: 2em;
+	margin-top: 1em;
+}
+/* pour les sommaires des dossiers en pages interieures */
+#SommaireDossier {
+	color: #FFF;
+	padding-top: 30px;
+	float: right;
+	width: 282px;
+}
+#SommaireDossier h3 {
+	margin-top: 0px;
+	margin-bottom: 5px;
+	margin-left: 50px;
+	margin-right: 5px;
+}
+#SommaireDossier form {
+	margin-left: 50px;
+	width: 80%;
+}
+#SommaireDossier select {
+}
+.entete {
+}
+.entete h1 {
+	font-size: 200%;
+	color: #909;
+	line-height: 120%;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+.entete h2 {
+	font-weight: normal;
+	color: #309;
+	font-size: 140%;
+	margin: 0px;
+}
+.entete h3 {
+	font-size: 120%;
+	text-align: right;
+}
+.entete h4 {
+	text-align: right;
+	line-height: 1.4em;
+	color: #666;
+	font-weight: normal;
+	font-size: 12px;
+}
+.entete h5 {
+	text-align: right;
+	margin-right: 3%;
+}
+.entete h6 {
+	font-size: 0.9em;
+	text-align: right;
+	color: #666;
+}/*
+.entete span {
+	font-weight: normal;
+	color: #309;
+	font-size: 80%;
+}*/
+.chapo {
+	font-weight: bold;
+	line-height: 1.4em;
+	text-align: justify;
+	margin-bottom: 3em;
+	clear: right;
+	margin-top: 2em;
+}
+#texte {
+	line-height: 1.5em;
+	text-align: justify;
+	padding-left: 25px;
+}
+#texte h2 {
+	font-size: 140%;
+	color: #309;
+	margin-left: -20px;
+	margin-top: 2em;
+}
+#texte p.spip {
+}
+#resultats {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+#resultats h4.ResultatsGDS {
+	margin-left: 15px;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	color: #309;
+}
+#resultats h4 {
+	margin-left: 25px;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+#resultats h5 {
+	font-size: 100%;
+	margin-left: 25px;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+#resultats p {
+	margin-top: 0px;
+	margin-left: 30px;
+	margin-bottom: 1em;
+}
+#resultats span.Date {
+	color: #666;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size: 90%;
+	line-height: 1.8em;
+}
+div.postscriptum, div.notes, div.signatures {
+	font-family: Helvetica, Arial, sans-serif;
+	margin-top: 3em;
+	margin-bottom: 1em;
+	line-height: 1.4em;
+	clear: left;
+}
+#petition {
+	border:medium solid #906;
+	padding: 2px;
+	width: 250px;
+}
+div.postscriptum h4, div.notes h4, div.DocLies {
+	margin: 0px;
+}
+div.notes p {
+	margin: 0px;
+}
+.DocAncre {
+}
+div.AffDocLies {
+	float: left;
+	width: 41%;
+	margin: 3%;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	padding: 1%;
+	text-align: center;
+}
+#signatures {
+	padding-left: 25px;
+}
+#Documents {
+	margin-top: 2em;
+}
+div.AffDocLies span {
+	font-weight: bold;
+}
+dd.noart {
+	font-style: italic;
+	font-size: smaller;
+}
+.ArtLies {
+	font-size: 120%;
+	color: #006;
+	margin-top: 2em;
+}
+form.recherche {
+	padding-top: 0.5em;
+}
+#Colonne dt {
+	font-weight: bold;
+	margin-top: 2em;
+}
+#Colonne dd {
+	line-height: 1.5em;
+}
+#Colonne dl {
+}
+.GuideGlossaireMargeHaute {
+	padding-top: 3.8em;
+}
+.GuideGlossaireColonne {
+}
+/* pour formulaires Guide, Glossaire */
+#FormGuideGlossaire {
+	width: 95%;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 0px;
+}
+#SelectGuideGlossaire {
+	width: 95%;
+	font-size: 90%;
+	line-height: normal;
+}
+#GuideGlossaireGauche {
+	float: left;
+	width: 48%;
+	padding-right: 2%;
+}
+#GuideGlossaireDroite {
+	padding-left: 2%;
+	width: 48%;
+	float: right;
+}
+#GuideGlossaire {
+	padding-left: 2%;
+}
+.GuideGlossaireElement1 {
+	margin-bottom: 2.5em;
+	padding: 0px 0px 10px;
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+.GuideGlossaireElement2 {
+	margin-bottom: 2.5em;
+	padding: 0px;
+}
+.GuideGlossaireElement3 {
+	margin-bottom: 2.5em;
+	padding: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+}
+h3.GuideGlossaire {
+	font-size: 140%;
+	margin-left: 10px;
+	line-height: 1.2em;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+h4.GuideGlossaire, h5.GuideGlossaire {
+	font-size: 100%;
+	margin-left: 10px;
+	line-height: 1.2em;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+p.centre {
+	text-align: center;
+}
+#GuideGlossaireDroiteMot {
+	padding-left: 8%;
+	float: right;
+	width: 42%;
+	margin-top: 1em;
+	text-align: left;
+}
+div.titre {
+	margin-top: 4em;
+	margin-bottom: 4em;
+}
+div.titre img {
+	float: left;
+	margin-right: 15px;
+}
+div.entete img.spip_logos {
+	float: left;
+	margin-right: 15px;
+}
+.logoArticles, div.encadrement img.spip_logos {
+	padding-top: 2em;
+	margin-left: 5px;
+	float: right;
+}
+/* pour le plan */
+dl.plan {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	width: auto;
+}
+dt.planNiv1, dd.planNiv1 {
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #4C004C;
+	padding-left: 1em;
+	margin-left: 1em;
+}
+dt.planNiv2, dd.planNiv2 {
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #4C004C;
+	padding-left: 1em;
+	margin-left: 2em;
+}
+dd.plan {
+	border-left-width: 1px;
+	border-left-style: dotted;
+	border-left-color: #4C004C;
+	margin-left: 0px;
+	padding-left: 1em;
+}
+dt.planNiv3, dd.planNiv3 {
+	border-left-width: thin;
+	border-left-style: dotted;
+	border-left-color: #4C004C;
+	padding-left: 1em;
+	margin-left: 3em;
+}
+form#questionnaireGuide li {
+	font-weight: bold;
+}
+.infos {
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size: 9px;
+	text-align: right;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	padding-right: 1em;
+}
+/* pour l'affichage du dernier portolio disponible dans la page d'accueil et la page secteur-4.html}
+---------------------------------------------------------------------------------- */
+div#SommairePortfolio, div.SommairePortfolio {
+	color: #FFF;
+	background: #000;
+	padding-left: 2px;
+	padding-top: 2px;
+	display: block;
+	width: 178px;
+}
+div.SommairePortfolio {
+	text-align:center;
+}
+img.SommaireLogoArtPortfolio {
+	margin-right: 1.2em;
+	margin-bottom: 1.2em;
+	margin-left: 1.2em;
+}
+div#SommairePortfolio h2, div#SommairePortfolio a {
+}
+/* Rubrique Repi
+---------------- */
+h2.SsTitreRubRepi {
+	font-size: 140%;
+	margin-bottom: 0px;
+	margin-top: 1.8em;
+	color: #60C;
+}
+p.DateRepi {
+	font-size: 85%;
+	color: #666;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	margin-top: 2em;
+}
+/* Articles : liens vers photos et documents joints
+------------------------------------------ */
+div#DocsPhotos {
+	text-align: right;
+}
+img.DocsPhotos {
+	float: none;
+}
+/* Pour les 15 ans 
+----------------*/
+dl.QuinzeAns {
+	width: 190px;
+	margin: 0px;
+	text-align: center;
+}
+dt.QuinzeAns {
+	margin: 0px 0px 1em;
+	color: #CC0099;
+}
+dd.QuinzeAns {
+	margin: 0px 0px 1em;
+}
+span.Gras {
+	font-weight: bold;
+}
+/* Dossier NoKpote
+-----------------*/
+div.DossierNoKpote {
+	margin-top: 3em;
+	width: 250px;
+	border: 1px solid #000;
+}
+div.DossierNoKpote h3 {
+	font-size: 120%;
+	padding: 5px;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #000;
+	margin-top: 0px;
+}
+div.DossierNoKpote ul {
+	margin: 0.5em 0px 0px;
+	list-style: url(../../puce.gif);
+}
+div.DossierNoKpote ul li {
+	margin: 0px 0px 0.7em;
+}
+div#SommairePortfolioUn {
+	color: #FFF;
+	background: #000;
+	padding-left: 2px;
+	padding-top: 2px;
+	display: block;
+	width: 178px;
+	text-align: center;
+}
+div#SommairePortfolioDeux {
+	color: #FFF;
+	background: #000;
+	padding-left: 2px;
+	padding-top: 2px;
+	display: block;
+	width: 178px;
+}

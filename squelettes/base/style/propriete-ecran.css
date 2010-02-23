@@ -1,0 +1,151 @@
+body {
+	background: #000 url(../images/propriete-intellectuelle/copy-right-fond.png) repeat-y;
+	font: 12px/1.6em Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+a, a:link {
+	color: #909;
+	text-decoration: none;
+}
+a:visited {
+	color: #909;
+	text-decoration: underline;
+}
+a:hover {
+	color: #909;
+	text-decoration: underline;
+}
+#contenu {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	border-right: 1px solid #333;
+	padding: 0px;
+}
+.gauche {
+	width: 185px;
+	text-align: right;
+	margin-left: 5px;
+	margin-right: 0px;
+	float: left;
+}
+html>body div.gauche {
+	width: 175px;
+}
+.droite {
+	float: left;
+	width: 500px;
+	margin-right: 0px;
+	margin-left: 30px;
+	text-align: left;
+}
+html>body div.droite {
+	width: 470px;
+}
+#chapo {
+	margin-top: 0px;
+}
+#AUP {
+	margin-top: 3em;
+}
+#contenu h1.titre, #contenu h2.titre {
+	background-repeat:no-repeat;
+}
+h1.titre span, h2.titre span {
+	display: none;
+}
+h1#t-mort {
+	background:  url(../images/propriete-intellectuelle/mort-sous-brevet.png);
+	height: 79px;
+	margin: 20px 0px 0px;
+}
+#t-propriete {
+	background:  url(../images/propriete-intellectuelle/propriete-intellectuelle.png);
+	height: 27px;
+	margin: 5px 0px 0px;
+}
+.rien {
+	clear: both;
+}
+#contenu h3 {
+	font-size: 110%;
+	margin-bottom: 0em;
+}
+#contenu h4 {
+	font-size: 100%;
+	margin-bottom: 0px;
+}
+
+.texte, .images {
+	margin-bottom: 2.5em;
+	margin-top: 0.5em;
+}
+.texte dt {
+	font-weight: bold;
+	margin: 0px 0px 0px 10px;
+}
+.texte dd {
+	font-size: 98%;
+	line-height: 1.5em;
+	margin: 0em 0px 1em 10px;
+}
+.texte dd span {
+	color: #999;
+	font-style: italic;
+}
+.texte dt span.urlsite {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+.images dt {
+	border: 1px solid #909;
+	margin-left: 10px;
+	float: left;
+	display: block;
+	margin-bottom: 1em;
+}
+.images dt img {
+	display: block;
+	margin: 0px;
+}
+p.Actu {
+	font: bold 10px Geneva, Arial, Helvetica, sans-serif;
+	margin-top: 0.7em;
+}
+#piedpage {
+	border-top: 1px solid #333;
+	width: 750px;
+	border-right: 1px solid #333;
+	margin-right: auto;
+	margin-left: auto;
+	border-bottom: 1px solid #333;
+	margin-bottom: 1em;
+	height: 50px;
+}
+#copy {
+	margin-top: 20px;
+}
+.vignettes dt {
+	margin: 0px 0px 1em 10px;
+	border: 1px solid #909;
+	float: left;
+}
+.vignettes dt img {
+	text-align: right;
+	display: block;
+	margin: 0px;
+}
+#vignettes {
+	margin: 0px;
+	text-align: right;
+}
+.intro {
+	font-size: 88%;
+	line-height: 1.5em;
+	margin: 0px;
+	color: #CCC;
+	text-align: justify;
+.px; }

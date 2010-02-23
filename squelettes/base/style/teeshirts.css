@@ -1,0 +1,174 @@
+div.ts-colonne {
+	width:240px;
+	float:left;
+}
+div.ts-colonne-article {
+	background-color:gray;
+	width:300px;
+}
+div.ts-article {
+	border:1px solid #e6e6e6;
+	text-align:center;
+	padding-bottom:15px;
+	margin-bottom:1em;
+}
+.gauche {
+	margin-right:10px;
+}
+.droite {
+	margin-left:10px;
+}
+div.ts-info-article {
+	width:215px;
+	float:right;
+	margin-top:3.5em;
+}
+div.ts-image-article {
+	width:270px;
+	float:left;
+	text-align:center;
+	margin-top:2em;
+}
+div.ts-autres-articles {
+/*	float:right;*/
+	width:515px;
+	clear:both;
+}
+div.ts-autres-articles div {
+	border-top:1px solid #ccc;
+	margin:0 25px 0 10px;
+	padding-top:15px;
+}
+div.ts-article h3 {
+	font-size:100%;
+	margin:0.5em 15px 0;
+	padding:3px;
+}
+div.ts-info-article h2 {
+	font-size:130%;
+	margin:0 0 10px 10px;
+	color:#909;
+}
+#texte.ts-texte {
+	margin:2em 0 2em 10px;
+	padding-left:0;
+}
+#texte.ts-texte p.spip {
+	margin:0;
+	font-size:90%;
+	line-height:1.2em;
+}
+p.createurs {
+	font-weight:bold;
+	text-align:right;
+	margin:0;
+	color:#900;
+}
+p.ts-prix {
+	background: url(../images/tee-shirt/etiquette-modifie.png) no-repeat left top;
+	height:39px;
+	padding-left:48px;
+	font-size: 120%;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	padding-top:10px;
+}
+dl.ts-info-article {
+	margin:0 0 0 10px;
+	font: 90% Helvetica, Arial, sans-serif;
+}
+dl.ts-info-article dt {
+	margin:0.5em 0;
+	clear:both;
+	border-top:1px solid #ccc /*#e6e6e6*/;
+	padding:2px 0 0 5px;
+	color: #909;
+	font: small-caps 120% Georgia, "Times New Roman", Times, serif;
+}
+/*dl.ts-info-article dt.ts-couleurs, dl.ts-info-article dt.ts-modeles {
+	position:relative;
+}*/
+dl.ts-info-article dd {
+	float:left;
+	margin:0 0 1.5em 0;
+	padding-left:5px;
+}
+dl.ts-info-article dd.ts-couleurs, dl.ts-info-article dd.ts-modeles {
+	position:relative;
+	margin-bottom:2em;
+}
+dl.ts-info-article dd.ts-modeles span {
+	position:absolute;
+	top:70px;
+	left:5px;
+	z-index:1;
+	width: 90px;
+	font: 9px/1em Geneva, Arial, Helvetica, sans-serif;
+	visibility:hidden;
+}
+dl.ts-info-article dd.ts-couleurs span {
+	position:absolute;
+	top:19px;
+	font: 9px/1em Geneva, Arial, Helvetica, sans-serif;
+}
+dl.ts-info-article dd.ts-modeles a {
+	display:block;
+	border:1px solid #fff;
+}
+dl.ts-info-article dd.ts-modeles a:hover {
+	border:1px solid #000;
+}
+dl.ts-info-article dd.ts-modeles a:hover span {
+	visibility:visible;
+}
+
+dl.ts-info-article dd.ts-couleurs a {
+	display:block;
+	width:33px;
+	height:18px;
+	background: url(../images/tee-shirt/loupe.png) no-repeat 100% 0%;
+}
+
+dl.ts-info-article dd.ts-couleurs a:hover {
+	background: url(../images/tee-shirt/loupe.png) no-repeat 100% 100%;
+}
+dl.ts-info-article dd.ts-couleurs a.tson {
+	background: url(../images/tee-shirt/loupe.png) no-repeat 100% 100%;
+}
+div.ts-article img, div.ts-autres-articles img {
+	border:none;
+}
+div.ts-image-article img {
+	border:none;
+	padding:10px 0 10px 0;
+}
+a:hover div.ts-article {
+	background-color:#000;
+}
+div.ts-autres-articles ul {
+	list-style: none;
+	margin:0;
+	padding:0;	
+}
+div.ts-autres-articles li {
+	float:left;
+	margin:1px;
+	border:1px solid #fff;
+	display:block;
+	height:66px;
+}
+
+div.ts-autres-articles li:hover {
+	border:1px solid #000;
+}
+
+/* page Sommaire accueil site */
+div.SommairePortfolio img.spip_logos {
+	width:73px;
+	margin:0 3px;
+}
+div.SommairePortfolio h2 {
+	text-align:left;
+}
+div.SommairePortfolio a {
+}

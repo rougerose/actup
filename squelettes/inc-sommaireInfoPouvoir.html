@@ -1,0 +1,27 @@
+#CACHE{7*24*3600}
+<ul class="normal">
+    <BOUCLE_secteurs(RUBRIQUES){id_rubrique=74}{par num titre}>
+    <li class="niveau0"><a class="secteur" href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a>
+        <BOUCLE_test_expose1(RUBRIQUES){id_rubrique=74}{id_rubrique=#ENV{id_rubrique}}>#EXPOSE{' '}</BOUCLE_test_expose1>
+        <ul>
+            <BOUCLE_articles_rubrique_expose(ARTICLES){id_rubrique}{par num titre, titre}>
+            <li class="NiveauArticle"><img src="#CHEMIN{base/images/symboleIP-article.png}" /> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+            </BOUCLE_articles_rubrique_expose>
+        </ul>
+    </B_test_expose1>
+    </li>
+    <BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+    <li>
+        <img src="#CHEMIN{base/images/symboleIP-off.png}" /> <a href="#URL_RUBRIQUE" class="rubriqueoff">[(#TITRE|supprimer_numero)]</a>
+        <BOUCLE_test_expose2(RUBRIQUES){id_rubrique}{id_rubrique=#ENV{id_rubrique}}>#EXPOSE{' '}</BOUCLE_test_expose2>
+        <ul>
+            <BOUCLE_article_sousrubriques(ARTICLES){id_rubrique}>
+            <li class="NiveauArticle"><img src="#CHEMIN{base/images/symboleIP-article.png}" /> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+            </BOUCLE_article_sousrubriques>
+        </ul>
+        </B_test_expose2>
+    </li>
+    </BOUCLE_sousrubriques>
+    </BOUCLE_secteurs>
+</ul>
+ 

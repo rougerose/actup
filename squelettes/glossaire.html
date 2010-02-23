@@ -1,0 +1,75 @@
+<BOUCLE_p(RUBRIQUES){id_rubrique=81}>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>#NOM_SITE_SPIP | [(#TITRE|textebrut|supprimer_numero)]<BOUCLE_lettre(GROUPES_MOTS){id_groupe}>[ : (#TITRE|substr{19})]</BOUCLE_lettre></title>
+    [
+    <meta name="description" content="(#DESCRIPTIF|textebrut|couper{190})">
+    ]
+    <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+
+    <INCLURE{fond=inc-head}>
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <BOUCLE_principale(GROUPES_MOTS){id_groupe}>
+                
+                <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=81}{descriptif=image glossaire}>
+                [(#EMBED_DOCUMENT)]
+                </BOUCLE_img_glossaire_haut>
+                
+                <div class="hierarchie">
+                    <a href="#URL_PAGE{secteur,id_rubrique=5}" class="noline"></a><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique=5}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_hierarchie_img> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><BOUCLE_lien_rub(RUBRIQUES){id_rubrique=81}><a href="#URL_RUBRIQUE" class="noline"> <BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}> <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_hierarchie_img2></a></BOUCLE_lien_rub>
+                </div>
+                
+                <div class="CorpsRubrique" id="SommaireGlossaire">
+                    <form action="#SELF" method="get" dir="ltr" lang="fr">
+                        <input type="hidden" name="page" value="glossaire">
+                        <select name="id_groupe">
+                            <option selected>INDEX DU GLOSSAIRE</option>
+                            <BOUCLE_sommaire_glossaire1(GROUPES_MOTS){titre LIKE sida%}{par titre}>
+                            <option value="#ID_GROUPE"[ (#ENV{id_groupe}|=={#ID_GROUPE}|?{'selected="selected"'})]>[(#TITRE|supprimer_numero|substr{19})]</option>
+                            </BOUCLE_sommaire_glossaire1>
+                            </select>
+                            <input type="submit" name="valider" class="BoutonSommaire" value="valider">
+                    </form>
+                    <p class="GuideGlossaire"><a href="rubrique81.html">Retour au sommaire du Glossaire</a></p>
+                  </div>
+                  <div class="rien">&nbsp;</div>
+                  
+                  <h1>Sida, un glossaire : [(#TITRE|substr{19})]</h1>
+                  
+                  <dl>
+                      <BOUCLE_termes(MOTS){id_groupe}{par titre}>
+                      <dt><a href="#URL_MOT" [title="(#DESCRIPTIF)"]>#TITRE</a></dt>
+                      <dd>
+                        #TEXTE
+                        <B_art_lies>
+                        <br><img src="#CHEMIN{base/commun/rubriques/jalons_puce.gif}" alt="puce"> <a href="#URL_MOT">
+                        <BOUCLE_art_lies(ARTICLES){id_mot}{0,1}>
+                        <a href="#_termes:URL_MOT">Les articles et br&egrave;ves li&eacute;s &agrave; ce terme</a>
+                        </BOUCLE_art_lies>
+                      </dd>
+                      </BOUCLE_termes>
+                </dl>
+                </BOUCLE_principale>
+                <div class="bdp">&nbsp;</div>
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>
+</BOUCLE_p>

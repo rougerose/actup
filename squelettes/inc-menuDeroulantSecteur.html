@@ -1,0 +1,23 @@
+#CACHE{7*24*3600}
+
+<BOUCLE_hierarchie_secteur(HIERARCHIE){id_rubrique}{tout}{0,1}>
+<div class="boites" id="jalons">
+    <h2><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero|textebrut)]"  border="0" title="[(#TITRE|supprimer_numero|textebrut)]"></a></h2>
+    <B_hierarchie>
+    <form action="spip.php" method="get" dir="ltr" lang="fr">
+        <input type="hidden" name="page" value="rubrique">
+        <select name="id_rubrique" id="select" class="MenuSommaire">
+            <option selected>Rubriques disponibles</option>
+            <option>================</option>
+            <BOUCLE_hierarchie(RUBRIQUES){id_parent}>
+            <option value="#ID_RUBRIQUE">[&nbsp;(#TITRE|supprimer_numero|majuscules)]</option>
+            <BOUCLE_hierarchie2(RUBRIQUES){id_parent}>
+            <option value="#ID_RUBRIQUE">[&nbsp;&nbsp;&nbsp;(#TITRE|supprimer_numero)]</option>
+            </BOUCLE_hierarchie2>
+            </BOUCLE_hierarchie>
+        </select>
+        <input type="submit" name="valider" class="BoutonSommaire" value="valider">
+    </form>
+    </B_hierarchie>
+</div>
+</BOUCLE_hierarchie_secteur>

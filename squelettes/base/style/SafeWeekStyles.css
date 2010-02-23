@@ -1,0 +1,51 @@
+/* CSS Document */
+div.SWBlocHaut {
+	margin: 0px;
+}
+div.SWBlocBas {
+	margin: 0px;
+}
+#SWBlocTextes {
+	overflow: auto;
+	height: 120px;
+	line-height: 1.2em;
+}
+div.SWBlocContenu {
+	background: url(../images/SafeWeek/montage-final-transparent.jpg) no-repeat;
+	height: 125px;
+	color: #FFFFFF;
+	width: 320px;
+	padding-left: 5px;
+}
+dl#SWBlocTextes dt {
+	margin: 3px 6px 0px 0px;
+}
+dl#SWBlocTextes dd {
+	margin: 1em 4px 0px;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-weight: bold;
+}
+span.SWDescriptif {
+	display: block;
+	margin: 3px 0px 3px 4px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+}
+#SWBlocTextes a:visited {
+	color: #909;
+}
+#SWBlocTextes p {
+	font-weight: bold;
+}
+#SWBlocTextes ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#SWBlocTextes li {
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+p.ChapoSW {
+	font-weight: bold;
+	color: #CC0099;
+}

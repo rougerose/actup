@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Recherche sur le site d'#NOM_SITE_SPIP[ : (#RECHERCHE|textebrut)]</title>
+    <INCLURE{fond=inc-head}>
+    <link rel="stylesheet" type="text/css" media="screen" href="base/style/guide-ecran.css">
+</head>
+<body>
+    <INCLURE{fond=inc-logo}>
+    <div id="cadre">
+        <div id="ColonneCentre">
+            <div id="Colonne">
+                <div class="entete">
+                    <p class="reserveimg">&nbsp;</p>
+                    <h1>Recherche sur le site d'#NOM_SITE_SPIP</h1>
+                    <p class="reservetitre">&nbsp;</p>
+                </div>
+                <div id="texte">
+                    [<h2>Vous recherchez : <em>(#RECHERCHE)</em></h2>]
+                </div>
+                <div id="resultats">
+                    <B_articles>
+                    #ANCRE_PAGINATION
+                    <div class="encadrement">
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                        <h3 class="ArtLies">Dans les articles : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
+                        <BOUCLE_articles(ARTICLES){recherche}{par points}{inverse}{pagination 5}>
+                        <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h4>
+                        [<p>(#EXTRAIT)</p>]
+                        <p><a href="#URL_ARTICLE">[(#URL_ARTICLE|url_absolue)]</a><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
+                        </BOUCLE_articles>
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                    </div>
+                    </B_articles>
+                    
+                    <B_breves>
+                    #ANCRE_PAGINATION
+                    <div class="encadrement">
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                        <h3 class="ArtLies">Dans les br&egrave;ves : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
+                        <BOUCLE_breves(BREVES){recherche}{par points}{inverse}{pagination 5}>
+                        <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a></h4>
+                        [<p>(#EXTRAIT)</p>]
+                        <p><a href="#URL_BREVE">[(#URL_BREVE|url_absolue)]</a><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
+                        </BOUCLE_breves>
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                    </div>
+                    </B_breves>
+                    
+                    <B_rubriques>
+                    #ANCRE_PAGINATION
+                    <div class="encadrement">
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                        <h3 class="ArtLies">Dans les rubriques : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
+                        <BOUCLE_rubriques(RUBRIQUES){recherche}{par points}{inverse}{pagination 5}>
+                        <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></h4>
+                        [<p>(#EXTRAIT)</p>]
+                        <p><a href="#URL_RUBRIQUE">[(#URL_RUBRIQUE|url_absolue)]</a></p>
+                        </BOUCLE_rubriques>
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                    </div>
+                    </B_rubriques>
+                    
+                    <B_mots>
+                    #ANCRE_PAGINATION
+                    <div class="encadrement">
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                        <h3 class="ArtLies">Dans les mots-cl&eacute;s : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
+                        <BOUCLE_mots(MOTS){recherche}{par points}{inverse}{pagination 5}>
+                        <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_MOT">[(#TITRE|supprimer_numero)]</a></h4>
+                        [<p>(#EXTRAIT)</p>]
+                        <p><a href="#URL_MOT">[(#URL_MOT|url_absolue)]</a></p>
+                        </BOUCLE_mots>
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                    </div>
+                    </B_mots>
+                    
+                    <B_documents>
+                    #ANCRE_PAGINATION
+                    <div class="encadrement">
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                        <h3 class="ArtLies">Dans les documents : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
+                        <BOUCLE_documents(DOCUMENTS){recherche}{extension!==jpg|gif|png}{par points}{inverse}{pagination 5}{doublons documents}>
+                        <h4><B_article_relatif_document><BOUCLE_article_relatif_document(ARTICLES){id_document}><a href="#URL_ARTICLE#documents"></BOUCLE_article_relatif_document></B_article_relatif_document><a href="#URL_DOCUMENT"><//B_article_relatif_document>[(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT})]</a></h4>
+                        [<p>(#EXTRAIT)</p>]
+                        <p><B_article_relatif_document2><BOUCLE_article_relatif_document2(ARTICLES){id_document}><a href="#URL_ARTICLE#documents">[(#URL_ARTICLE|url_absolue)#documents]</a></BOUCLE_article_relatif_document2></B_article_relatif_document2><a href="#URL_DOCUMENT">[(#URL_DOCUMENT|url_absolue)]<//B_article_relatif_document2><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
+                        </BOUCLE_documents>
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                    </div>
+                    </B_documents>
+                    
+                    <B_images>
+                    #ANCRE_PAGINATION
+                    <div class="encadrement">
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                        <h3 class="ArtLies">Dans les images : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
+                        <BOUCLE_images(DOCUMENTS){recherche}{extension IN jpg,gif,png}{par points}{inverse}{pagination}{doublons documents}{descriptif!==ouverture}{objet=article}>
+                        <h4><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}">[(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT})]</a></h4>
+                        [<p>(#DESCRIPTIF)</p>]
+                        <p><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}">[(#URL_PAGE{porfolio,id_document=#ID_DOCUMENT}|url_absolue)]</a><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
+                        </BOUCLE_images>
+                        <div class="hierarchie">
+                            [(#PAGINATION{page})]
+                        </div>
+                    </div>
+                    </B_images>
+                </div>
+
+            </div><!-- fin Colonne -->
+        </div><!-- fin ColonneCentre -->
+        <div id="ColonneGauche">
+            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+            <INCLURE{fond=inc-menuSecondaire}>
+            <hr class="invisible">
+
+            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+        </div><!-- fin ColonneGauche -->
+        <div class="rien">&nbsp;</div>
+        <INCLURE{fond=inc-piedDePage}>
+    </div><!-- fin cadre -->
+</body>
+</html>

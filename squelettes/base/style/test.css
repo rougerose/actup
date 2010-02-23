@@ -1,0 +1,13 @@
+body {
+	margin: 0px;
+}
+div.cadre {
+	border-top-width: 60px;
+	border-left-width: 5%;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
