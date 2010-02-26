@@ -1,0 +1,9 @@
+#SET{composition,#CHEMIN{navigation/article-#ENV{composition}|concat{.html}}|?{#ENV{composition},''}}
+
+[(#ENV{composition}|oui)
+    [(#INCLURE{fond=navigation/article-#GET{composition},id_rubrique,id_article})]
+]
+
+[(#ENV{composition}|non)
+    <INCLURE{fond=inclure/navigation}{env}>
+]

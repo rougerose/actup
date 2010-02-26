@@ -1,0 +1,8 @@
+<ul>
+    <li[ class="(#ENV{type}|=={sommaire}|?{"on","off"})"]><a href="#URL_SITE_SPIP" title="<:accueil_site:>"><:accueil_site:></a></li>
+    <BOUCLE_menuprincipal(RUBRIQUES){racine}{par num titre}>
+    [<li[ class="(#EXPOSE{on,off})"]>
+        <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}">(#TITRE|supprimer_numero)</a>
+    </li>]
+    </BOUCLE_menuprincipal>
+</ul>

@@ -1,0 +1,127 @@
+/*	******************************	*/
+/*	Site : Act Up-Paris				*/
+/*	URL : www.actupparis.org		*/
+/*	Auteur : christophe le drean	*/
+/*	Date : 02-2009					*/
+/*	Version : 1						*/
+/*	******************************* */
+
+
+/*	*******************************	*/
+/*	Table des matières				*/
+/*	******************************	*/
+/*	- Reset
+	- Réglage des float
+	- Typo générale
+    - Structure
+    - Entete
+*/
+
+
+/*	=Reset							*/
+/*	http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0; padding: 0;
+	border: 0; outline: 0;
+	font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit;
+	vertical-align: baseline; }
+
+	/* remember to define focus styles! */
+:focus {  }
+
+body {
+	line-height: 1;
+	color: black;
+	background: white; }
+
+ol, ul { list-style: none; }
+
+	/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0; }
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; }
+
+blockquote, q { quotes: "" ""; }
+
+/*	=Réglage des float				*/
+
+.clearfix:after {
+	visibility: hidden;
+    clear: both; display: block; height: 0;
+    font-size: 0; content: " "; }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+/*	=Typo générale					*/
+html { font-size: 100.01%; /* pour IE */ }
+
+body {
+	font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12px/18px */
+	margin: 0; }
+	
+a { color: #000; text-decoration: none; }
+a:visited { }
+a:hover { text-decoration: underline; outline: none; }
+a:active { outline: none; }
+a:active, a:focus { position: relative; top: 1px; }
+
+hr { display: none; }
+
+p { margin: 0 0 1.3em; }
+
+
+/*	=Structure						*/
+
+#enveloppe { 
+	border: 0 solid #000;
+	border-top-width: 105px; }
+
+#page { 
+	position: relative;
+	margin: 0 auto;
+	width: 960px; }
+	
+#entete, #nav, #conteneur, #pied { margin-left: 10px; }
+
+#conteneur {
+	float: right;
+	width: 760px; background-color: gainsboro; }
+
+#pied { clear: both; }
+
+
+/*	=Entete						*/
+#logo { 
+	float: left;
+	position: absolute; margin-top: -97px; }
+#logo a { 
+	text-indent: -9999px;
+	display: block; overflow: hidden;
+	height: 192px; width: 160px; }
+	
+/*	=Navigation						*/
+#nav { 
+	margin-top: 100px;
+	width: 160px; float: left; }
+#nav li {
+	font-family: "Helvetica Neue"; font-size: 12px;
+	margin-bottom: .3em; }	
+	

@@ -1,0 +1,13 @@
+<div id="logo">
+	[(#ENV{type}|=={sommaire}|?{
+		<h1[ style="background: url((#LOGO_SITE_SPIP||image_reduire{160,0}|extraire_attribut{src})) no-repeat;"]>
+		,
+		<a rel="start home" href="#URL_SITE_SPIP" title="<:accueil_site:>"[ style="background: url((#LOGO_SITE_SPIP||image_reduire{160,0}|extraire_attribut{src})) no-repeat;"]>
+	})]
+	    	[(#NOM_SITE_SPIP)]
+	[(#ENV{type}|=={sommaire}|?{
+		</h1>
+		,
+		</a>
+	})]
+</div>
