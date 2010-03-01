@@ -1,3 +1,12 @@
+#enveloppe {
+    border: 0 solid #000; border-top-width: 105px; }
+
+#page {
+        position: relative;
+        margin: 0 auto;
+        padding:0 10px;
+        width: 940px; }
+
 div#cadre {
     /*
 	border-bottom: 10px solid #000;
@@ -15,11 +24,13 @@ div#cadre {
 	padding-left: 10px;
 	*/
 }
-div#ColonneCentre {
-	width: 66%;
+#ColonneCentre, #conteneur {
+	width: 760px;
 	float: right;
-	margin-left: 2%;
 }
+#contenu {
+	width: 520px; }
+
 div#ColonneGauche {
 	width: 25%;
 	float: right;
@@ -37,10 +48,11 @@ div#ColonneGauche {
 	background-repeat: no-repeat;
 	background-position: 120% 0px;
 }
+/*
 #Contenu {
 	float: right;
 	width: 68%;
-}
+}*/
 #Gauche {
 	float: right;
 	margin-top: 60px;

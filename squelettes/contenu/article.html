@@ -1,0 +1,90 @@
+<BOUCLE_contenu_article(ARTICLES){id_article}>
+<B_ouverture>
+<BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}>
+<img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" id="ImgOuverture">
+</BOUCLE_ouverture>
+</B_ouverture>
+
+[(#REM) Fil d'Ariane ]
+<p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_article}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>
+
+<div class="entete">
+    <BOUCLE_logo_gd_format2(DOCUMENTS){id_article}{descriptif=logo medias}{0,1}{doublons}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_logo_gd_format2>
+
+    <div class="titre">
+        [<h2>(#SURTITRE)</h2>]
+        <h1>[(#TITRE|supprimer_numero)]</h1>
+        [<h2>&nbsp;&nbsp;(#SOUSTITRE)</h2>]
+    </div>
+    [(#LOGO_ARTICLE)]
+    <B_auteurs><h3>par <BOUCLE_auteurs(AUTEURS){id_article} {", "}> #NOM</BOUCLE_auteurs></h3></B_auteurs>
+    <h4><B_trad_date><BOUCLE_trad_date(ARTICLES){id_article}{titre_mot=anglais}>[(#DATE|mois)] - [(#DATE|jour)] - [(#DATE|annee)] </BOUCLE_trad_date></B_trad_date>publi&eacute; en ligne&nbsp;: [(#DATE|affdate)][ &mdash; publi&eacute; la premi&egrave;re fois&nbsp;: (#DATE_REDAC|affdate)] <//B_trad_date><B_lien_medias><BOUCLE_lien_medias(MOTS){id_article}{type==medias}> dans <a href="#URL_PAGE{medias,id_mot=#ID_MOT}">[(#TITRE|supprimer_numero)]</a></BOUCLE_lien_medias></B_lien_medias></h4>
+    <B_photos>
+    <BOUCLE_photos(DOCUMENTS){id_article}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{descriptif!==colonneGauche}{mode=document}{extension==jpg|png|gif}{0,1}>
+    <div id="DocsPhotos" class="boites"><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}" class="noline"><img src="#CHEMIN{base/commun/essentiel/photos.gif}" alt="Des photos sont disponibles" width="125" height="32" border="0" class="DocsPhotos"></a>
+        <ul>
+            <li><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}">Acc&eacute;der aux photos</a></li>
+        </ul>
+    </div>
+    </BOUCLE_photos>
+    </B_photos>
+    <B_doc_ancre>
+    <div id="DocsPhotos" class="boites">
+        <BOUCLE_doc_ancre(DOCUMENTS){id_article}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{descriptif!==colonneGauche}{mode=document}{extension!==jpg|png|gif}{0,1}>
+        <a href="#documents" class="noline"><img src="#CHEMIN{base/commun/essentiel/documents.gif}" width="125" height="32" border="0" alt="Des documents sont joints &agrave; ce texte" class="DocsPhotos"></a>
+        <ul>
+            <li><a href="#documents">Acc&eacute;der aux documents</a></li>
+        </ul>
+        </BOUCLE_doc_ancre>
+    </div>
+    </B_doc_ancre>
+    <div class="rien">&nbsp;</div>
+
+    [<div class="chapo">
+        (#CHAPO)
+    </div>]
+</div>
+
+[<div id="texte">
+    (#TEXTE)
+</div>]
+[<div class="postscriptum">
+    (#PS)
+</div>]
+
+<B_docs_joints>
+<div class="rien">&nbsp;</div>
+<div class="DocLies" id="Documents"><a name="documents"></a>
+    <h4><img src="#CHEMIN{base/commun/essentiel/documents2.gif}" alt="Documents disponibles en t&eacute;l&eacute;chargement" title="Documents disponibles en t&eacute;l&eacute;chargement" width="138" height="32"></h4>
+    <BOUCLE_docs_joints(DOCUMENTS){id_article}{mode=document}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{descriptif!==colonneGauche}{extension!==jpg|png|gif}{doublons}>
+    <div class="AffDocLies">[<a name="#ID_DOCUMENT"></a><a href="#URL_DOCUMENT" class="noline">(#LOGO_DOCUMENT)</a> <br>]
+        [<span>(#TITRE|supprimer_numero)</span>][ - (#DESCRIPTIF)] [((#TAILLE|taille_en_octets))]
+    </div>
+    </BOUCLE_docs_joints>
+</div>
+</B_docs_joints>
+
+[<div class="rien">&nbsp;</div>
+<div class="notes">
+    <h4>Notes</h4>
+    (#NOTES)
+</div>]
+
+<BOUCLE_test_petition_active(MOTS){id_article}{id_mot=1290}>
+[<div class="signatures" id="petition">
+    <a name="signer"></a><img src="#CHEMIN{base/commun/rubriques/signatures.gif}" alt="Vous souhaiter signer cet appel ?" title="Vous souhaiter signer cet appel ?" width="125" height="30" border="0"><br> (#FORMULAIRE_SIGNATURE)<br>
+</div>]
+</BOUCLE_test_petition_active>
+<B_signatures_test>
+<div class="signatures" id="signatures">
+    <h3 class="spip">Les signataires</h3>
+    <B_compte_signatures>
+    <BOUCLE_compte_signatures(SIGNATURES){id_article}></BOUCLE_compte_signatures>
+    <p class="spip">[<em>(#TOTAL_BOUCLE) [(#TOTAL_BOUCLE|>{1}|?{'signatures','signature'})] au [(#ENV|date|affdate)].</em>]</p>
+    <//B_compte_signatures>
+    <p class="spip">Consulter <a href="#URL_PAGE{signatures,id_article=#ID_ARTICLE}">la liste des signataires</a></p>
+
+    <BOUCLE_signatures_test(SIGNATURES){id_article}{0,1}> </BOUCLE_signatures_test>
+</div>
+</B_signatures_test>
+</BOUCLE_contenu_article>

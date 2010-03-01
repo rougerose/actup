@@ -62,8 +62,8 @@
 					.appendTo($el)
 					.css({
 						'position':'absolute',
-						'top':0,
-						'left':0,
+						'top':'30px',
+						'left':'10px',
 						'z-index':opts.z_index,
 						'background': '#222',
 						'color':'#fff',
