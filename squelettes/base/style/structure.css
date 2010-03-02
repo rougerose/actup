@@ -28,8 +28,18 @@ div#cadre {
 	width: 760px;
 	float: right;
 }
-#contenu {
+#contenu { 
+	float: left;
 	width: 520px; }
+
+#extra {
+	float: right;
+	margin-top: 120px;
+	margin-left: 20px;
+	width: 220px; }
+
+#pied {
+	clear: both; }
 
 div#ColonneGauche {
 	width: 25%;
