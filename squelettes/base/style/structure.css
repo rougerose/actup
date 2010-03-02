@@ -64,12 +64,12 @@ div#ColonneGauche {
 	right: 72%;
 }
 #Colonne {
-	width: 490px;
+	width: 520px;
 }
 #menu {
-	margin-bottom: 3em;
-	padding-right: 3px;
-	margin-top: 60px;
+	margin-top: 110px;
+	margin-bottom: 3.6em;
+	width: 160px;
 }
 div#fondRadio {
 	background-image: url(../images/SidaBlabla/sida-blabla.jpg);
