@@ -1,5 +1,7 @@
 div#cadre {
-	border-bottom: 10px solid #000;
+	border: 0 solid #000;
+	border-top-width: 105px;
+/*	border-bottom: 10px solid #000;
 	margin-top: 0px;
 	margin-right: 0px;
 	padding-right: 0px;
@@ -11,8 +13,14 @@ div#cadre {
 	border-right-style: none;
 	border-left-style: none;
 	border-top-color: #000;
-	padding-left: 10px;
+	padding-left: 10px;*/
 }
+#page {
+	position: relative;
+    margin: 0 auto;
+    padding:0 10px;
+    width: 940px; }
+
 div#ColonneCentre {
 	width: 66%;
 	float: right;
