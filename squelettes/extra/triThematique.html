@@ -1,0 +1,26 @@
+[(#REM) tableau des mots liés aux articles publiés dans la même rubrique ]
+<BOUCLE_articles_rubriques(ARTICLES){id_rubrique}>
+<BOUCLE_mots_art(MOTS){id_article}{par titre}{unique}>
+[(#SET{thematiques,#GET{thematiques}|array_merge{#ARRAY{#COMPTEUR_BOUCLE,#ID_MOT}}})]
+
+
+
+
+</BOUCLE_mots_art>
+</BOUCLE_articles_rubriques>
+
+<dl id="tri">
+  <dt><:tri_theme:></dt>
+  <dd class="clearfix">
+    <form action="#SELF" method="get" accept-charset="utf-8" class="inline">
+      <select name="id_mot" onchange="this.form.submit();">
+        <option value=""><:select_selectionnez:></option>
+        <option value="0">Toutes les vidéos</option>
+        <BOUCLE_affichage_mots(MOTS){id_mot IN #GET{thematiques}}{par titre}{doublons titre}>
+        [<option value="#ID_MOT">(#TITRE|couper{20})</option>]
+        </BOUCLE_affichage_mots>
+      </select>
+      <input type="submit" value="&rarr;" />
+    </form>
+  </dd>
+</dl>
