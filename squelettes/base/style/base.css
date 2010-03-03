@@ -55,21 +55,27 @@ body {
 	margin: 0; }
 	
 /* =Rubrique video */
+.rubrique-video .hierarchie, .rubrique-video .entete, .rubrique-video #videos {
+	width: 520px; }
+
 .rubrique-video .entete {
 	margin-bottom: 36px; }
 
-.descriptifRubrique p {
+.entete .descriptifRubrique p {
 	color: #666; }
 
+.rubrique-video #videos {
+	float: left; }
+
 .afficheUne {
-	margin-bottom: 3em; }
+	width: 520px; }
 	
 .afficheUne h2 {
-	font-size: 20px;
+	font-size: 20px; line-height: 18px;
 	margin-bottom: .8em; }
 
 .afficheUne h3 {
-	font-size: 14px;
+	font-size: 14px; line-height: 18px;
 	height: 3em; margin-bottom: .5em; }
 
 .afficheUne a.logo {
@@ -77,9 +83,15 @@ body {
 	display: block;
 	float: left; }
 
+.afficheUne .selection {
+	border-bottom: 1px dotted #000;
+	margin-bottom: 2em; padding-bottom: 2em; }
+
 .afficheUne .normal {
 	float: left;
-	width: 160px; margin-right: 20px; }
+	border-bottom: 1px dotted #000;
+	margin-right: 20px; margin-bottom: 2em; padding-bottom: 2em;
+	width: 160px; }
 
 .afficheUne .normal.dernier {
 	margin-right: 0; }
@@ -103,18 +115,22 @@ body {
 	xborder: 2px solid #909;
 	padding: 1px 3px 2px; }
 	
-/* =Formulaire tri thématique */
-.rubrique-video #tri.thematique {
-	
-	 }
-
-.rubrique-video #tri.thematique dt {
+/* =Selection thématique */
+.rubrique-video #tags dt {
 	font: 12px/1.5 Futura,"Helvetica Neue",Helvetica,Arial,sans-serif; text-transform: uppercase;
-	border-bottom: 2px solid #000;
-	margin-bottom: .5em; }
+	border-bottom: 1px solid #000;
+	margin: 0; }
 
-.rubrique-video #tri.thematique select {
-	width: 100px; }
+.rubrique-video #tags dd {
+	font: 12px/1.5 Futura,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: .5em 0; xpadding: 2px 4px; }
+
+.rubrique-video #tags dd strong.on {
+	background-color: #000; color: #fff;
+	padding: 0 2px; }
+
+.rubrique-video #tags dd a {
+	color: #000; border: 0; }
 
 /* css originales */
 
@@ -158,7 +174,7 @@ a:visited {
 	color: #306;
 	border-bottom: 1px dotted #ccc;
 }
-a:hover, a:active, #menu li a:hover {
+a:hover, a:active, #menu li a:hover, .rubrique-video #tags dd a:hover {
 	color: #C39;
 	text-decoration: none;
 	border-bottom: 1px solid #C39;

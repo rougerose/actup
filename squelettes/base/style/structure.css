@@ -23,9 +23,8 @@ div#cadre {
 
 div#ColonneCentre {
 	width: 700px;
-	xwidth: 66%;
 	float: right;
-	margin-left: 2%;
+	xmargin-left: 2%;
 }
 div#ColonneGauche {
 	width: 220px;
@@ -67,8 +66,11 @@ div#ColonneGauche {
 	width: 520px;
 	float: left;
 }
+
+.rubrique-video #Colonne {
+	width: 700px; }
+
 #extra {
-	margin-top: 110px;
 	width: 160px;
 	float: right;
 	 }

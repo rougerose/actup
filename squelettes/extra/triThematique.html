@@ -10,7 +10,7 @@
         item 1
         item 2
         item 3
--->
+-->#SET{id_mot,#ENV{id_mot}}
 <dl id="tri" class="thematique">
     <dt><:tri_theme:></dt>
     <dd class="clearfix">
@@ -21,7 +21,7 @@
                 <option value=""><:selectionnez:></option>
                 <option value="0"><:toutes_videos_disponibles:></option>
                 <BOUCLE_affichage_mots(MOTS){id_mot IN #GET{thematiques}}{par titre}{doublons titre}>
-                [<option value="#ID_MOT">(#TITRE)</option>]
+                [<option value="#ID_MOT"[ (#ENV{id_mot}|=={#ID_MOT}|?{'selected',''})]>(#TITRE)</option>]
                 </BOUCLE_affichage_mots>
             </select>
             <input type="submit" value="&rarr;" />
