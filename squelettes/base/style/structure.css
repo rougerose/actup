@@ -65,7 +65,13 @@ div#ColonneGauche {
 }
 #Colonne {
 	width: 520px;
+	float: left;
 }
+#extra {
+	margin-top: 110px;
+	width: 160px;
+	float: right;
+	 }
 #menu {
 	margin-top: 110px;
 	margin-bottom: 3.6em;

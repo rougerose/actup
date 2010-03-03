@@ -54,7 +54,7 @@ body {
 	font: 0.75em/1.5 Georgia, "Times New Roman", Times, serif; /* corps : 12px/18px */
 	margin: 0; }
 	
-/* rubrique video */
+/* =Rubrique video */
 .rubrique-video .entete {
 	margin-bottom: 36px; }
 
@@ -98,8 +98,23 @@ body {
 	
 .rubrique-video .pagination span.on {
 	font-weight: bold;
-	border: 2px solid #909;
+	color: #fff;
+	background-color: #909;
+	xborder: 2px solid #909;
 	padding: 1px 3px 2px; }
+	
+/* =Formulaire tri thématique */
+.rubrique-video #tri.thematique {
+	
+	 }
+
+.rubrique-video #tri.thematique dt {
+	font: 12px/1.5 Futura,"Helvetica Neue",Helvetica,Arial,sans-serif; text-transform: uppercase;
+	border-bottom: 2px solid #000;
+	margin-bottom: .5em; }
+
+.rubrique-video #tri.thematique select {
+	width: 100px; }
 
 /* css originales */
 
