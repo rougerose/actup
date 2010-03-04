@@ -18,7 +18,10 @@
             
             <div id="ColonneCentre">
                 <div id="Colonne">
-                    <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=78}{descriptif=image guide}><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
+                    <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=78}{descriptif=image guide}>
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
                     </BOUCLE_img_glossaire_haut>
                     <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
 

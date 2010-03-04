@@ -19,7 +19,9 @@
             <div id="ColonneCentre">
                 <div id="Colonne">
                     <BOUCLE_img_ouverture(DOCUMENTS){id_rubrique=176}{descriptif=image ouverture}{doublons}>
-                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
                     </BOUCLE_img_ouverture>
                      <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
 

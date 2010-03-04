@@ -20,8 +20,10 @@
             <div id="ColonneCentre">
                 <div id="Colonne">
                     <BOUCLE_img_haut(DOCUMENTS){id_rubrique=74}{descriptif=image brochure}>
-                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
-                    </BOUCLE_img_haut>
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
+
                     <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
 
                     <div class="CorpsRubrique">

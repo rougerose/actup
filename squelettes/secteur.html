@@ -8,7 +8,7 @@
     ]
     <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
 
-    <INCLURE{fond=inc-headStylesAlter}>
+    <INCLURE{fond=inc-head}>
 </head>
 <body>
     
@@ -23,7 +23,9 @@
 
                     <B_ouverture>
                     <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
-                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    <div class="imgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    </div>
                     </BOUCLE_ouverture>
                     </B_ouverture>
 

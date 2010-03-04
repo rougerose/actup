@@ -8,7 +8,7 @@
     ]
     <meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_rubrique}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
 
-    <INCLURE{fond=inc-headStylesAlter}>
+    <INCLURE{fond=inc-head}>
 </head>
 <body>
     <div id="cadre">
@@ -21,9 +21,13 @@
                       <BOUCLE_exclu_divers(ARTICLES){id_secteur}{type_mot=divers}{doublons}></BOUCLE_exclu_divers>
                       <BOUCLE_exclu_outreach(ARTICLES){id_secteur}{titre_mot=outreach}{doublons}></BOUCLE_exclu_outreach>
                       <BOUCLE_exclu_portfolio(RUBRIQUES){id_rubrique=45}{doublons}><BOUCLE_exclu_art_portfolio(ARTICLES){branche}{doublons}></BOUCLE_exclu_art_portfolio></BOUCLE_exclu_portfolio><BOUCLE_exclu_ts(RUBRIQUES){id_rubrique=178}{doublons}><BOUCLE_exclu_art_ts(ARTICLES){branche}{doublons}></BOUCLE_exclu_art_ts></BOUCLE_exclu_ts>
+                    
                     <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
-                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    </div>
                     </BOUCLE_ouverture>
+                    
                     <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
                     
                     <B_dossier_nouveau_format>

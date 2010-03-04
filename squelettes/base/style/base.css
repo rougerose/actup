@@ -241,8 +241,15 @@ h1, h2, h3, h4, h5, h6 {
 	display: none;
 }
 #ImgOuverture {
-	margin-bottom: 1em;
+	margin: 15px 0;
+	background-color: #000;
 }
+.ImgOuverture {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 1em;
+	width: 520px;
+	background-color: #000; }
 
 #menu li {
 	text-align: right; font-family: Futura,"Helvetica Neue",Helvetica,Arial,sans-serif; line-height: 1.3;
@@ -293,6 +300,26 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0px;
 	font-size:120%;
 }
+
+
+.encadrement, .encadrement-archives {
+	margin-bottom: 2em;
+	padding-right: 10px;
+	/* border: 1px solid #E6E6E6;*/
+	padding-bottom: 2px;
+	margin-top: 1em;
+	background-color: #FFF;
+}
+.encadrement-archives {
+	margin-bottom:.5em;
+}
+.encadrement h2, .encadrement-archives h2, .sommaireRubriques h2, .archives h2, .media1 h2, .RubriquePortfolioUne h2 {
+	margin-top: 0px;
+}
+
+
+
+
 .CorpsRubrique h2 {
 	font-size: 140%;
 	margin-top: 1.8em;
