@@ -536,6 +536,8 @@ li.signatures {
 	position: relative;
 	text-align: right;
 }
+.hierarchie p {
+	font: 12px/1.5 Futura,"Helvetica Neue",Helvetica,Arial,sans-serif; }
 .hierarchie2 {
 	text-align: right;
 	margin-bottom: 1em;
