@@ -179,7 +179,7 @@ a:hover, a:active, #menu li a:hover, .rubrique-video #tags dd a:hover {
 	text-decoration: none;
 	border-bottom: 1px solid #C39;
 }
-a.noline, a.noline:link, a.noline:visited, a.noline:hover {
+a.noline, a.noline:link, a.noline:visited, a.noline:hover, a.modal {
 	border-bottom-style: none;
 }
 h1, h2, h3, h4, h5, h6 {
