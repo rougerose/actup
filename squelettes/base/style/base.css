@@ -602,7 +602,7 @@ div.dossier {
 .entete {
 }
 .entete h1 {
-	font-size: 30px;
+	font-size: 30px; line-height: 30px;
 	color: #909;
 	xline-height: 120%;
 }
@@ -647,7 +647,7 @@ div.dossier {
 #texte {
 	line-height: 1.5em;
 	text-align: justify;
-	padding-left: 25px;
+	xpadding-left: 25px;
 }
 #texte h2 {
 	font-size: 140%;
