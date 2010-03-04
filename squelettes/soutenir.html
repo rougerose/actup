@@ -19,9 +19,7 @@
                 <div id="Colonne">
                     <B_ouverture><BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture"></BOUCLE_ouverture></B_ouverture>
 
-                    <div class="hierarchie"><BOUCLE_hierarchie_accueil(DOCUMENTS){descriptif=hierarchie accueil}><a href="#URL_SITE_SPIP" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_accueil> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="[puce]" border="0"> <BOUCLE_hierarchie_plan(DOCUMENTS){descriptif=hierarchie nous soutenir}><a href="soutenir.php3" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_plan>
-                    </div>
-                    <div class="entete">
+                    <INCLURE{fond=inclure/article-hierarchie}{id_article}>
                         <BOUCLE_logo_gd_format(ARTICLES){id_mot}><BOUCLE_logo_gd_format2(DOCUMENTS){id_article}{titre==LogoMedias}{0,1}{doublons}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_logo_gd_format2></BOUCLE_logo_gd_format>
                         <div class="titre">
                             [<h2>(#SURTITRE)</h2>]

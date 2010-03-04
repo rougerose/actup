@@ -22,14 +22,10 @@
                     <B_ouverture><BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture"></BOUCLE_ouverture></B_ouverture>
 
                     <div class="hierarchie">
-                        <BOUCLE_hierarchie_accueil(DOCUMENTS){descriptif=hierarchie accueil}>
-                        <a href="#URL_SITE_SPIP" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                        </BOUCLE_hierarchie_accueil>
-                        <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="[puce]" border="0"> 
-                        <BOUCLE_hierarchie_plan(DOCUMENTS){descriptif=hierarchie lettre actupinfos}>
-                        <a href="#URL_PAGE{lettre}" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                        </BOUCLE_hierarchie_plan>
+                        <p><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <strong class="on">#TITRE</strong></p>
                     </div>
+                   
+                    
 
                     <div class="entete">
                         <BOUCLE_logo_gd_format(ARTICLES){id_mot}>

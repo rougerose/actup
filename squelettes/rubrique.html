@@ -25,24 +25,7 @@
                     <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
                     </BOUCLE_ouverture>
                     </B_ouverture>
-                    <div class="hierarchie">
-                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
-                        <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline">
-                        <BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}>
-                        <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                        </BOUCLE_hierarchie_img>
-                        </BOUCLE_hierarchie_secteur1>
-                        <BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}>
-                        <BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}>
-                        <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                        </BOUCLE_hierarchie_img2>
-                        </BOUCLE_hierarchie_image2>
-                        <BOUCLE_rub_actuelle(RUBRIQUES){id_rubrique}>
-                        <BOUCLE_hierarchie_img3(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}{doublons}>
-                        <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                        </BOUCLE_hierarchie_img3>
-                        </BOUCLE_rub_actuelle>
-                    </div>
+                    <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
 
                     <B_dossier_nouveau_format>
                     <div class="encadrement">

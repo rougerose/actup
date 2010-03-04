@@ -1,10 +1,10 @@
-<BOUCLE_article(ARTICLES){id_article}>
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
 <div class="hierarchie">
     <p>
         <a href="#URL_SITE_SPIP/"><:accueil_site:></a>
         <BOUCLE_ariane(HIERARCHIE){id_rubrique}{0,1}{doublons}> &gt; <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}">[(#TITRE|couper{40})]</a></BOUCLE_ariane>
-        <BOUCLE_ariane2(HIERARCHIE){id_article}{doublons}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{40})]</a></BOUCLE_ariane2>
+        <BOUCLE_ariane2(HIERARCHIE){id_rubrique}{doublons}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{40})]</a></BOUCLE_ariane2>
         [ &gt; <strong class="on">(#TITRE|couper{40})</strong>]
     </p>
 </div>
-</BOUCLE_article>
+</BOUCLE_rubrique>

@@ -24,15 +24,8 @@
                     <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
                     <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
                     </BOUCLE_ouverture>
-                    <div class="hierarchie">
-                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
-                        <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline">
-                        <BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}>
-                        <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                        </BOUCLE_hierarchie_img>
-                        </BOUCLE_hierarchie_secteur1>
-                        <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="[puce]" border="0"> <img src="#CHEMIN{base/commun/hierarchie/actu.gif}" alt="Actuellement" border="0" title="Actuellement">
-                    </div>
+                    <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
+                    
                     <B_dossier_nouveau_format>
                     <div class="encadrement">
                         <BOUCLE_dossier_nouveau_format(ARTICLES){id_secteur}{type_mot=dossiers ouverture}{par date}{inverse}{0,1}{doublons}{age<30}>

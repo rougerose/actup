@@ -25,7 +25,7 @@
                     </BOUCLE_ouverture>
                     </B_ouverture>
 
-                    <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}{id_article}>
+                    <INCLURE{fond=inclure/article-hierarchie,id_article,env}>
 
                     <div class="entete">
                         <BOUCLE_logo_gd_format(ARTICLES){id_mot}><BOUCLE_logo_gd_format2(DOCUMENTS){id_article}{titre==LogoMedias}{0,1}{doublons}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_logo_gd_format2></BOUCLE_logo_gd_format>

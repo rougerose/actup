@@ -18,10 +18,7 @@
                 <BOUCLE_exclu_anglais(ARTICLES){id_mot}{titre_mot=anglais}{doublons}{age<60}>
                 </BOUCLE_exclu_anglais>
                     <div class="hierarchie">
-                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_rubrique}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}>
-                        <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1>
-                        <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="[puce]" border="0">
-                        <img src="#CHEMIN{base/commun/hierarchie/communiques.gif}" alt="Communiqu&eacute;s de presse" width="142" height="19" border="0" title="Communiqu&eacute;s de presse"></a>
+                        <p><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <strong class="on">Communiqu&eacute;s de presse</strong></p>
                     </div>
 
                     [(#ENV{id_rubrique}|?{'',' '})

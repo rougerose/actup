@@ -25,9 +25,7 @@
             <div id="ColonneCentre">
                 <div id="Colonne">
                     <div class="PortfolioColonne">
-                        <div class="hierarchie">
-                            <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie Noir}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie Noir}> <img src="#CHEMIN{base/commun/hierarchie/hierarchieN.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
-                        </div>
+                        <INCLURE{fond=inclure/article-hierarchie}{id_article}>
                         <div class="entete">
                             [<h2>(#SURTITRE)</h2>]
                             <h1>[(#TITRE|supprimer_numero)]</h1>

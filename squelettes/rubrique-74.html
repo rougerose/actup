@@ -22,11 +22,7 @@
                     <BOUCLE_img_haut(DOCUMENTS){id_rubrique=74}{descriptif=image brochure}>
                     <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
                     </BOUCLE_img_haut>
-                    <div class="hierarchie">
-                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
-                          <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(RUBRIQUES){id_rubrique=74}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2>
-                          </BOUCLE_hierarchie_image2>
-                    </div>
+                    <INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
 
                     <div class="CorpsRubrique">
                         <BOUCLE_articles_exclus(ARTICLES){id_rubrique}{titre_mot=articles exclus}{doublons}></BOUCLE_articles_exclus>

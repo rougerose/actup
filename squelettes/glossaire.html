@@ -22,9 +22,9 @@
                     <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=81}{descriptif=image glossaire}>
                     [(#EMBED_DOCUMENT)]
                     </BOUCLE_img_glossaire_haut>
-
+                    
                     <div class="hierarchie">
-                        <a href="#URL_PAGE{secteur,id_rubrique=5}" class="noline"></a><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique=5}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_hierarchie_img> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><BOUCLE_lien_rub(RUBRIQUES){id_rubrique=81}><a href="#URL_RUBRIQUE" class="noline"> <BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}> <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></BOUCLE_hierarchie_img2></a></BOUCLE_lien_rub>
+                        <p id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_rubrique}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>
                     </div>
 
                     <div class="CorpsRubrique" id="SommaireGlossaire">
