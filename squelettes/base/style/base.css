@@ -115,7 +115,7 @@ body {
 	xborder: 2px solid #909;
 	padding: 1px 3px 2px; }
 	
-/* =Selection thématique */
+/* =Menu latéral sélection thématique */
 .rubrique-video #tags dt {
 	font: 12px/1.5 Futura,"Helvetica Neue",Helvetica,Arial,sans-serif; text-transform: uppercase;
 	border-bottom: 1px solid #000;
@@ -131,6 +131,54 @@ body {
 
 .rubrique-video #tags dd a {
 	color: #000; border: 0; }
+
+/* =Selection d'articles page accueil */
+#selection {
+	background-color: #000;
+	border: 2px solid #000;
+	overflow: hidden;
+	position: relative;
+	xheight: 450px; width: 496px; 
+	margin: 10px 0 2em; padding-right: 200px; }
+
+#selection a {
+	border: 0; }
+
+#selection ul {
+	position: absolute; top: 0; left: 491px; z-index: 100;
+	width: 205px; }
+	
+#selection ul li {
+	font-family: Futura,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 11px; }
+
+#selection ul li.ui-tabs-selected {
+	background: transparent url(../../img/selected-item.png) no-repeat left center; }
+
+#selection ul li a {
+	 display: block; margin-left: 10px; padding: 4px 0; }
+
+#selection ul li.ui-tabs-selected a {
+	background-color: #fff; }
+
+#selection ul li a img {
+	margin: 0 6px;
+	float: left; }
+
+#selection .ui-tabs-panel { 
+	position: relative; z-index: 1;
+	overflow: hidden; width: 496px; height: 370px; }
+
+#selection .ui-tabs-hide { display: none; }
+
+#selection .ui-tabs-panel .info {
+	color: #fff;
+	position: absolute; left: 0; bottom: 0;
+	background-image: url(../../img/transparent-bg.png);
+	padding: 4px; }
+
+#selection .ui-tabs-panel .info h2 {
+	font-size: 16px; }	
 
 /* css originales */
 

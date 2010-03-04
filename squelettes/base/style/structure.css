@@ -67,7 +67,7 @@ div#ColonneGauche {
 	float: left;
 }
 
-.rubrique-video #Colonne {
+.sommaire #Colonne, .rubrique-video #Colonne {
 	width: 700px; }
 
 #extra {
