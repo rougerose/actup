@@ -12,66 +12,66 @@
 
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
     <div id="cadre">
         <div id="page">
+            <INCLURE{fond=inc-logo}>
             
+            <div id="ColonneCentre">
+                <div id="Colonne">
+                    <BOUCLE_exclu_anglais(ARTICLES){id_rubrique}{titre_mot=anglais}{age>25}{doublons}></BOUCLE_exclu_anglais>
+                    <BOUCLE_exclu_outreach(ARTICLES){id_secteur}{titre_mot=outreach}{doublons}></BOUCLE_exclu_outreach>
+                    <B_ouverture>
+                    <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
+                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    </BOUCLE_ouverture>
+                    </B_ouverture>
+
+                    <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}>
+
+                    <B_ts_col_gauche>
+                    <div class="ts-colonne">
+                        <BOUCLE_ts_col_gauche(ARTICLES){id_rubrique}{par num titre, date}{inverse}{1/2}>
+                        <a href="#URL_ARTICLE">
+                            <div class="ts-article gauche">
+                                <h3>[(#TITRE|supprimer_numero|couper{30})]</h3>
+                                <BOUCLE_image_ts1(DOCUMENTS){id_article}{extension==jpg|gif|png}{0,1}>
+                                [(#FICHIER||image_reduire{200,0}|inserer_attribut{alt,#TITRE})]
+                                </BOUCLE_image_ts1>
+                            </div>
+                        </a>
+                        </BOUCLE_ts_col_gauche>
+                    </div>
+                    </B_ts_col_gauche>
+
+                    <B_ts_col_droite>
+                    <div class="ts-colonne">
+                        <BOUCLE_ts_col_droite(ARTICLES){id_rubrique}{par num titre, date}{inverse}{2/2}>
+                        <a href="#URL_ARTICLE">
+                            <div class="ts-article gauche">
+                                <h3>[(#TITRE|supprimer_numero|couper{30})]</h3>
+                                <BOUCLE_image_ts2(DOCUMENTS){id_article}{extension==jpg|gif|png}{0,1}>
+                                [(#FICHIER|reduire_image{200,0}|inserer_attribut{alt,#TITRE})]
+                                </BOUCLE_image_ts2>
+                            </div>
+                        </a>
+                    </BOUCLE_ts_col_droite>
+                    </div>
+                    </B_ts_col_droite>
+
+                    <div class="rien">&nbsp;</div>
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
         </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                <BOUCLE_exclu_anglais(ARTICLES){id_rubrique}{titre_mot=anglais}{age>25}{doublons}></BOUCLE_exclu_anglais>
-                <BOUCLE_exclu_outreach(ARTICLES){id_secteur}{titre_mot=outreach}{doublons}></BOUCLE_exclu_outreach>
-                <B_ouverture>
-                <BOUCLE_ouverture(DOCUMENTS){id_rubrique}{descriptif=ouverture rubrique}>
-                <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
-                </BOUCLE_ouverture>
-                </B_ouverture>
-
-                <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}>
-                
-                <B_ts_col_gauche>
-                <div class="ts-colonne">
-                    <BOUCLE_ts_col_gauche(ARTICLES){id_rubrique}{par num titre, date}{inverse}{1/2}>
-                    <a href="#URL_ARTICLE">
-                        <div class="ts-article gauche">
-                            <h3>[(#TITRE|supprimer_numero|couper{30})]</h3>
-                            <BOUCLE_image_ts1(DOCUMENTS){id_article}{extension==jpg|gif|png}{0,1}>
-                            [(#FICHIER||image_reduire{200,0}|inserer_attribut{alt,#TITRE})]
-                            </BOUCLE_image_ts1>
-                        </div>
-                    </a>
-                    </BOUCLE_ts_col_gauche>
-                </div>
-                </B_ts_col_gauche>
-
-                <B_ts_col_droite>
-                <div class="ts-colonne">
-                    <BOUCLE_ts_col_droite(ARTICLES){id_rubrique}{par num titre, date}{inverse}{2/2}>
-                    <a href="#URL_ARTICLE">
-                        <div class="ts-article gauche">
-                            <h3>[(#TITRE|supprimer_numero|couper{30})]</h3>
-                            <BOUCLE_image_ts2(DOCUMENTS){id_article}{extension==jpg|gif|png}{0,1}>
-                            [(#FICHIER|reduire_image{200,0}|inserer_attribut{alt,#TITRE})]
-                            </BOUCLE_image_ts2>
-                        </div>
-                    </a>
-                </BOUCLE_ts_col_droite>
-                </div>
-                </B_ts_col_droite>
-
-                <div class="rien">&nbsp;</div>
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
-
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
-
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
     </div><!-- fin cadre -->
 </body>
 </html>

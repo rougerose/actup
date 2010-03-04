@@ -18,73 +18,74 @@
 
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
     <div id="cadre">
         <div id="page">
+            <INCLURE{fond=inc-logo}>
+            
+            <div id="ColonneCentre">
+                <div id="Colonne">
+                    <div class="PortfolioColonne">
+                        <div class="hierarchie">
+                            <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie Noir}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie Noir}> <img src="#CHEMIN{base/commun/hierarchie/hierarchieN.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
+                        </div>
+                        <div class="entete">
+                            [<h2>(#SURTITRE)</h2>]
+                            <h1>[(#TITRE|supprimer_numero)]</h1>
+                            [<h2>&nbsp;&nbsp;(#SOUSTITRE)</h2>]<B_auteurs>
+                            <h3>par<BOUCLE_auteurs(AUTEURS){id_article}>#NOM</BOUCLE_auteurs></h3></B_auteurs>
+                            <h4><B_trad_date><BOUCLE_trad_date(ARTICLES){id_article}{titre_mot=anglais}>[(#DATE|mois)] - [(#DATE|jour)] - [(#DATE|annee)]</BOUCLE_trad_date></B_trad_date>publi&eacute; le [(#DATE|affdate)]<//B_trad_date><B_lien_medias><BOUCLE_lien_medias(MOTS){id_article}{type==medias}> dans <a href="#URL_PAGE{medias,id_mot=#ID_MOT}">#TITRE</a></BOUCLE_lien_medias></B_lien_medias></h4>
+                            [<div class="chapo">(#CHAPO)</div>]
+                        </div>
+                        [(#REM) si on est dans la rubrique Portfolio ]
+                        [(#ID_RUBRIQUE|=={45}|?{' '})
+                        [<div id="texte">
+                            (#TEXTE)
+                        </div>]
+                        [<div class="postscriptum"> 
+                            (#PS)
+                        </div>]
+                        [<div class="rien">&nbsp;</div>
+                        <div class="notes"> 
+                            <h4>Notes</h4>
+                            (#NOTES)
+                        </div>]
+                        ]
+
+                        [(#ID_RUBRIQUE|!=={45}|?{' '})
+                        [<div id="texte">
+                            (#DESCRIPTIF|couper{150}) <a href="#URL_ARTICLE">&#091; retour &agrave; l'article &#093;</a>
+                        </div>]
+                        ]
+
+                        <p id="PortfolioVignettes">
+                            <BOUCLE_vignettes(DOCUMENTS){id_article}{extension==jpg|png|gif}><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}" class="noline" id="doc#ID_DOCUMENT"><img src="#CHEMIN{base/commun/portfolio/index-icone#COMPTEUR_BOUCLE.gif}" alt="image #COMPTEUR_BOUCLE" title="afficher l'image #COMPTEUR_BOUCLE" width="38" height="20" border="0"></a>
+                            </BOUCLE_vignettes>
+                        </p>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    <div id="PortfolioImage"><BOUCLE_photo(DOCUMENTS){id_document}>
+                        <img src="#URL_DOCUMENT">
+                    </div>
+                    <div id="PortfolioImageDescription" class="PortfolioColonne">
+                        <h4>[(#TITRE|supprimer_numero|sinon{"&nbsp;"})]</h4>
+                        [<div>(#DESCRIPTIF)</div>]</BOUCLE_photo>
+                        <p class="DroitsPhotos">Sauf indication contraire, les images publi&eacute;es sont la propri&eacute;t&eacute; d'Act Up-Paris et, &agrave; ce titre, elles peuvent &ecirc;tre t&eacute;l&eacute;charg&eacute;es et reproduites, &agrave; condition de citer la source, <strong>Act Up-Paris</strong>. Dans l'hypoth&egrave;se de leur utilisation sur le web, veuillez &eacute;tablir un lien vers notre site. Pour toute pr&eacute;cision suppl&eacute;mentaire, vous pouvez <a href="auteur91.html">envoyer un mail</a> au responsable du site.</p>
+                    </div>
+
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipalPortfolio}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
             
         </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                <div class="PortfolioColonne">
-                    <div class="hierarchie">
-                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie Noir}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie Noir}> <img src="#CHEMIN{base/commun/hierarchie/hierarchieN.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
-                    </div>
-                    <div class="entete">
-                        [<h2>(#SURTITRE)</h2>]
-                        <h1>[(#TITRE|supprimer_numero)]</h1>
-                        [<h2>&nbsp;&nbsp;(#SOUSTITRE)</h2>]<B_auteurs>
-                        <h3>par<BOUCLE_auteurs(AUTEURS){id_article}>#NOM</BOUCLE_auteurs></h3></B_auteurs>
-                        <h4><B_trad_date><BOUCLE_trad_date(ARTICLES){id_article}{titre_mot=anglais}>[(#DATE|mois)] - [(#DATE|jour)] - [(#DATE|annee)]</BOUCLE_trad_date></B_trad_date>publi&eacute; le [(#DATE|affdate)]<//B_trad_date><B_lien_medias><BOUCLE_lien_medias(MOTS){id_article}{type==medias}> dans <a href="#URL_PAGE{medias,id_mot=#ID_MOT}">#TITRE</a></BOUCLE_lien_medias></B_lien_medias></h4>
-                        [<div class="chapo">(#CHAPO)</div>]
-                    </div>
-                    [(#REM) si on est dans la rubrique Portfolio ]
-                    [(#ID_RUBRIQUE|=={45}|?{' '})
-                    [<div id="texte">
-                        (#TEXTE)
-                    </div>]
-                    [<div class="postscriptum"> 
-                        (#PS)
-                    </div>]
-                    [<div class="rien">&nbsp;</div>
-                    <div class="notes"> 
-                        <h4>Notes</h4>
-                        (#NOTES)
-                    </div>]
-                    ]
-                    
-                    [(#ID_RUBRIQUE|!=={45}|?{' '})
-                    [<div id="texte">
-                        (#DESCRIPTIF|couper{150}) <a href="#URL_ARTICLE">&#091; retour &agrave; l'article &#093;</a>
-                    </div>]
-                    ]
-                    
-                    <p id="PortfolioVignettes">
-                        <BOUCLE_vignettes(DOCUMENTS){id_article}{extension==jpg|png|gif}><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}" class="noline" id="doc#ID_DOCUMENT"><img src="#CHEMIN{base/commun/portfolio/index-icone#COMPTEUR_BOUCLE.gif}" alt="image #COMPTEUR_BOUCLE" title="afficher l'image #COMPTEUR_BOUCLE" width="38" height="20" border="0"></a>
-                        </BOUCLE_vignettes>
-                    </p>
-                    <div class="rien">&nbsp;</div>
-                </div>
-                <div id="PortfolioImage"><BOUCLE_photo(DOCUMENTS){id_document}>
-                    <img src="#URL_DOCUMENT">
-                </div>
-                <div id="PortfolioImageDescription" class="PortfolioColonne">
-                    <h4>[(#TITRE|supprimer_numero|sinon{"&nbsp;"})]</h4>
-                    [<div>(#DESCRIPTIF)</div>]</BOUCLE_photo>
-                    <p class="DroitsPhotos">Sauf indication contraire, les images publi&eacute;es sont la propri&eacute;t&eacute; d'Act Up-Paris et, &agrave; ce titre, elles peuvent &ecirc;tre t&eacute;l&eacute;charg&eacute;es et reproduites, &agrave; condition de citer la source, <strong>Act Up-Paris</strong>. Dans l'hypoth&egrave;se de leur utilisation sur le web, veuillez &eacute;tablir un lien vers notre site. Pour toute pr&eacute;cision suppl&eacute;mentaire, vous pouvez <a href="auteur91.html">envoyer un mail</a> au responsable du site.</p>
-                </div>
-
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipalPortfolio}{id_rubrique}>
-
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
-
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
     </div><!-- fin cadre -->
 </body>
 </html>

@@ -12,58 +12,59 @@
     <link rel="stylesheet" type="text/css" media="screen" href="base/style/info-pouvoir-ecran.css">
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
+    
     <div id="cadre">
         <div id="page">
+            <INCLURE{fond=inc-logo}>
             
+            <div id="ColonneCentre">
+                <div id="Colonne">
+                    <BOUCLE_img_haut(DOCUMENTS){id_rubrique=74}{descriptif=image brochure}>
+                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
+                    </BOUCLE_img_haut>
+                    <div class="hierarchie">
+                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
+                          <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(RUBRIQUES){id_rubrique=74}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2>
+                          </BOUCLE_hierarchie_image2>
+                    </div>
+
+                    <div class="CorpsRubrique">
+                        <BOUCLE_articles_exclus(ARTICLES){id_rubrique}{titre_mot=articles exclus}{doublons}></BOUCLE_articles_exclus>
+                        <BOUCLE_intro(ARTICLES){id_rubrique}{titre=Introduction}{doublons}>
+                        <h2 class="RubCouleurIPTitreArt">[(#TITRE|supprimer_numero)]</h2>
+                        <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p>
+                        </BOUCLE_intro>
+                        <BOUCLE_avertissement(ARTICLES){id_rubrique}{titre=Avertissement}{doublons}>
+                        <a name="avertissement"></a>
+                        <h3 class="RubCouleurIPTitreArt">Avertissement</h3>
+                        <p>#TEXTE</p>
+                        </BOUCLE_avertissement>
+                    </div>
+                    <div class="CorpsRubrique">
+                        <h2 class="RubCouleurIPTitreArt">Sommaire</h2>
+                        <INCLURE{fond=inc-sommaireInfoPouvoir}{id_rubrique}>
+                    </div>
+                    <B_pied_de_page>
+                    <BOUCLE_pied_de_page(ARTICLES){id_rubrique}{titre=Avertissement}{doublons}></BOUCLE_pied_de_page>
+                    <div class="CorpsRubrique" id="PiedGDS">
+                        <BOUCLE_rubGDS2(RUBRIQUES){id_rubrique=74}>
+                        [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]
+                        </BOUCLE_rubGDS2>
+                    </div>
+                    </B_pied_de_page>
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
         </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                <BOUCLE_img_haut(DOCUMENTS){id_rubrique=74}{descriptif=image brochure}>
-                <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
-                </BOUCLE_img_haut>
-                <div class="hierarchie">
-                    <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}>
-                      <a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(RUBRIQUES){id_rubrique=74}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2>
-                      </BOUCLE_hierarchie_image2>
-                </div>
-                
-                <div class="CorpsRubrique">
-                    <BOUCLE_articles_exclus(ARTICLES){id_rubrique}{titre_mot=articles exclus}{doublons}></BOUCLE_articles_exclus>
-                    <BOUCLE_intro(ARTICLES){id_rubrique}{titre=Introduction}{doublons}>
-                    <h2 class="RubCouleurIPTitreArt">[(#TITRE|supprimer_numero)]</h2>
-                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p>
-                    </BOUCLE_intro>
-                    <BOUCLE_avertissement(ARTICLES){id_rubrique}{titre=Avertissement}{doublons}>
-                    <a name="avertissement"></a>
-                    <h3 class="RubCouleurIPTitreArt">Avertissement</h3>
-                    <p>#TEXTE</p>
-                    </BOUCLE_avertissement>
-                </div>
-                <div class="CorpsRubrique">
-                    <h2 class="RubCouleurIPTitreArt">Sommaire</h2>
-                    <INCLURE{fond=inc-sommaireInfoPouvoir}{id_rubrique}>
-                </div>
-                <B_pied_de_page>
-                <BOUCLE_pied_de_page(ARTICLES){id_rubrique}{titre=Avertissement}{doublons}></BOUCLE_pied_de_page>
-                <div class="CorpsRubrique" id="PiedGDS">
-                    <BOUCLE_rubGDS2(RUBRIQUES){id_rubrique=74}>
-                    [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]
-                    </BOUCLE_rubGDS2>
-                </div>
-                </B_pied_de_page>
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
-
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
-
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
     </div><!-- fin cadre -->
 </body>
 </html>

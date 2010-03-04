@@ -9,75 +9,77 @@
 </head>
 
 <body>
-    <INCLURE{fond=inc-logo}>
+    
     <div id="cadre">
         <div id="page">
+            <INCLURE{fond=inc-logo}>
+            
+            <div id="ColonneCentre">
+                <div id="Colonne">
+                    <B_ouverture>
+                    <BOUCLE_ouverture(DOCUMENTS){id_rubrique=78}{descriptif=ouverture rubrique}>
+                    <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    </BOUCLE_ouverture>
+                    </B_ouverture>
+
+                    <div class="hierarchie">
+                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur=11}{0,1}>
+                        <a href="#URL_PAGE{secteur,id_rubrique#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a> </BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(RUBRIQUES){id_rubrique=78}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
+                        </BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
+                    </div>
+
+                    <div class="CorpsRubrique">
+                        <h3 class="RubCouleurTitreArt">Index</h3>
+                        [(#REM) <!-- on met dans un tableau les articles qui commencent par la même lettre -->]
+                        [<!--(#REM)La première boucle affiche seulement chaque lettre de l'alphabet avec son lien-->]
+                        <p class="abecedaire">
+                        <BOUCLE_listalphaone(MOTS){id_groupe}{par titre}>[<a href="[(#SELF|parametre_url{lettre,[(#TITRE|onelettre)]})]" [(#TITRE|onelettre|=={[(#ENV{lettre,A})]}|?{id='expose'})]>(#TITRE|onelettre|unique)</a> | ]</BOUCLE_listalphaone>
+                        </p>
+                        [<!--(#REM)La deuxième boucle stocke dans chaque Arraylettre les titres des articles +ou- alphabétiquement sans le l' la les..-->]
+                        <BOUCLE_listalphadeux(MOTS){id_groupe}{parsansL}>[(#SET{beginby[(#TITRE|sansle|onelettre)],[(#GET{beginby[(#TITRE|sansle|onelettre)]}|array_merge5{#ARRAY{#COMPTEUR_BOUCLE,#ID_MOT}})]})]</BOUCLE_listalphadeux>
+                        <h3 class="RubCouleurTitreArt">#ENV{lettre,A}</h3>
+                        <ul class="mots">
+                            [(#REM) test du tableau faire  [(#GET{beginbyB}|print_r)]]
+
+                            [(#REM)<!--La troisième boucle affiche les articles stockés dans Arraylettre si seulement ils correspondent bien à la lettre-->]
+                            <BOUCLE_artlettre(MOTS){id_mot IN #GET{beginby#ENV{lettre,A}}}{id_groupe}{doublons alphabet}>
+                            [<li class="mots">
+                            (#TITRE|onelettrebis|=={#ENV{lettre,A}}|?{' ',''}) 
+                            <a href="#URL_MOT"><span>[(#TITRE|sansle)][ ((#TITRE|quele))]</span></a>
+                            </li>]
+                            </BOUCLE_artlettre>
+
+                            [(#REM)<!--La quatrième boucle réinterroge les articles stockés de ArrayA dans lequel il y a les accents, ils correspondent bien à la lettre-->] 
+                            <BOUCLE_artlettreb(MOTS){id_mot IN #GET{beginbyA}}{id_groupe}{doublons alphabet}> 
+                            [<li class="mots">
+                            (#TITRE|onelettrebis|=={#ENV{lettre,A}}|?{' ',''}) 
+                            <a href="#URL_MOT"><span>[(#TITRE|sansle)][ ((#TITRE|quele))]</span></a>
+                            </li>]
+                            </BOUCLE_artlettreb>
+                        </ul>
+
+                    </div>
+                    <div class="CorpsRubrique" id="Recherche">
+                        <INCLURE{fond=inc-formulaireRechercheGuide}>
+                        <div class="rien">&nbsp;</div>
+                    </div>
+                    <div class="CorpsRubrique" id="PiedGDS"><BOUCLE_rubGDS2(HIERARCHIE){id_rubrique}{1,1}{doublons}>[&nbsp;<a href="#URL_RUBRIQUE#telecharger">T&eacute;l&eacute;charger le Guide</a>&nbsp;]  [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]</BOUCLE_rubGDS2> [&nbsp;<a href="#URL_PAGE{adresses-utiles-guide}">Adresses utiles</a>&nbsp;]
+                    </div>
+
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique=11}>
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
             
         </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                <B_ouverture>
-                <BOUCLE_ouverture(DOCUMENTS){id_rubrique=78}{descriptif=ouverture rubrique}>
-                <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
-                </BOUCLE_ouverture>
-                </B_ouverture>
-                
-                <div class="hierarchie">
-                    <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur=11}{0,1}>
-                    <a href="#URL_PAGE{secteur,id_rubrique#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a> </BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(RUBRIQUES){id_rubrique=78}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"><a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a>
-                    </BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2>
-                </div>
-                
-                <div class="CorpsRubrique">
-                    <h3 class="RubCouleurTitreArt">Index</h3>
-                    [(#REM) <!-- on met dans un tableau les articles qui commencent par la même lettre -->]
-                    [<!--(#REM)La première boucle affiche seulement chaque lettre de l'alphabet avec son lien-->]
-                    <p class="abecedaire">
-                    <BOUCLE_listalphaone(MOTS){id_groupe}{par titre}>[<a href="[(#SELF|parametre_url{lettre,[(#TITRE|onelettre)]})]" [(#TITRE|onelettre|=={[(#ENV{lettre,A})]}|?{id='expose'})]>(#TITRE|onelettre|unique)</a> | ]</BOUCLE_listalphaone>
-                    </p>
-                    [<!--(#REM)La deuxième boucle stocke dans chaque Arraylettre les titres des articles +ou- alphabétiquement sans le l' la les..-->]
-                    <BOUCLE_listalphadeux(MOTS){id_groupe}{parsansL}>[(#SET{beginby[(#TITRE|sansle|onelettre)],[(#GET{beginby[(#TITRE|sansle|onelettre)]}|array_merge5{#ARRAY{#COMPTEUR_BOUCLE,#ID_MOT}})]})]</BOUCLE_listalphadeux>
-                    <h3 class="RubCouleurTitreArt">#ENV{lettre,A}</h3>
-                    <ul class="mots">
-                        [(#REM) test du tableau faire  [(#GET{beginbyB}|print_r)]]
-
-                        [(#REM)<!--La troisième boucle affiche les articles stockés dans Arraylettre si seulement ils correspondent bien à la lettre-->]
-                        <BOUCLE_artlettre(MOTS){id_mot IN #GET{beginby#ENV{lettre,A}}}{id_groupe}{doublons alphabet}>
-                        [<li class="mots">
-                        (#TITRE|onelettrebis|=={#ENV{lettre,A}}|?{' ',''}) 
-                        <a href="#URL_MOT"><span>[(#TITRE|sansle)][ ((#TITRE|quele))]</span></a>
-                        </li>]
-                        </BOUCLE_artlettre>
-
-                        [(#REM)<!--La quatrième boucle réinterroge les articles stockés de ArrayA dans lequel il y a les accents, ils correspondent bien à la lettre-->] 
-                        <BOUCLE_artlettreb(MOTS){id_mot IN #GET{beginbyA}}{id_groupe}{doublons alphabet}> 
-                        [<li class="mots">
-                        (#TITRE|onelettrebis|=={#ENV{lettre,A}}|?{' ',''}) 
-                        <a href="#URL_MOT"><span>[(#TITRE|sansle)][ ((#TITRE|quele))]</span></a>
-                        </li>]
-                        </BOUCLE_artlettreb>
-                    </ul>
-                    
-                </div>
-                <div class="CorpsRubrique" id="Recherche">
-                    <INCLURE{fond=inc-formulaireRechercheGuide}>
-                    <div class="rien">&nbsp;</div>
-                </div>
-                <div class="CorpsRubrique" id="PiedGDS"><BOUCLE_rubGDS2(HIERARCHIE){id_rubrique}{1,1}{doublons}>[&nbsp;<a href="#URL_RUBRIQUE#telecharger">T&eacute;l&eacute;charger le Guide</a>&nbsp;]  [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]</BOUCLE_rubGDS2> [&nbsp;<a href="#URL_PAGE{adresses-utiles-guide}">Adresses utiles</a>&nbsp;]
-                </div>
-                
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
-
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
-
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique=11}>
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
     </div><!-- fin cadre -->
 </body>
 </html>

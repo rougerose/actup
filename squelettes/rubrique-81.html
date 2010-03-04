@@ -11,103 +11,104 @@
     <INCLURE{fond=inc-head}>
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
+    
     <div id="cadre">
         <div id="page">
-            
-        </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique}{descriptif=image glossaire}>
-                <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
-                </BOUCLE_img_glossaire_haut>
-                
-                <div class="hierarchie">
-                    <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2> <BOUCLE_rub_actuelle(RUBRIQUES){id_rubrique}><BOUCLE_hierarchie_img3(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}{doublons}> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img3></BOUCLE_rub_actuelle>
-                </div>
-                <div class="GuideGlossaireMargeHaute">&nbsp;</div>
-                
-                <div id="GuideGlossaireGauche" class="GuideGlossaireColonne">
-                    <BOUCLE_avertissement(ARTICLES){id_rubrique}{titre=Avertissement}{0,1}>
-                    <h3 class="GuideGlossaire">[(#TITRE|supprimer_numero)]</h3>
-                    <p>[(#TEXTE|PtoBR)]</p>
-                    </BOUCLE_avertissement>
-                    <BOUCLE_avantpropos(ARTICLES){id_rubrique}{titre=Avant-propos}{0,1}>
-                    <h3 class="GuideGlossaire">[(#TITRE|supprimer_numero)]</h3>
-                    <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p></BOUCLE_avantpropos>
-                </div>
-                
-                <div id="GuideGlossaireDroite" class="GuideGlossaireColonne">
-                       <div class="GuideGlossaireElement1">
-                           <h4 class="GuideGlossaire">Index du glossaire</h4>
-                           <form action="#SELF" method="get" dir="ltr" lang="fr" id="FormGuideGlossaire">
-                               <input type="hidden" name="page" value="glossaire">
-                               <select name="id_groupe" id="SelectGuideGlossaire">
-                                   <option selected>&nbsp;</option>
-                                   <BOUCLE_sommaire_glossaire1(GROUPES_MOTS){titre==glossaire}{par titre}>
-                                   <option value="#ID_GROUPE">[(#TITRE|supprimer_numero|substr{19})]</option>
-                                   </BOUCLE_sommaire_glossaire1>
-                               </select>
-                               <input type="submit" name="valider" class="BoutonSommaire" value="valider">
-                              </form>
+            <INCLURE{fond=inc-logo}>
+            <div id="ColonneCentre">
+                <div id="Colonne">
+                    <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique}{descriptif=image glossaire}>
+                    <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" border="0">
+                    </BOUCLE_img_glossaire_haut>
+
+                    <div class="hierarchie">
+                        <BOUCLE_hierarchie_secteur1(RUBRIQUES){id_secteur}{0,1}><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline"><BOUCLE_hierarchie_img(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img></BOUCLE_hierarchie_secteur1><BOUCLE_hierarchie_image2(HIERARCHIE){id_rubrique}{1,5}><BOUCLE_hierarchie_img2(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img2></BOUCLE_hierarchie_image2> <BOUCLE_rub_actuelle(RUBRIQUES){id_rubrique}><BOUCLE_hierarchie_img3(DOCUMENTS){id_rubrique}{descriptif=Hierarchie}{doublons}> <img src="#CHEMIN{base/commun/hierarchie/hierarchie.gif}" alt="puce" border="0"> <a href="#URL_RUBRIQUE" class="noline"><img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0"></a></BOUCLE_hierarchie_img3></BOUCLE_rub_actuelle>
+                    </div>
+                    <div class="GuideGlossaireMargeHaute">&nbsp;</div>
+
+                    <div id="GuideGlossaireGauche" class="GuideGlossaireColonne">
+                        <BOUCLE_avertissement(ARTICLES){id_rubrique}{titre=Avertissement}{0,1}>
+                        <h3 class="GuideGlossaire">[(#TITRE|supprimer_numero)]</h3>
+                        <p>[(#TEXTE|PtoBR)]</p>
+                        </BOUCLE_avertissement>
+                        <BOUCLE_avantpropos(ARTICLES){id_rubrique}{titre=Avant-propos}{0,1}>
+                        <h3 class="GuideGlossaire">[(#TITRE|supprimer_numero)]</h3>
+                        <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p></BOUCLE_avantpropos>
                     </div>
 
-                       <BOUCLE_annexes(ARTICLES){id_rubrique}{id_mot=1840}{par num titre}>
-                       <div class="GuideGlossaireElement2">
-                           <h4 class="GuideGlossaire">[(#TITRE|supprimer_numero)]</h4>
-                           <p>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></p>
-                       </div>
-                       </BOUCLE_annexes>
+                    <div id="GuideGlossaireDroite" class="GuideGlossaireColonne">
+                           <div class="GuideGlossaireElement1">
+                               <h4 class="GuideGlossaire">Index du glossaire</h4>
+                               <form action="#SELF" method="get" dir="ltr" lang="fr" id="FormGuideGlossaire">
+                                   <input type="hidden" name="page" value="glossaire">
+                                   <select name="id_groupe" id="SelectGuideGlossaire">
+                                       <option selected>&nbsp;</option>
+                                       <BOUCLE_sommaire_glossaire1(GROUPES_MOTS){titre==glossaire}{par titre}>
+                                       <option value="#ID_GROUPE">[(#TITRE|supprimer_numero|substr{19})]</option>
+                                       </BOUCLE_sommaire_glossaire1>
+                                   </select>
+                                   <input type="submit" name="valider" class="BoutonSommaire" value="valider">
+                                  </form>
+                        </div>
 
-                       <B_telechargement>
-                       <div class="GuideGlossaireElement3">
-                           <BOUCLE_telechargement(DOCUMENTS){id_rubrique}{descriptif=telechargement glossaire}> 
-                           <h4 class="GuideGlossaire">T&eacute;l&eacute;chargement</h4>
-                           <p class="centre"><a href="#URL_DOCUMENT" class="noline">[(#LOGO_DOCUMENT||inserer_attribut{"border","0"}|inserer_attribut{"alt",#TITRE})]<br>
-                               [<em>(#TITRE)</em>]</a>[ (#TYPE_DOCUMENT), ][(#TAILLE|taille_en_octets))]</p></BOUCLE_telechargement>
-                    </div></B_telechargement>
+                           <BOUCLE_annexes(ARTICLES){id_rubrique}{id_mot=1840}{par num titre}>
+                           <div class="GuideGlossaireElement2">
+                               <h4 class="GuideGlossaire">[(#TITRE|supprimer_numero)]</h4>
+                               <p>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></p>
+                           </div>
+                           </BOUCLE_annexes>
+
+                           <B_telechargement>
+                           <div class="GuideGlossaireElement3">
+                               <BOUCLE_telechargement(DOCUMENTS){id_rubrique}{descriptif=telechargement glossaire}> 
+                               <h4 class="GuideGlossaire">T&eacute;l&eacute;chargement</h4>
+                               <p class="centre"><a href="#URL_DOCUMENT" class="noline">[(#LOGO_DOCUMENT||inserer_attribut{"border","0"}|inserer_attribut{"alt",#TITRE})]<br>
+                                   [<em>(#TITRE)</em>]</a>[ (#TYPE_DOCUMENT), ][(#TAILLE|taille_en_octets))]</p></BOUCLE_telechargement>
+                        </div></B_telechargement>
+                    </div>
+                    <div class="bdp">&nbsp;</div>
+
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+
+                <div class="boites">
+                    <B_outreach>
+                    <BOUCLE_outreach(RUBRIQUES){id_secteur}{0,1}>
+                    <BOUCLE_outreach1(RUBRIQUES){id_rubrique}{id_rubrique!=4}>
+                    <h2><img src="#CHEMIN{base/commun/rubriques/participez.gif}" alt="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" title="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" width="125" height="30" border="0"></h2>
+                    </BOUCLE_outreach1>
+                    </BOUCLE_outreach>
+                    </B_outreach>
+                    <h2><img src="#CHEMIN{base/commun/rubriques/rejoignez_nous.gif}" alt="Rejoignez-nous" title="Rejoignez-nous" width="82" height="15" border="0"></h2>
+                    <//B_outreach>
+                    <BOUCLE_outreach2(ARTICLES){id_secteur}{titre_mot=outreach}{0,1}{doublons}>
+                    <ul>
+                        <li>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></li>
+                    </ul>
+                    </BOUCLE_outreach2>
+                    </BOUCLE_outreach>
                 </div>
-                <div class="bdp">&nbsp;</div>
 
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+                <div class="boites">
+                    <h2><a href="#URL_PAGE{presse}" class="noline"><img src="#CHEMIN{base/commun/rubriques/communiques.gif}" alt="Communiqu&eacute;s de presse" title="Communiqu&eacute;s de presse" width="125" height="15" border="0"></a></h2>
+                    <ul>
+                        <li><a href="#URL_PAGE{presse}">Tous nos communiqu&eacute;s</a></li>
+                    </ul>
+                </div>
 
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
 
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
             
-            <div class="boites">
-                <B_outreach>
-                <BOUCLE_outreach(RUBRIQUES){id_secteur}{0,1}>
-                <BOUCLE_outreach1(RUBRIQUES){id_rubrique}{id_rubrique!=4}>
-                <h2><img src="#CHEMIN{base/commun/rubriques/participez.gif}" alt="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" title="Participez aux activit&eacute;s de la Commission [(#TITRE|supprimer_numero)]" width="125" height="30" border="0"></h2>
-                </BOUCLE_outreach1>
-                </BOUCLE_outreach>
-                </B_outreach>
-                <h2><img src="#CHEMIN{base/commun/rubriques/rejoignez_nous.gif}" alt="Rejoignez-nous" title="Rejoignez-nous" width="82" height="15" border="0"></h2>
-                <//B_outreach>
-                <BOUCLE_outreach2(ARTICLES){id_secteur}{titre_mot=outreach}{0,1}{doublons}>
-                <ul>
-                    <li>#DESCRIPTIF <a href="#URL_ARTICLE">[la suite]</a></li>
-                </ul>
-                </BOUCLE_outreach2>
-                </BOUCLE_outreach>
-            </div>
-            
-            <div class="boites">
-                <h2><a href="#URL_PAGE{presse}" class="noline"><img src="#CHEMIN{base/commun/rubriques/communiques.gif}" alt="Communiqu&eacute;s de presse" title="Communiqu&eacute;s de presse" width="125" height="15" border="0"></a></h2>
-                <ul>
-                    <li><a href="#URL_PAGE{presse}">Tous nos communiqu&eacute;s</a></li>
-                </ul>
-            </div>
-            
-            
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
+        </div><!-- #page -->
     </div><!-- fin cadre -->
 </body>
 </html>

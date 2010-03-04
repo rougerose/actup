@@ -7,52 +7,54 @@
 
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
+    
     <div id="cadre">
         <div id="page">
+            <INCLURE{fond=inc-logo}>
+            
+            <div id="ColonneCentre">
+                <div id="Colonne">
+
+                    <BOUCLE_secteur_plan(RUBRIQUES){id_parent=0}{par num titre,titre}>
+                    <div class="encadrement">
+                        <h2><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline">[(#TITRE|supprimer_numero)]</a></h2>
+                        <dl class="plan">
+                            [<dd class="plan">(#DESCRIPTIF)</dd>]<BOUCLE_rubriquesNiv1_plan(RUBRIQUES){id_parent}{par num titre,titre}>
+                            <dt class="planNiv1"><a href="#URL_RUBRIQUE" class="noline">[(#TITRE|supprimer_numero)]</a></dt>
+                            [<dd class="planNiv1">(#DESCRIPTIF)</dd>]
+                            <BOUCLE_rubriquesNiv2_plan(RUBRIQUES){id_parent}{par num titre, titre}>
+                            <dt class="planNiv2"><a href="#URL_RUBRIQUE" class="noline">[(#TITRE|supprimer_numero)]</a></dt>
+                            [<dd class="planNiv2">(#DESCRIPTIF)</dd>]
+                            <BOUCLE_rubriquesNiv3_plan(RUBRIQUES){id_parent}{par num titre,titre}>
+                            <dt class="planNiv3"><a href="#URL_RUBRIQUE" class="noline">[(#TITRE|supprimer_numero)]</a></dt>
+                            [<dd class="planNiv3">(#DESCRIPTIF)</dd>]</BOUCLE_rubriquesNiv3_plan>
+                            </BOUCLE_rubriquesNiv2_plan></BOUCLE_rubriquesNiv1_plan>
+                        </dl>
+                    </div>
+                    </BOUCLE_secteur_plan>
+                    <div class="rien">&nbsp;</div>
+
+
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+
+                <div class="boites"><h2><a href="#URL_PAGE{presse}" class="noline"><img src="#CHEMIN{base/commun/rubriques/communiques.gif}" alt="Communiqu&eacute;s de presse" title="Communiqu&eacute;s de presse" width="125" height="15" border="0"></a></h2>
+                    <ul>
+                        <li><a href="#URL_PAGE{presse}">Tous nos communiqu&eacute;s</a></li>
+                    </ul> 
+                </div>
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
             
         </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                
-                <BOUCLE_secteur_plan(RUBRIQUES){id_parent=0}{par num titre,titre}>
-                <div class="encadrement">
-                    <h2><a href="#URL_PAGE{secteur,id_rubrique=#ID_RUBRIQUE}" class="noline">[(#TITRE|supprimer_numero)]</a></h2>
-                    <dl class="plan">
-                        [<dd class="plan">(#DESCRIPTIF)</dd>]<BOUCLE_rubriquesNiv1_plan(RUBRIQUES){id_parent}{par num titre,titre}>
-                        <dt class="planNiv1"><a href="#URL_RUBRIQUE" class="noline">[(#TITRE|supprimer_numero)]</a></dt>
-                        [<dd class="planNiv1">(#DESCRIPTIF)</dd>]
-                        <BOUCLE_rubriquesNiv2_plan(RUBRIQUES){id_parent}{par num titre, titre}>
-                        <dt class="planNiv2"><a href="#URL_RUBRIQUE" class="noline">[(#TITRE|supprimer_numero)]</a></dt>
-                        [<dd class="planNiv2">(#DESCRIPTIF)</dd>]
-                        <BOUCLE_rubriquesNiv3_plan(RUBRIQUES){id_parent}{par num titre,titre}>
-                        <dt class="planNiv3"><a href="#URL_RUBRIQUE" class="noline">[(#TITRE|supprimer_numero)]</a></dt>
-                        [<dd class="planNiv3">(#DESCRIPTIF)</dd>]</BOUCLE_rubriquesNiv3_plan>
-                        </BOUCLE_rubriquesNiv2_plan></BOUCLE_rubriquesNiv1_plan>
-                    </dl>
-                </div>
-                </BOUCLE_secteur_plan>
-                <div class="rien">&nbsp;</div>
-                
-
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
-
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
-
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
-            
-            <div class="boites"><h2><a href="#URL_PAGE{presse}" class="noline"><img src="#CHEMIN{base/commun/rubriques/communiques.gif}" alt="Communiqu&eacute;s de presse" title="Communiqu&eacute;s de presse" width="125" height="15" border="0"></a></h2>
-                <ul>
-                    <li><a href="#URL_PAGE{presse}">Tous nos communiqu&eacute;s</a></li>
-                </ul> 
-            </div>
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
     </div><!-- fin cadre -->
 </body>
 </html>

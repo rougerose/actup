@@ -7,41 +7,40 @@
     
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
     <div id="cadre">
         <div id="page">
-            
-        </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                
-                
-                <div class="entete">
-                    <div class="titre">
-                        <h1>Erreur 404</h1>
+            <INCLURE{fond=inc-logo}>
+            <div id="ColonneCentre">
+                <div id="Colonne">
+
+
+                    <div class="entete">
+                        <div class="titre">
+                            <h1>Erreur 404</h1>
+                        </div>
                     </div>
-                </div>
-                
-                <div id="texte">
-                    <p>Nous sommes désolé-e-s, la page que vous demandez n'existe plus. <a href="#URL_SITE_SPIP">Retour à la page d'accueil du site</a></p>
-                    <p>We are sorry, the page you request doesn't exist anymore. <a href="#URL_SITE_SPIP">Go back to the home page</a></p>
-                    <p>
-                </div>
-                
-                <div class="bdp">&nbsp;</div>
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
 
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
+                    <div id="texte">
+                        <p>Nous sommes désolé-e-s, la page que vous demandez n'existe plus. <a href="#URL_SITE_SPIP">Retour à la page d'accueil du site</a></p>
+                        <p>We are sorry, the page you request doesn't exist anymore. <a href="#URL_SITE_SPIP">Go back to the home page</a></p>
+                        <p>
+                    </div>
 
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+                    <div class="bdp">&nbsp;</div>
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
 
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
+        </div><!-- #page -->
     </div><!-- fin cadre -->
 </body>
 </html>

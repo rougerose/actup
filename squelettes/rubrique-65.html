@@ -12,43 +12,42 @@
     <link rel="stylesheet" type="text/css" media="screen" href="base/style/radio-ecran.css">
 </head>
 <body>
-    <INCLURE{fond=inc-logo}>
     <div id="cadre">
         <div id="page">
-            
+            <INCLURE{fond=inc-logo}>
+            <div id="ColonneCentre">
+                <div id="Colonne">
+                    <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}>
+                    <div id="fondRadio">
+                        <div id="RubRadioDescriptif">
+                            <div id="EnteteInfo"><img src="#CHEMIN{base/images/SidaBlabla/logo-sida-blabla.gif}" id="SidaBlablaLogo" alt="Sidablabla"></div>
+                            <div id="RubRadioDescriptifTexte">#DESCRIPTIF</div>
+                        </div>
+                        <div id="ColonneRadio"><BOUCLE_emissions(ARTICLES){id_rubrique}{par date}{inverse}>
+                            <h2 class="RubRadioTitreArt"><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a> - [(#DATE|affdate)]</h2>
+                            <p>#DESCRIPTIF</p><BOUCLE_enregistrements(DOCUMENTS){id_article}{0,1}>
+                            <ul class="ListeMp3">
+                                <li><a href="#URL_ARTICLE">[ Ecouter l'&eacute;mission ]</a></li>
+                            </ul></BOUCLE_enregistrements></BOUCLE_emissions>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                    <div class="bdp">&nbsp;</div>
+
+                </div><!-- fin Colonne -->
+            </div><!-- fin ColonneCentre -->
+            <div id="ColonneGauche">
+                <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
+
+                <INCLURE{fond=inc-menuSecondaire}>
+                <hr class="invisible">
+
+                <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
+
+            </div><!-- fin ColonneGauche -->
+            <div class="rien">&nbsp;</div>
+            <INCLURE{fond=inc-piedDePage}>
         </div><!-- #page -->
-        <div id="ColonneCentre">
-            <div id="Colonne">
-                <INCLURE{fond=inc-hierarchie}{id_secteur}{id_rubrique}>
-                <div id="fondRadio">
-                    <div id="RubRadioDescriptif">
-                        <div id="EnteteInfo"><img src="#CHEMIN{base/images/SidaBlabla/logo-sida-blabla.gif}" id="SidaBlablaLogo" alt="Sidablabla"></div>
-                        <div id="RubRadioDescriptifTexte">#DESCRIPTIF</div>
-                    </div>
-                    <div id="ColonneRadio"><BOUCLE_emissions(ARTICLES){id_rubrique}{par date}{inverse}>
-                        <h2 class="RubRadioTitreArt"><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a> - [(#DATE|affdate)]</h2>
-                        <p>#DESCRIPTIF</p><BOUCLE_enregistrements(DOCUMENTS){id_article}{0,1}>
-                        <ul class="ListeMp3">
-                            <li><a href="#URL_ARTICLE">[ Ecouter l'&eacute;mission ]</a></li>
-                        </ul></BOUCLE_enregistrements></BOUCLE_emissions>
-                        <p>&nbsp;</p>
-                    </div>
-                </div>
-                <div class="bdp">&nbsp;</div>
-
-            </div><!-- fin Colonne -->
-        </div><!-- fin ColonneCentre -->
-        <div id="ColonneGauche">
-            <INCLURE{fond=inc-menuPrincipal}{id_rubrique}>
-
-            <INCLURE{fond=inc-menuSecondaire}>
-            <hr class="invisible">
-
-            <INCLURE{fond=inc-menuDeroulantSecteur}{id_rubrique}>
-
-        </div><!-- fin ColonneGauche -->
-        <div class="rien">&nbsp;</div>
-        <INCLURE{fond=inc-piedDePage}>
     </div><!-- fin cadre -->
 </body>
 </html>
