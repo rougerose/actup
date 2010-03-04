@@ -20,7 +20,9 @@
                 <div id="Colonne">
                     <B_ouverture>
                     <BOUCLE_ouverture(DOCUMENTS){id_article}{descriptif=ouverture article}>
-                    <img src="#URL_DOCUMENT" alt="#TITRE" title="#TITRE" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImgOuverture">
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
                     </BOUCLE_ouverture>
                     </B_ouverture>
                     <INCLURE{fond=inclure/article-hierarchie,id_article,env}>

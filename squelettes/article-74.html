@@ -20,7 +20,9 @@
             <div id="ColonneCentre">
                 <div id="Colonne">
                     <BOUCLE_img_haut(DOCUMENTS){id_rubrique=74}{descriptif=image brochure}>
-                    [(#EMBED_DOCUMENT)]
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
                     </BOUCLE_img_haut>
                     
                     <INCLURE{fond=inclure/article-hierarchie,id_article,env}>

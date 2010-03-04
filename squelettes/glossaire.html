@@ -20,7 +20,9 @@
                     <BOUCLE_principale(GROUPES_MOTS){id_groupe}>
 
                     <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=81}{descriptif=image glossaire}>
-                    [(#EMBED_DOCUMENT)]
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
                     </BOUCLE_img_glossaire_haut>
                     
                     <div class="hierarchie">

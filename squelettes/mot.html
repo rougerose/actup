@@ -31,7 +31,11 @@
                     </B_SafeWeek>
                     <B_test_glossaire>
                     <BOUCLE_test_glossaire(MOTS){id_mot}{type==un glossaire}>
-                    <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=81}{descriptif=image glossaire}>[(#EMBED_DOCUMENT)]</BOUCLE_img_glossaire_haut>
+                    <BOUCLE_img_glossaire_haut(DOCUMENTS){id_rubrique=81}{descriptif=image glossaire}>
+                    <div class="ImgOuverture">
+                        <img src="#URL_DOCUMENT" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" width="#LARGEUR" height="#HAUTEUR" id="imgOuverture">
+                    </div>
+                    </BOUCLE_img_glossaire_haut>
 
                     <div class="hierarchie">
                         <p><a href="#URL_SITE_SPIP/"><:accueil_site:></a>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>
