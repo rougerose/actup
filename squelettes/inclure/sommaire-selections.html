@@ -1,17 +1,17 @@
-[(#REM) repris de http://webdeveloperplus.com/jquery/featured-content-slider-using-jquery-ui/ ]
+[(#REM) inspiré par http://webdeveloperplus.com/jquery/featured-content-slider-using-jquery-ui/ ]
 <B_selection_tabs>
 <div id="selection">
 	<ul>
 	    <BOUCLE_selection_tabs(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=#ENV{id_rubrique}}>
 		<li class="clearfix"><a href="#selection-#COMPTEUR_BOUCLE" class="clearfix">
-		    [(#LOGO_ARTICLE||image_reduire{80,0}|inserer_attribut{alt,[(#TITRE|attribut_html)]})]
-            [<span>(#TITRE)</span>]
+		    [(#LOGO_ARTICLE||image_reduire{60,0}|inserer_attribut{alt,[(#TITRE|attribut_html)]})]
+            [<span>(#TITRE|couper{60})</span>]
 		</a></li>
 		</BOUCLE_selection_tabs>
 	</ul>
 	<BOUCLE_selection_fragments(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=#ENV{id_rubrique}}>
 	<div id="selection-#COMPTEUR_BOUCLE">
-		[<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{500,0}|inserer_attribut{alt,[(#TITRE|attribut_html)]})</a>]
+		[<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{496,0}|inserer_attribut{alt,[(#TITRE|attribut_html)]})</a>]
         <div class="info" >
             [<h2><a href="#URL_ARTICLE" >(#TITRE)</a></h2>]
             [<p>(#INTRODUCTION)&nbsp;<a href="#URL_ARTICLE" >&#091;la&nbsp;suite&#093;</a></p>]
