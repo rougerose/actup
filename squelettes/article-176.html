@@ -35,13 +35,13 @@
                             [<h2>&nbsp;&nbsp;(#SOUSTITRE)</h2>]
                         </div>
                         <h4>[publi&eacute; en ligne&nbsp;: (#DATE|affdate)]</h4>
-                        <B_photos><BOUCLE_photos(DOCUMENTS){id_article}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{mode=document}{extension==jpg|png|gif}{0,1}>
+                        <B_photos><BOUCLE_photos(DOCUMENTS){id_article}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{vu=non}{extension==jpg|png|gif}{0,1}>
                         <div id="DocsPhotos" class="boites"><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}" class="noline"><img src="#CHEMIN{base/commun/essentiel/photos.gif}" alt="Des photos sont disponibles" width="125" height="32" border="0" class="DocsPhotos"></a>
                             <ul>
                                 <li><a href="#URL_PAGE{portfolio,id_document=#ID_DOCUMENT}">Acc&eacute;der aux photos</a></li>
                             </ul>
                         </div></BOUCLE_photos></B_photos><B_doc_ancre>
-                        <div id="DocsPhotos" class="boites"><BOUCLE_doc_ancre(DOCUMENTS){id_article}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{mode=document}{extension!==jpg|png|gif}{0,1}><a href="#documents" class="noline"><img src="#CHEMIN{base/commun/essentiel/documents.gif}" width="125" height="32" border="0" alt="Des documents sont joints &agrave; ce texte" class="DocsPhotos"></a>
+                        <div id="DocsPhotos" class="boites"><BOUCLE_doc_ancre(DOCUMENTS){id_article}{descriptif!==Logo Medias}{descriptif!==image fond}{descriptif!==ouverture article}{vu=non}{extension!==jpg|png|gif}{0,1}><a href="#documents" class="noline"><img src="#CHEMIN{base/commun/essentiel/documents.gif}" width="125" height="32" border="0" alt="Des documents sont joints &agrave; ce texte" class="DocsPhotos"></a>
                             <ul>
                                 <li><a href="#documents">Acc&eacute;der aux documents</a></li>
                             </ul></BOUCLE_doc_ancre>
