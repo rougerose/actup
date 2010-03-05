@@ -1,5 +1,7 @@
 // pour Shadowbox
-Shadowbox.init();
+Shadowbox.init({
+    overlayOpacity:"0.85"
+});
 
 // JQuery
 $(document).ready(function() {
