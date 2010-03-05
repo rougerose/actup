@@ -29,7 +29,7 @@
 div.sb-message{font-size:12px;padding:10px;text-align:center;}
 div.sb-message a:link,div.sb-message a:visited{color:#fff;text-decoration:underline;}
 
-/* surcharges */
+/* surcharges */ /*
 #sb-title { text-align: right; position: relative; }
 #sb-info, #sb-nav {
 	height: 30px; }
@@ -38,3 +38,4 @@ div.sb-message a:link,div.sb-message a:visited{color:#fff;text-decoration:underl
 	border: 0;
 	position: absolute; left: -20px; top: 8px;
 	height: 30px; width: 30px;}
+	*/

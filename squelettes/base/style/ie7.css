@@ -1,0 +1,16 @@
+#cadre { text-align: center;}
+
+#page { zoom:1; text-align:left; padding:0; }
+/*
+#logo { margin-top:-97px; float:none; width:160px; height:192px; }
+*/
+/* ie 7 */
+div#cadre{ xmargin:0; xborder:0;}
+/*
+#logo { margin-top:0; position:absolute; }
+*//*
+#logo a { float: none; height:auto; width:auto;}
+*/
+#logo {float:none; position: static; margin:0;}
+#logo a { position:absolute; margin-top:-97px; }
+#selection {zoom:1; xoverflow: visible; padding-right:0; width:700px;}
