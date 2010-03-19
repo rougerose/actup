@@ -1,9 +1,10 @@
 [(#HTTP_HEADER{Content-type: text/xml[; charset=(#CHARSET)]})]<?xml version="1.0"[ encoding="(#CHARSET)"]?>
-<rss version="2.0"><BOUCLE_mots_glossaire(GROUPES_MOTS){titre==^sida}{par titre}><BOUCLE_mots(MOTS){id_groupe}{par titre}>
+<rss version="2.0">
+    <BOUCLE_mots_glossaire(GROUPES_MOTS){titre==^sida}{par titre}><BOUCLE_mots(MOTS){id_groupe}{par titre}>
     <spip_mots>
         <id_mot>#ID_MOT</id_mot>
         <type>#TYPE</type>
-        <titre><![CDATA[[(#TITRE)]]]></titre>
+        <titre><![CDATA[[(#TITRE|texte_backend)]]]></titre>
         <descriptif><![CDATA[[(#DESCRIPTIF|texte_backend)]]]></descriptif>
         <texte><![CDATA[[(#TEXTE*|texte_backend)]]]></texte>
         <id_groupe>#ID_GROUPE</id_groupe>
