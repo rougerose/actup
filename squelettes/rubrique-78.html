@@ -63,17 +63,17 @@
                     <B_test_affichage><BOUCLE_test_affichage(ARTICLES){id_rubrique}{titre_mot=articles exclus}> </BOUCLE_test_affichage>
                     <div class="CorpsRubrique" id="Separation"><B_telechargement>
                         <a name="telecharger"></a>
-                        <h3 class="RubCouleurTitreArt">T&eacute;l&eacute;chargement</h3><BOUCLE_telechargement(ARTICLES){id_rubrique}{titre=telechargement}>
-                        <p>#TEXTE<BOUCLE_doc_telechargement(DOCUMENTS){id_article}{mode=document}><br>&#091;&nbsp; <a href="#URL_DOCUMENT">[(#TITRE|supprimer_numero)]</a> - #TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]&nbsp;&#093;</BOUCLE_doc_telechargement></p></BOUCLE_telechargement></B_telechargement><B_avertissement>
+                        <h3 class="RubCouleurTitreArt">T&eacute;l&eacute;chargement</h3><BOUCLE_telechargement(ARTICLES){id_rubrique}{titre=téléchargement}>
+                        <p>[(#TEXTE|PtoBR)]<BOUCLE_doc_telechargement(DOCUMENTS){id_article}{mode=document}><br>&#091;&nbsp; <a href="#URL_DOCUMENT">[(#TITRE|supprimer_numero)]</a> - #TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]&nbsp;&#093;</BOUCLE_doc_telechargement></p></BOUCLE_telechargement></B_telechargement><B_avertissement>
                         <h3 class="RubCouleurTitreArt">Adresses utiles</h3>
                         <p>Les coordonn&eacute;es des associations, syndicats, institutions et administrations [<a href="#URL_PAGE{adresses-utiles-guide}">consulter la liste</a>]</p>
                         <a name="avertissement"></a>
                         <h3 class="RubCouleurTitreArt">Avertissement</h3><BOUCLE_avertissement(ARTICLES){id_rubrique}{titre=avertissement}>
-                        <p>#TEXTE</p></BOUCLE_avertissement><B_remerciements>
+                        <p>[(#TEXTE|PtoBR)]</p></BOUCLE_avertissement><B_remerciements>
                         <h3 class="RubCouleurTitreArt">Remerciements</h3><BOUCLE_remerciements(ARTICLES){id_rubrique}{titre=remerciements}>
-                        <p>#TEXTE</p></BOUCLE_remerciements></B_remerciements>
+                        <p>[(#TEXTE|PtoBR)]</p></BOUCLE_remerciements></B_remerciements>
                     </div></B_test_affichage>
-                    <div class="CorpsRubrique" id="PiedGDS"><BOUCLE_rubGDS2(HIERARCHIE){id_rubrique}{1,1}{doublons}>[&nbsp;<a href="#URL_RUBRIQUE#telecharger">T&eacute;l&eacute;charger le Guide</a>&nbsp;]  [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]</BOUCLE_rubGDS2> [&nbsp;<a href="#URL_PAGE{adresses-utiles-guide}">Adresses utiles</a>&nbsp;]
+                    <div class="CorpsRubrique" id="PiedGDS"><BOUCLE_rubGDS2(RUBRIQUES){id_rubrique=78}>[&nbsp;<a href="#URL_RUBRIQUE#telecharger">T&eacute;l&eacute;charger le Guide</a>&nbsp;]  [&nbsp;<a href="#URL_RUBRIQUE#avertissement">Avertissement</a>&nbsp;]</BOUCLE_rubGDS2> [&nbsp;<a href="#URL_PAGE{adresses-utiles-guide}">Adresses utiles</a>&nbsp;]
                     </div><//B_test_affichage>
 
                 </div><!-- fin Colonne -->
