@@ -174,11 +174,13 @@ body {
 #selection .ui-tabs-panel .info {
 	color: #fff;
 	position: absolute; left: 0; bottom: 0;
-	background-image: url(../../img/transparent-bg.png);
+	background-color: rgba(0,0,0,.65);
 	padding: 4px; }
 
 #selection .ui-tabs-panel .info h2 {
 	font-size: 16px; }	
+
+#selection .ui-tabs-panel .info a { color: #C39; }
 
 /* css originales */
 
