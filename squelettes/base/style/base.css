@@ -174,7 +174,7 @@ body {
 #selection .ui-tabs-panel .info {
 	color: #fff;
 	position: absolute; left: 0; bottom: 0;
-	background-color: rgba(0,0,0,.65);
+	background-color: rgba(0,0,0,.75);
 	padding: 4px; }
 
 #selection .ui-tabs-panel .info h2 {

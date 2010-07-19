@@ -30,7 +30,7 @@
                             <h3 class="ArtLies">Dans les articles : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
                             <BOUCLE_articles(ARTICLES){recherche}{par points}{inverse}{pagination 5}>
                             <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h4>
-                            [<p>(#EXTRAIT)</p>]
+                            [<p>(#INTRODUCTION)</p>]
                             <p><a href="#URL_ARTICLE">[(#URL_ARTICLE|url_absolue)]</a><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
                             </BOUCLE_articles>
                             <div class="hierarchie">
@@ -48,7 +48,7 @@
                             <h3 class="ArtLies">Dans les br&egrave;ves : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
                             <BOUCLE_breves(BREVES){recherche}{par points}{inverse}{pagination 5}>
                             <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a></h4>
-                            [<p>(#EXTRAIT)</p>]
+                            [<p>(#INTRODUCTION)</p>]
                             <p><a href="#URL_BREVE">[(#URL_BREVE|url_absolue)]</a><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
                             </BOUCLE_breves>
                             <div class="hierarchie">
@@ -66,7 +66,7 @@
                             <h3 class="ArtLies">Dans les rubriques : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
                             <BOUCLE_rubriques(RUBRIQUES){recherche}{par points}{inverse}{pagination 5}>
                             <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></h4>
-                            [<p>(#EXTRAIT)</p>]
+                            [<p>(#INTRODUCTION)</p>]
                             <p><a href="#URL_RUBRIQUE">[(#URL_RUBRIQUE|url_absolue)]</a></p>
                             </BOUCLE_rubriques>
                             <div class="hierarchie">
@@ -84,7 +84,7 @@
                             <h3 class="ArtLies">Dans les mots-cl&eacute;s : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
                             <BOUCLE_mots(MOTS){recherche}{par points}{inverse}{pagination 5}>
                             <h4>[(#COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="#URL_MOT">[(#TITRE|supprimer_numero)]</a></h4>
-                            [<p>(#EXTRAIT)</p>]
+                            [<p>(#INTRODUCTION)</p>]
                             <p><a href="#URL_MOT">[(#URL_MOT|url_absolue)]</a></p>
                             </BOUCLE_mots>
                             <div class="hierarchie">
@@ -102,7 +102,7 @@
                             <h3 class="ArtLies">Dans les documents : [(#GRAND_TOTAL) [(#GRAND_TOTAL|>{1}|?{'r&eacute;sultats','r&eacute;sultat'})]]</h3>
                             <BOUCLE_documents(DOCUMENTS){recherche}{extension!==jpg|gif|png}{par points}{inverse}{pagination 5}{doublons documents}>
                             <h4><B_article_relatif_document><BOUCLE_article_relatif_document(ARTICLES){id_document}><a href="#URL_ARTICLE#documents"></BOUCLE_article_relatif_document></B_article_relatif_document><a href="#URL_DOCUMENT"><//B_article_relatif_document>[(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT})]</a></h4>
-                            [<p>(#EXTRAIT)</p>]
+                            [<p>(#DESCRIPTIF)</p>]
                             <p><B_article_relatif_document2><BOUCLE_article_relatif_document2(ARTICLES){id_document}><a href="#URL_ARTICLE#documents">[(#URL_ARTICLE|url_absolue)#documents]</a></BOUCLE_article_relatif_document2></B_article_relatif_document2><a href="#URL_DOCUMENT">[(#URL_DOCUMENT|url_absolue)]<//B_article_relatif_document2><br>[<span class="Date">publi&eacute; le (#DATE|affdate)</span>]</p>
                             </BOUCLE_documents>
                             <div class="hierarchie">

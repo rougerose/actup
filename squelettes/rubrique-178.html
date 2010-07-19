@@ -52,7 +52,7 @@
                             <div class="ts-article gauche">
                                 <h3>[(#TITRE|supprimer_numero|couper{30})]</h3>
                                 <BOUCLE_image_ts2(DOCUMENTS){id_article}{extension==jpg|gif|png}{0,1}>
-                                [(#FICHIER|reduire_image{200,0}|inserer_attribut{alt,#TITRE})]
+                                [(#FICHIER|image_reduire{200,0}|inserer_attribut{alt,#TITRE})]
                                 </BOUCLE_image_ts2>
                             </div>
                         </a>

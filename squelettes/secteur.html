@@ -52,7 +52,7 @@
 
                     <BOUCLE_actuellement(ARTICLES){id_secteur}{par date}{inverse}{age<30}{doublons}>
                     <div class="encadrement">
-                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||reduire_image{150})</a>]
+                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{150})</a>]
                         [<h4>(#SURTITRE)</h4>]
                         <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
                         [<h4>(#SOUSTITRE)</h4>]
@@ -75,7 +75,7 @@
                     </B_actuellement>
                     <BOUCLE_actuellement_alternatif(ARTICLES){id_secteur}{par date}{inverse}{0,1}{doublons}>
                     <div class="encadrement">
-                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||reduire_image{150})</a>]
+                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{150})</a>]
                         [<h4>(#SURTITRE)</h4>]
                         <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
                         [<h4>(#SOUSTITRE)</h4>]

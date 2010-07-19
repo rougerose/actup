@@ -51,7 +51,7 @@
 
                     <BOUCLE_actuellement(ARTICLES){id_secteur}{par date}{inverse}{age<30}{doublons}>
                     <div class="encadrement">
-                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||reduire_image{150})</a>]
+                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{150})</a>]
                         [<h4>(#SURTITRE)</h4>]
                         <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
                         [<h4>(#SOUSTITRE)</h4>]
@@ -74,7 +74,7 @@
                     </B_actuellement>
                     <BOUCLE_actuellement_alternatif(ARTICLES){id_secteur}{par date}{inverse}{0,1}{doublons}>
                     <div class="encadrement">
-                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||reduire_image{150})</a>]
+                        [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{150})</a>]
                         [<h4>(#SURTITRE)</h4>]
                         <h3><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
                         [<h4>(#SOUSTITRE)</h4>]
@@ -280,7 +280,7 @@
                     <BOUCLE_tee-shirts(ARTICLES){id_rubrique=178}{par hasard}{0,4}>
                     <a href="#URL_ARTICLE" class="noline">
                         <BOUCLE_image_ts(DOCUMENTS){id_article}{extension==gif|png|jpg}{0,1}>
-                        [(#FICHIER|reduire_image{73,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{"border","0"})]
+                        [(#FICHIER|image_reduire{73,0}|inserer_attribut{alt,#TITRE}|inserer_attribut{"border","0"})]
                         </BOUCLE_image_ts></a>
                     </BOUCLE_tee-shirts>
 
