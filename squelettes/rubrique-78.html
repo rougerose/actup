@@ -43,7 +43,7 @@
                                         <li><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rub_parent>
                                     </ul></B_rub_parent><B_niveauArticles>
                                     <ul>
-                                        <BOUCLE_niveauArticles(ARTICLES){id_rubrique}{doublons}{annee>2001}>
+                                        <BOUCLE_niveauArticles(ARTICLES){id_rubrique}{doublons}{annee>2001}{par num titre}>
                                         <li class="niveau2"><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="+" width="14" height="14"> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
                                         </BOUCLE_niveauArticles>
                                     </ul>
