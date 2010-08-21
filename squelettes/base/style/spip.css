@@ -9,7 +9,11 @@ h3.spip { text-align: center; margin-top: 2em; margin-bottom: 1.4em; font-size: 
 hr.spip { margin: 2em auto; }
 
 /* Listes SPIP */
-ul.spip {}
+ul.spip { font-size: 13px; margin-bottom:1.5em; }
+	ul.spip li { 
+	background: url(../../puce.gif) no-repeat 0 2px;
+	padding-left: 16px;}
+	ul.spip ul { margin-bottom: 0; }
 ol.spip { list-style: decimal; }
 
 /* Citations, code et poesie */
