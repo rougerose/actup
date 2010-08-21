@@ -27,7 +27,10 @@
 
                     <div class="CorpsRubrique">
 
-                        <BOUCLE_articles_exclus(ARTICLES){id_rubrique}{titre_mot=articles exclus}{doublons}></BOUCLE_articles_exclus><BOUCLE_avantpropos(ARTICLES){id_rubrique}{titre=Avant-propos}{doublons}>
+                        <BOUCLE_articles_exclus(ARTICLES){id_rubrique}{titre_mot=articles exclus}{doublons exclus}></BOUCLE_articles_exclus>
+						[(#REM) exclusion des articles virtuels]
+						<BOUCLE_virtuels(ARTICLES){id_rubrique}{chapo==^=}{doublons}></BOUCLE_virtuels>
+<BOUCLE_avantpropos(ARTICLES){id_rubrique}{titre=Avant-propos}{doublons}>
                         <h2 class="RubCouleurTitreArt">[(#TITRE|supprimer_numero)]</h2>
                         <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[la suite]</a></p></BOUCLE_avantpropos>
                     </div>
