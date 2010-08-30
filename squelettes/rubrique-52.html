@@ -28,19 +28,22 @@
 
 					<INCLURE{fond=inclure/rubrique-hierarchie}{id_rubrique}>
 
+					
 					<B_actionvie_recent>
 					<div class="hierarchie">
 						#PAGINATION{page}
 					</div>
 					<BOUCLE_actionvie_recent(ARTICLES){id_rubrique}{par date}{inverse}{pagination}>
+					<BOUCLE_actionvie_recent2(MOTS){id_article}{type=medias action vie}>
 					<div class="media5">
 						<div class="media2">
-							<BOUCLE_actionvie_recent2(MOTS){id_article}{type=medias action vie}>
+							
 							<a href="#URL_PAGE{medias,id_mot=#ID_MOT}" class="noline"><img src="IMG/[(#LOGO_MOT|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0" class="logoMedias"></a>
 							<br><br>
 							<BOUCLE_rubrique_actionvie(RUBRIQUES){id_rubrique=52}>
 							<a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
 							</BOUCLE_rubrique_actionvie>
+							
 						</div>
 						<div class="media4">
 							[(#TITRE|supprimer_numero|majuscules)]
@@ -61,6 +64,7 @@
 						#PAGINATION{page}
 					</div>
 					</B_actionvie_recent>
+					
 					<div class="rien">&nbsp;</div>
 				</div><!-- fin Colonne -->
 			</div><!-- fin ColonneCentre -->
