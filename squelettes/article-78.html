@@ -94,17 +94,17 @@
                                 <li class="niveau0"><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li>
                                 </BOUCLE_rubGDS>
                                 <B_hierarchieGDS>
-                                <BOUCLE_hierarchieGDS(HIERARCHIE){id_rubrique}{2,6}{doublons}>
+                                <BOUCLE_hierarchieGDS(HIERARCHIE){id_rubrique}{2,6}{doublons}{par num titre}>
                                 <ul>
                                     <li><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li>
                                     </BOUCLE_hierarchieGDS>
                                     <ul>
                                         <B_rub_parent>
-                                        <ul><BOUCLE_rub_parent(RUBRIQUES){id_parent}{doublons}>
+                                        <ul><BOUCLE_rub_parent(RUBRIQUES){id_parent}{doublons}{par num titre}>
                                             <li><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rub_parent>
                                         </ul></B_rub_parent><B_niveauArticles>
                                         <ul>
-                                            <BOUCLE_niveauArticles(ARTICLES){id_rubrique}{doublons}{titre_mot!=articles exclus}>
+                                            <BOUCLE_niveauArticles(ARTICLES){id_rubrique}{doublons}{titre_mot!=articles exclus}{par num titre}>
                                             <li class="niveau2"><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="+" width="14" height="14"> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
                                             </BOUCLE_niveauArticles>
                                         </ul>

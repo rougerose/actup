@@ -37,12 +37,12 @@
                     <div class="CorpsRubrique">
                         <h2 class="RubCouleurTitreArt">Sommaire</h2>
                         <ul class="normal"><BOUCLE_rubGDS(HIERARCHIE){id_rubrique}{1,1}{doublons}>
-                            <li class="niveau0"><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rubGDS><B_hierarchieGDS><BOUCLE_hierarchieGDS(HIERARCHIE){id_rubrique}{2,7}{doublons}>
+                            <li class="niveau0"><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rubGDS><B_hierarchieGDS><BOUCLE_hierarchieGDS(HIERARCHIE){id_rubrique}{2,7}{doublons}{par num titre}>
                             <ul>
                                 <li><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_hierarchieGDS>
                                 <ul>
                                     <li><img src="#CHEMIN{base/images/symbole-moins.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a>[<p>(#TEXTE)</p>]</li><B_rub_parent>
-                                    <ul><BOUCLE_rub_parent(RUBRIQUES){id_parent}{doublons}>
+                                    <ul><BOUCLE_rub_parent(RUBRIQUES){id_parent}{doublons}{par num titre}>
                                         <li><img src="#CHEMIN{base/images/symbole-plus.gif}" alt="-" width="14" height="14"> <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li></BOUCLE_rub_parent>
                                     </ul></B_rub_parent><B_niveauArticles>
                                     <ul>
