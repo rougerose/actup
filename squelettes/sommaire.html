@@ -203,7 +203,7 @@
                                 <a href="#URL_RUBRIQUE" class="noline"><img src="IMG/[(#LOGO_RUBRIQUE|fichier)]" alt="[(#TITRE|supprimer_numero)]" title="[(#TITRE|supprimer_numero)]" border="0"></a>
                             </div>
                             <div class="media4">
-                                R&Eacute;NIONS PUBLIQUES D'INFORMATIONS (R&eacute;PI)
+                                R&Eacute;UNIONS PUBLIQUES D'INFORMATIONS (R&eacute;PI)
                                 <ul><BOUCLE_repi_prochaine(ARTICLES){id_rubrique}{doublons}{age<=0}>
                                     <li><span class="Nouveau">Prochaine R&eacute;PI :</span> [(#DATE|affdate)] | <a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_repi_prochaine></B_repi_prochaine><BOUCLE_repi_precedentes(ARTICLES){id_rubrique}{doublons}{par date}{inverse}{0,4}>
                                     <li>[(#DATE|affdate)] | <a href="#URL_ARTICLE" [title="(#DESCRIPTIF|couper{100})"]>[(#TITRE|supprimer_numero)]</a></li></BOUCLE_repi_precedentes>
